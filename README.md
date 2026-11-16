@@ -1,6 +1,8 @@
 # Bayesian IPL roster optimizer
 
-**The Concourse** is an IPL archive, experimental match simulator and franchise XI planning interface. React/TypeScript/Vite powers the frontend; FastAPI, Bayesian delivery models and constrained optimization power the local backend. Both light and dark themes are complete.
+**The Concourse** is an IPL archive, experimental match simulator and franchise XI planning interface. React/TypeScript/Vite powers the frontend; FastAPI, Bayesian delivery models and constrained optimization power the Python backend. Both light and dark themes are complete.
+
+[Live dashboard](https://roaster-cricket.vercel.app) · [Live API documentation](https://roaster-cricket-api.vercel.app/docs). Both run on Vercel as separate projects. Forecasts remain experimental; deployment does not establish predictive accuracy.
 
 ![The Concourse](docs/frontend-review/final-fixtures-dark.jpg)
 
