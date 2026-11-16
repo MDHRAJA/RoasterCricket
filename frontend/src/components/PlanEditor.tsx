@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { TeamPlan } from '../api/simulation';
 import type { Roster } from '../api/lab';
 import {
@@ -27,6 +27,7 @@ export default function PlanEditor({
   allowUnknown,
   disabled,
   onChange,
+  application,
 }: {
   plan: TeamPlan;
   roster: Roster;
@@ -36,11 +37,19 @@ export default function PlanEditor({
   allowUnknown: boolean;
   disabled: boolean;
   onChange: (plan: TeamPlan) => void;
+  application: { slot: 'A' | 'B'; planKey: string } | null;
 }) {
   const [tab, setTab] = useState<'xi' | 'overs' | 'impact'>('xi'),
     [query, setQuery] = useState(''),
     [over, setOver] = useState(0),
-    [impactOut, setImpactOut] = useState(plan.impact?.outgoing_id || '');
+    [impactOut, setImpactOut] = useState(plan.impact?.outgoing_id || ''),
+    heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => {
+    if (!application) return;
+    setTab('xi');
+    heading.current?.focus({ preventScroll: true });
+    heading.current?.scrollIntoView({ block: 'start', behavior: 'instant' });
+  }, [application]);
   const outgoing = plan.impact?.outgoing_id || impactOut;
   const names = Object.fromEntries(
     roster.members.map((m) => [m.player.player_id, m.player.display_name]),
@@ -66,7 +75,7 @@ export default function PlanEditor({
       <div className="lab-panel-heading">
         <div>
           <span className="eyebrow">02 / Team plan</span>
-          <h2 id="plan-heading">
+          <h2 id="plan-heading" ref={heading} tabIndex={-1}>
             <RouteBullet id={plan.team_id} />
             {team(plan.team_id).name}
           </h2>
@@ -75,6 +84,17 @@ export default function PlanEditor({
           {source === 'api' ? 'Local API roster' : 'Saved roster snapshot'}
         </span>
       </div>
+      {application && (
+        <div className="candidate-applied-notice" role="status">
+          <strong>
+            {team(plan.team_id).short} XI applied to Scenario {application.slot}.
+          </strong>
+          <p>
+            All 11 starters, batting order and bowling plan are updated. Run scenario{' '}
+            {application.slot} to update its result.
+          </p>
+        </div>
+      )}
       <div className="plan-gauges">
         <span>
           XI <strong className="mono">{plan.starting_xi.length}/11</strong>

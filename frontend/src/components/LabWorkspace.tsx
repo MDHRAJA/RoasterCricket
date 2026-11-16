@@ -27,6 +27,7 @@ import {
   scenarioIssues,
   setToss,
   type LabSlot,
+  type PlanSide,
   type SlotId,
 } from '../domain/lab';
 import { formatDate } from '../domain/archive';
@@ -182,7 +183,12 @@ export default function LabWorkspace({
     optimization = store.optimization || savedOptimization,
     [teamPicker, setTeamPicker] = useState(false),
     [groundPicker, setGroundPicker] = useState(false),
-    [groundQuery, setGroundQuery] = useState('');
+    [groundQuery, setGroundQuery] = useState(''),
+    [application, setApplication] = useState<{
+      slot: SlotId;
+      side: PlanSide;
+      planKey: string;
+    } | null>(null);
   const slot = store.slots?.[active],
     request = slot?.request || exampleRequest;
   const { rosters, sources, checking, retry } = useLabRosters(
@@ -296,6 +302,7 @@ export default function LabWorkspace({
       return;
     edit({ ...request, [settings.side]: clone(candidate.plan) });
     setSide(settings.side);
+    setApplication({ slot: active, side: settings.side, planKey: requestKey(candidate.plan) });
   }
   function exportRequest() {
     try {
@@ -614,6 +621,13 @@ export default function LabWorkspace({
             allowUnknown={request.allow_unknown_availability}
             disabled={job.busy}
             onChange={planChange}
+            application={
+              application?.slot === active &&
+              application.side === side &&
+              application.planKey === requestKey(selectedPlan)
+                ? application
+                : null
+            }
           />
         </div>
         <aside className="lab-result-column">
@@ -712,6 +726,8 @@ export default function LabWorkspace({
         onSettings={setSettings}
         onRun={optimize}
         onApply={apply}
+        currentPlan={request[settings.side]}
+        scenario={active}
       />
       <footer className="page-footer">
         <span>The Concourse / Lab</span>

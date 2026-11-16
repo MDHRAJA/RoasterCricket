@@ -7,6 +7,8 @@ import {
   type Roster,
 } from '../api/lab';
 import { availability, type OptimizerSettings } from '../domain/lab';
+import type { SlotId } from '../domain/lab';
+import type { TeamPlan } from '../api/simulation';
 import { percent } from '../domain/simulation';
 import { team } from '../domain/teams';
 import { RangeBar } from './SimulationCharts';
@@ -19,6 +21,8 @@ function CandidateResult({
   apply,
   canApply,
   names,
+  currentPlan,
+  scenario,
 }: {
   run: OptimizationRun;
   selected: number;
@@ -26,11 +30,14 @@ function CandidateResult({
   apply: (candidate: OptimizedCandidate) => void;
   canApply: boolean;
   names: Record<string, string>;
+  currentPlan: TeamPlan;
+  scenario: SlotId;
 }) {
   const result = run.response.data,
     candidates = [result.recommended, ...result.alternatives],
     candidate = candidates[Math.min(selected, candidates.length - 1)],
-    confirmation = result.confirmation.selected_team_outcome;
+    confirmation = result.confirmation.selected_team_outcome,
+    applied = requestKey(currentPlan) === requestKey(candidate.plan);
   return (
     <div className="optimizer-result">
       <div className="optimizer-source">
@@ -109,15 +116,18 @@ function CandidateResult({
       </ol>
       <button
         className="yellow-button apply-candidate"
-        disabled={!canApply}
+        disabled={!canApply || applied}
         onClick={() => apply(candidate)}
       >
-        Apply this candidate to the active scenario <Icon name="arrow" />
+        {applied ? `XI selected in Scenario ${scenario}` : `Apply XI to Scenario ${scenario}`}{' '}
+        <Icon name="arrow" />
       </button>
       <ServiceNote>
-        {canApply
-          ? 'Applying replaces this team’s XI, order, bowling plan and any substitute/Impact nomination. Run the scenario again to update its result.'
-          : 'Inputs have changed. Run the optimizer again before applying a candidate.'}
+        {!canApply
+          ? 'Inputs have changed. Run the optimizer again before applying a candidate.'
+          : applied
+            ? `This XI is selected in Scenario ${scenario}. Run the scenario to update its result.`
+            : 'Applying replaces this team’s XI, order, bowling plan and any substitute/Impact nomination. Run the scenario again to update its result.'}
       </ServiceNote>
       <details className="optimizer-method">
         <summary>Selection method and constraints</summary>
@@ -185,6 +195,8 @@ export default function OptimizerPanel({
   onSettings,
   onRun,
   onApply,
+  currentPlan,
+  scenario,
 }: {
   request: OptimizationRequest;
   settings: OptimizerSettings;
@@ -196,6 +208,8 @@ export default function OptimizerPanel({
   onSettings: (settings: OptimizerSettings) => void;
   onRun: () => void;
   onApply: (candidate: OptimizedCandidate) => void;
+  currentPlan: TeamPlan;
+  scenario: SlotId;
 }) {
   const [query, setQuery] = useState(''),
     [selected, setSelected] = useState(0),
@@ -387,6 +401,8 @@ export default function OptimizerPanel({
           names={names}
           canApply={fresh && !busy}
           apply={onApply}
+          currentPlan={currentPlan}
+          scenario={scenario}
         />
       ) : (
         <ServiceNote>

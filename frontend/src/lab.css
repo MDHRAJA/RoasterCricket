@@ -361,6 +361,25 @@
   font-size: 11px;
   padding: 7px;
 }
+.lab-plan #plan-heading {
+  scroll-margin-top: 90px;
+}
+.candidate-applied-notice {
+  margin: 16px 0;
+  padding: 12px 16px;
+  border-left: 2px solid var(--ink);
+  background: var(--panel-alt);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.candidate-applied-notice strong {
+  display: block;
+}
+.candidate-applied-notice p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
 .lab-plan {
   background: var(--panel);
   min-width: 0;
