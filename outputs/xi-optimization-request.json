@@ -1,0 +1,62 @@
+{
+  "as_of": "2026-10-02",
+  "venue_id": "venue_4534efadc8",
+  "team_id": "CSK",
+  "opponent": {
+    "team_id": "MI",
+    "starting_xi": [
+      "172dff15",
+      "bafd0398",
+      "da934ee8",
+      "dbe50b21",
+      "e48a4814",
+      "fffa744b",
+      "0b60eb09",
+      "462411b3",
+      "9ca68676",
+      "d45c29b1",
+      "d6cd318e"
+    ],
+    "batting_order": [
+      "172dff15",
+      "bafd0398",
+      "da934ee8",
+      "dbe50b21",
+      "e48a4814",
+      "fffa744b",
+      "0b60eb09",
+      "462411b3",
+      "9ca68676",
+      "d45c29b1",
+      "d6cd318e"
+    ],
+    "bowling_plan": [
+      "0b60eb09",
+      "dbe50b21",
+      "d6cd318e",
+      "462411b3",
+      "0b60eb09",
+      "172dff15",
+      "d6cd318e",
+      "dbe50b21",
+      "0b60eb09",
+      "d45c29b1",
+      "d6cd318e",
+      "9ca68676",
+      "172dff15",
+      "0b60eb09",
+      "172dff15",
+      "462411b3",
+      "dbe50b21",
+      "172dff15",
+      "d6cd318e",
+      "dbe50b21"
+    ],
+    "captain_id": "172dff15"
+  },
+  "batting_first_team_id": "CSK",
+  "candidate_count": 3,
+  "simulations": 200,
+  "seed": 20261002,
+  "allow_unknown_availability": true
+}

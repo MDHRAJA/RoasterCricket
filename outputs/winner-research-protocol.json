@@ -1,0 +1,197 @@
+{
+  "target": "at_least_70_percent_deterministic_winner_accuracy_all_eligible_2026_post_toss_matches",
+  "training_start_season": 2012,
+  "validation_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "final_evaluation_season": 2026,
+  "selection": "mean_validation_season_accuracy_then_pooled_log_loss",
+  "classification_rule": "batting_first_probability_greater_than_0.5_else_chasing_team",
+  "coverage": "all_format_eligible_games_no_confidence_filter_or_abstention",
+  "fixed_match_age_half_life_seasons": 5,
+  "candidate_specs": [
+    {
+      "name": "logit_compact_C0.03",
+      "family": "logistic",
+      "group": "compact",
+      "parameter": 0.03
+    },
+    {
+      "name": "logit_compact_C0.3",
+      "family": "logistic",
+      "group": "compact",
+      "parameter": 0.3
+    },
+    {
+      "name": "logit_compact_C3",
+      "family": "logistic",
+      "group": "compact",
+      "parameter": 3
+    },
+    {
+      "name": "logit_team_C0.03",
+      "family": "logistic",
+      "group": "team",
+      "parameter": 0.03
+    },
+    {
+      "name": "logit_team_C0.3",
+      "family": "logistic",
+      "group": "team",
+      "parameter": 0.3
+    },
+    {
+      "name": "logit_team_C3",
+      "family": "logistic",
+      "group": "team",
+      "parameter": 3
+    },
+    {
+      "name": "logit_full_C0.03",
+      "family": "logistic",
+      "group": "full",
+      "parameter": 0.03
+    },
+    {
+      "name": "logit_full_C0.3",
+      "family": "logistic",
+      "group": "full",
+      "parameter": 0.3
+    },
+    {
+      "name": "logit_full_C3",
+      "family": "logistic",
+      "group": "full",
+      "parameter": 3
+    },
+    {
+      "name": "logit_xi_C0.03",
+      "family": "logistic",
+      "group": "xi",
+      "parameter": 0.03
+    },
+    {
+      "name": "logit_xi_C0.3",
+      "family": "logistic",
+      "group": "xi",
+      "parameter": 0.3
+    },
+    {
+      "name": "logit_xi_C3",
+      "family": "logistic",
+      "group": "xi",
+      "parameter": 3
+    },
+    {
+      "name": "gb_team_depth1",
+      "family": "gradient",
+      "group": "team",
+      "parameter": 1
+    },
+    {
+      "name": "gb_team_depth2",
+      "family": "gradient",
+      "group": "team",
+      "parameter": 2
+    },
+    {
+      "name": "gb_full_depth1",
+      "family": "gradient",
+      "group": "full",
+      "parameter": 1
+    },
+    {
+      "name": "gb_full_depth2",
+      "family": "gradient",
+      "group": "full",
+      "parameter": 2
+    },
+    {
+      "name": "gb_xi_depth1",
+      "family": "gradient",
+      "group": "xi",
+      "parameter": 1
+    },
+    {
+      "name": "gb_xi_depth2",
+      "family": "gradient",
+      "group": "xi",
+      "parameter": 2
+    },
+    {
+      "name": "hgb_team_leaves7",
+      "family": "histogram",
+      "group": "team",
+      "parameter": 7
+    },
+    {
+      "name": "hgb_team_leaves15",
+      "family": "histogram",
+      "group": "team",
+      "parameter": 15
+    },
+    {
+      "name": "hgb_full_leaves7",
+      "family": "histogram",
+      "group": "full",
+      "parameter": 7
+    },
+    {
+      "name": "hgb_full_leaves15",
+      "family": "histogram",
+      "group": "full",
+      "parameter": 15
+    },
+    {
+      "name": "hgb_xi_leaves7",
+      "family": "histogram",
+      "group": "xi",
+      "parameter": 7
+    },
+    {
+      "name": "hgb_xi_leaves15",
+      "family": "histogram",
+      "group": "xi",
+      "parameter": 15
+    },
+    {
+      "name": "rf_full_depth4",
+      "family": "forest",
+      "group": "full",
+      "parameter": 4
+    },
+    {
+      "name": "rf_full_depth8",
+      "family": "forest",
+      "group": "full",
+      "parameter": 8
+    },
+    {
+      "name": "rf_xi_depth4",
+      "family": "forest",
+      "group": "xi",
+      "parameter": 4
+    },
+    {
+      "name": "rf_xi_depth8",
+      "family": "forest",
+      "group": "xi",
+      "parameter": 8
+    }
+  ],
+  "additional_candidates": "prequentially_calibrated_each_model_and_top_three_validation_ensemble",
+  "feature_version": "post-toss-prior-team-player-form-with-conditional-original-xi-v2",
+  "xi_scope": "XI feature candidates condition on reconstructed original starters, NOT timestamp-verified announcements; team/full/compact candidates exclude XI features",
+  "seed": 20261105,
+  "database_sha256": "6f6c395ace7ccb6d240fa825d9b5f6e68c5b844102d23bdb8a563e233c9cf51f",
+  "source_sha256": {
+    "train_match_winner.py": "2e9b3e86f4add86a88f033004faedcd3ac883cdd7710ca69d9765dad03f12afa",
+    "prematch_features.py": "9d5bd431401e2b7957e1495d138245b15335a0fdfbf70e2e831dceb6567993a6",
+    "winner_model.py": "a83b4db9dc678e18a0e8df6edf5b641b4c1bd6e3c0a4a3cb8de65484b387f139"
+  },
+  "test_status": "2026_previously_inspected_for_other_diagnostics_not_new_untouched_or_prospective_data",
+  "created_at": "2026-11-05T07:10:19.645931+00:00"
+}

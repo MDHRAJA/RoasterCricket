@@ -1,0 +1,380 @@
+[
+  {
+    "team": "CSK",
+    "name": "Macneil Noronha",
+    "ipl_id": 83038,
+    "candidates": [
+      [
+        "macneilnoronha",
+        []
+      ]
+    ]
+  },
+  {
+    "team": "KKR",
+    "name": "Daksh Kamra",
+    "ipl_id": 95066,
+    "candidates": [
+      [
+        "dakshkamra",
+        []
+      ],
+      [
+        "dksharma",
+        [
+          "cca4633d"
+        ]
+      ],
+      [
+        "aksharma",
+        [
+          "f5cc6d0e"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "LSG",
+    "name": "Naman Tiwari",
+    "ipl_id": 83310,
+    "candidates": [
+      [
+        "namantiwari",
+        []
+      ],
+      [
+        "mtiwari",
+        [
+          "fb5f69e4"
+        ]
+      ],
+      [
+        "agrimaruntiwari",
+        [
+          "beb2a972"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "MI",
+    "name": "Mohammed Izhar",
+    "ipl_id": 94165,
+    "candidates": [
+      [
+        "mohammedizhar",
+        []
+      ],
+      [
+        "mohammediqbar",
+        [
+          "82afc034"
+        ]
+      ],
+      [
+        "mohammedsharif",
+        [
+          "1ec36a1e"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "PBKS",
+    "name": "Pyla Avinash",
+    "ipl_id": 83182,
+    "candidates": [
+      [
+        "pylaavinash",
+        []
+      ],
+      [
+        "pylavine",
+        [
+          "f786a7f6"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "PBKS",
+    "name": "Harnoor Singh",
+    "ipl_id": 76208,
+    "candidates": [
+      [
+        "harnoorsingh",
+        []
+      ],
+      [
+        "harrysingh",
+        [
+          "9bb06571",
+          "fdd5ba1e"
+        ]
+      ],
+      [
+        "harmansingh",
+        [
+          "6baf0cdd"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "PBKS",
+    "name": "Vishal Nishad",
+    "ipl_id": 86859,
+    "candidates": [
+      [
+        "vishalnishad",
+        []
+      ],
+      [
+        "ishankishan",
+        [
+          "752f7486"
+        ]
+      ],
+      [
+        "vishalsharma",
+        [
+          "b9d8abd3",
+          "f555bcf4"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RR",
+    "name": "Emanjot Singh Chahal",
+    "ipl_id": 87006,
+    "candidates": [
+      [
+        "emanjotsinghchahal",
+        []
+      ],
+      [
+        "ranjotsinghkhaira",
+        [
+          "baec2e62"
+        ]
+      ],
+      [
+        "jiwanjotsinghchouhan",
+        [
+          "39f9e2bc"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RR",
+    "name": "Aman Rao",
+    "ipl_id": 87914,
+    "candidates": [
+      [
+        "amanrao",
+        []
+      ],
+      [
+        "ramarao",
+        [
+          "c23ca700"
+        ]
+      ],
+      [
+        "aarao",
+        [
+          "c57f5c4c"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RCB",
+    "name": "Kanishk Chouhan",
+    "ipl_id": 91255,
+    "candidates": [
+      [
+        "kanishkchouhan",
+        []
+      ],
+      [
+        "anirudhchouhan",
+        [
+          "0863ec79"
+        ]
+      ],
+      [
+        "abhishekchauhan",
+        [
+          "6e0d8de5"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RCB",
+    "name": "Satvik Deswal",
+    "ipl_id": 91380,
+    "candidates": [
+      [
+        "satvikdeswal",
+        []
+      ],
+      [
+        "pratikdesai",
+        [
+          "e3626fb1"
+        ]
+      ],
+      [
+        "harvikdesai",
+        [
+          "9c86350f"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RCB",
+    "name": "Vihaan Malhotra",
+    "ipl_id": 86477,
+    "candidates": [
+      [
+        "vihaanmalhotra",
+        []
+      ],
+      [
+        "ishanmalhotra",
+        [
+          "943fd425"
+        ]
+      ],
+      [
+        "vinaymalhotra",
+        [
+          "452837d1"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RCB",
+    "name": "Vicky Ostwal",
+    "ipl_id": 76210,
+    "candidates": [
+      [
+        "vickyostwal",
+        []
+      ],
+      [
+        "vickymansale",
+        [
+          "7163637f"
+        ]
+      ],
+      [
+        "mickystewart",
+        [
+          "0b0355d0"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "RCB",
+    "name": "Mangesh Yadav",
+    "ipl_id": 90854,
+    "candidates": [
+      [
+        "mangeshyadav",
+        []
+      ],
+      [
+        "umeshyadav",
+        [
+          "cc1e8c68"
+        ]
+      ],
+      [
+        "santoshyadav",
+        [
+          "ef342bdb"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "SRH",
+    "name": "RS Ambrish",
+    "ipl_id": 90360,
+    "candidates": [
+      [
+        "rsambrish",
+        []
+      ],
+      [
+        "sambris",
+        [
+          "c7f6dd3b"
+        ]
+      ],
+      [
+        "swambris",
+        [
+          "c7f6dd3b"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "SRH",
+    "name": "Krains Fuletra",
+    "ipl_id": 88265,
+    "candidates": [
+      [
+        "krainsfuletra",
+        []
+      ]
+    ]
+  },
+  {
+    "team": "SRH",
+    "name": "Amit Kumar",
+    "ipl_id": 94972,
+    "candidates": [
+      [
+        "amitkumar",
+        [
+          "d1f63ad5",
+          "e3e9f70a"
+        ]
+      ],
+      [
+        "sumitkumar",
+        [
+          "8998a68f",
+          "fe180dba"
+        ]
+      ],
+      [
+        "mohitkumar",
+        [
+          "caabc8e4"
+        ]
+      ]
+    ]
+  },
+  {
+    "team": "SRH",
+    "name": "Onkar Tarmale",
+    "ipl_id": 90418,
+    "candidates": [
+      [
+        "onkartarmale",
+        []
+      ]
+    ]
+  }
+]

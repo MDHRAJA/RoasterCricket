@@ -1,0 +1,502 @@
+{
+  "source_report_sha256": "365a10ff851114eabd890dcd06e74fbbc5e139c69586301268b6a5eac0c208de",
+  "analysis_source_sha256": "d4276821cb75c6dc92b6d7af4a4c3aef3fc7a43fab9d67bc4c3ea470ffa3674d",
+  "completed_at": "2026-11-05T06:46:16.063811+00:00",
+  "status": "retrospective_diagnostic_only",
+  "score_correction_enabled_in_serving": false,
+  "results": {
+    "2025": {
+      "population": {
+        "raw": {
+          "point_and_coverage": {
+            "innings": 68,
+            "mae_runs": 28.997426470588234,
+            "rmse_runs": 36.417733272283385,
+            "mean_bias_runs": -11.160735294117647,
+            "mean_wicket_bias": -0.3240073529411765,
+            "mean_runs_mc_standard_error": 1.1120921442592953,
+            "predictive_coverage": {
+              "0.8": 0.5441176470588235,
+              "0.9": 0.6176470588235294
+            },
+            "mean_interval_width": {
+              "0.8": 54.96470588235295,
+              "0.9": 70.99632352941177
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 153.09705882352938,
+              "covered_matches": 37,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.42656606428685023,
+                "upper": 0.6569511707260847,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 198.43750000000014,
+              "covered_matches": 42,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.4988071245222142,
+                "upper": 0.7239055021789457,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "candidate": {
+          "point_and_coverage": {
+            "innings": 68,
+            "mae_runs": 27.29592331932773,
+            "rmse_runs": 34.8772237694519,
+            "mean_bias_runs": 3.8381575630252165,
+            "mean_wicket_bias": -0.3240073529411765,
+            "mean_runs_mc_standard_error": 1.1120921442592953,
+            "predictive_coverage": {
+              "0.8": 0.8823529411764706,
+              "0.9": 0.9558823529411765
+            },
+            "mean_interval_width": {
+              "0.8": 111.17819968019396,
+              "0.9": 143.60567035157752
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 131.95882168854445,
+              "covered_matches": 60,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.784650962802083,
+                "upper": 0.9391650739766866,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 149.22782498781203,
+              "covered_matches": 65,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.8781280481750362,
+                "upper": 0.9848833802919585,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "paired_gain": {
+          "absolute_run_error": {
+            "mean_gain": 1.701503151260503,
+            "95_percent_date_cluster_interval": [
+              -1.8864678184315702,
+              4.903699320790814
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.8": {
+            "mean_gain": 21.13823713498496,
+            "95_percent_date_cluster_interval": [
+              -5.612747013154193,
+              49.739285952147746
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.9": {
+            "mean_gain": 49.209675012188086,
+            "95_percent_date_cluster_interval": [
+              -0.6181950149001184,
+              101.48348521641995
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          }
+        }
+      },
+      "participant_raw": {
+        "raw": {
+          "point_and_coverage": {
+            "innings": 68,
+            "mae_runs": 28.908713235294123,
+            "rmse_runs": 36.149432066006966,
+            "mean_bias_runs": -10.608492647058824,
+            "mean_wicket_bias": -0.44047794117647066,
+            "mean_runs_mc_standard_error": 1.1423425037676527,
+            "predictive_coverage": {
+              "0.8": 0.5588235294117647,
+              "0.9": 0.6470588235294118
+            },
+            "mean_interval_width": {
+              "0.8": 56.452941176470596,
+              "0.9": 73.51617647058822
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 150.04117647058823,
+              "covered_matches": 38,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.44081865304588186,
+                "upper": 0.6705376603046981,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 197.20735294117654,
+              "covered_matches": 44,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.5284105522251017,
+                "upper": 0.7499802311513482,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "candidate": {
+          "point_and_coverage": {
+            "innings": 68,
+            "mae_runs": 27.25876651747656,
+            "rmse_runs": 34.65696563991023,
+            "mean_bias_runs": 2.6199131500426343,
+            "mean_wicket_bias": -0.44047794117647066,
+            "mean_runs_mc_standard_error": 1.1423425037676527,
+            "predictive_coverage": {
+              "0.8": 0.8676470588235294,
+              "0.9": 0.8970588235294118
+            },
+            "mean_interval_width": {
+              "0.8": 93.46591186525178,
+              "0.9": 121.7165364190841
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 124.49675523057222,
+              "covered_matches": 59,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.7671994025434227,
+                "upper": 0.928777555897702,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 151.02996361335235,
+              "covered_matches": 61,
+              "total_matches": 68,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.8024208869063437,
+                "upper": 0.9492342282100709,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "paired_gain": {
+          "absolute_run_error": {
+            "mean_gain": 1.6499467178175615,
+            "95_percent_date_cluster_interval": [
+              -1.4852557397586512,
+              4.470606091485508
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.8": {
+            "mean_gain": 25.54442124001601,
+            "95_percent_date_cluster_interval": [
+              2.314934029348007,
+              49.66040616055315
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.9": {
+            "mean_gain": 46.17738932782422,
+            "95_percent_date_cluster_interval": [
+              6.0238928307316275,
+              87.50882734695043
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          }
+        }
+      }
+    },
+    "2026": {
+      "population": {
+        "raw": {
+          "point_and_coverage": {
+            "innings": 70,
+            "mae_runs": 31.466107142857144,
+            "rmse_runs": 37.76002036238669,
+            "mean_bias_runs": -9.482607142857146,
+            "mean_wicket_bias": -0.07817857142857146,
+            "mean_runs_mc_standard_error": 1.153711978636859,
+            "predictive_coverage": {
+              "0.8": 0.5285714285714286,
+              "0.9": 0.6142857142857143
+            },
+            "mean_interval_width": {
+              "0.8": 56.82,
+              "0.9": 74.41571428571427
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 151.56285714285713,
+              "covered_matches": 37,
+              "total_matches": 70,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.4132188746832562,
+                "upper": 0.6409512360361571,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 190.81571428571436,
+              "covered_matches": 43,
+              "total_matches": 70,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.4971573558930424,
+                "upper": 0.7195230869846111,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "candidate": {
+          "point_and_coverage": {
+            "innings": 70,
+            "mae_runs": 29.201321428571426,
+            "rmse_runs": 36.96388382764621,
+            "mean_bias_runs": 5.516285714285719,
+            "mean_wicket_bias": -0.07817857142857146,
+            "mean_runs_mc_standard_error": 1.153711978636859,
+            "predictive_coverage": {
+              "0.8": 0.9,
+              "0.9": 0.9857142857142858
+            },
+            "mean_interval_width": {
+              "0.8": 114.93093985347446,
+              "0.9": 150.5221397874827
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 130.05051852471183,
+              "covered_matches": 63,
+              "total_matches": 70,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.807670851514326,
+                "upper": 0.9507106985574605,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 171.06385859557076,
+              "covered_matches": 69,
+              "total_matches": 70,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.9234181286879168,
+                "upper": 0.9974737535421097,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "paired_gain": {
+          "absolute_run_error": {
+            "mean_gain": 2.264785714285715,
+            "95_percent_date_cluster_interval": [
+              -0.9553934830947312,
+              5.470588598682713
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.8": {
+            "mean_gain": 21.512338618145332,
+            "95_percent_date_cluster_interval": [
+              -4.708988843122229,
+              48.54883747769662
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.9": {
+            "mean_gain": 19.751855690143675,
+            "95_percent_date_cluster_interval": [
+              -18.859132467944043,
+              59.84458863539964
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          }
+        }
+      },
+      "participant_raw": {
+        "raw": {
+          "point_and_coverage": {
+            "innings": 67,
+            "mae_runs": 30.979813432835822,
+            "rmse_runs": 37.180120007704566,
+            "mean_bias_runs": -8.504440298507461,
+            "mean_wicket_bias": -0.2437686567164179,
+            "mean_runs_mc_standard_error": 1.1960192624454136,
+            "predictive_coverage": {
+              "0.8": 0.4626865671641791,
+              "0.9": 0.6567164179104478
+            },
+            "mean_interval_width": {
+              "0.8": 58.72089552238806,
+              "0.9": 76.60970149253733
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 145.98955223880597,
+              "covered_matches": 31,
+              "total_matches": 67,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.3485844371949035,
+                "upper": 0.580835423953701,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 171.68432835820903,
+              "covered_matches": 44,
+              "total_matches": 67,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.5373266459034898,
+                "upper": 0.7591099372723709,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "candidate": {
+          "point_and_coverage": {
+            "innings": 67,
+            "mae_runs": 29.08565812243132,
+            "rmse_runs": 36.50139269984561,
+            "mean_bias_runs": 4.723965498593998,
+            "mean_wicket_bias": -0.2437686567164179,
+            "mean_runs_mc_standard_error": 1.1960192624454136,
+            "predictive_coverage": {
+              "0.8": 0.835820895522388,
+              "0.9": 0.9552238805970149
+            },
+            "mean_interval_width": {
+              "0.8": 97.22083440059505,
+              "0.9": 126.83830919174802
+            }
+          },
+          "interval_scores": {
+            "0.8": {
+              "mean_interval_score": 123.51017973523568,
+              "covered_matches": 56,
+              "total_matches": 67,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.7294473706077896,
+                "upper": 0.9057738790547688,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            },
+            "0.9": {
+              "mean_interval_score": 149.89423262103747,
+              "covered_matches": 64,
+              "total_matches": 67,
+              "coverage_wilson_95_interval": {
+                "level": 0.95,
+                "lower": 0.8764216691090624,
+                "upper": 0.9846560248779613,
+                "interpretation": "historical_coverage_binomial_independence_approximation_not_a_guarantee"
+              },
+              "coverage_interval_caveat": "binomial independence approximation, not a temporal coverage guarantee"
+            }
+          }
+        },
+        "paired_gain": {
+          "absolute_run_error": {
+            "mean_gain": 1.8941553104045004,
+            "95_percent_date_cluster_interval": [
+              -1.1238926587301599,
+              4.834944790294249
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.8": {
+            "mean_gain": 22.47937250357029,
+            "95_percent_date_cluster_interval": [
+              1.2636834010119755,
+              43.440070437467455
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          },
+          "interval_score_0.9": {
+            "mean_gain": 21.790095737171587,
+            "95_percent_date_cluster_interval": [
+              -8.448274039239557,
+              53.54673029180626
+            ],
+            "positive_means_candidate_better": true,
+            "resamples": 2000,
+            "limitations": "retrospective paired diagnostic; excludes fit/selection/season-dependence uncertainty"
+          }
+        }
+      }
+    }
+  },
+  "interval_score_reference": "https://scoringrules.readthedocs.io/en/latest/generated/scoringrules.interval_score.html"
+}

@@ -1,0 +1,3 @@
+# Saved research receipts hash the exact source/artifact bytes, including newlines.
+# Preserve those bytes on Windows and Linux instead of rewriting line endings.
+* -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

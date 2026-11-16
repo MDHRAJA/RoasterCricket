@@ -1,0 +1,10 @@
+{
+  "file": "raw/ipl/TATA_IPL_2026_Match_Playing_Conditions_current.pdf",
+  "pages": 119,
+  "pdf_header_valid": true,
+  "cover_title": "IPL 2026 PLAYING CONDITIONS",
+  "cover_effective_date": "2026-03-01",
+  "all_pages_parsed": true,
+  "introduction_date_note": "Page 4 introduction says 1 March 2024 while the cover says effective 1 March 2026; source file retained unmodified.",
+  "sha256": "8cb00c8428262988b147823628dd78c1e0ef7e623d2aa0a5d456eb7183bae655"
+}

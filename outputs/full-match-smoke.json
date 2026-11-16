@@ -1,0 +1,1391 @@
+{
+  "protocol_version": "full-match-date-blocked-observed-pool-v1",
+  "status": "limited_smoke_test_not_full_backtest",
+  "simulations_per_match_per_variant": 50,
+  "development_season": 2024,
+  "evaluation_seasons": [],
+  "cohort_counts": {
+    "population": 2,
+    "participant_raw": 2
+  },
+  "win_correction_fits_development_only": {
+    "population": {
+      "status": "insufficient_development_matches",
+      "matches": 2
+    },
+    "participant_raw": {
+      "status": "insufficient_development_matches",
+      "matches": 2
+    },
+    "participant_delivery_corrected": {
+      "status": "insufficient_development_matches",
+      "matches": 0
+    }
+  },
+  "results_by_season": {
+    "2024": {
+      "variants": {
+        "population": {
+          "win_metrics": {
+            "matches": 2,
+            "brier_score": 0.3207939446366782,
+            "log_loss": 0.8373805275160447,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 0.0,
+            "calibration_error_10_bins": 0.5638235294117647,
+            "calibration_bins": [
+              {
+                "lower": 0.5,
+                "upper_exclusive": 0.6,
+                "matches": 1,
+                "mean_probability": 0.51,
+                "observed_win_frequency": 0.0
+              },
+              {
+                "lower": 0.6,
+                "upper_exclusive": 0.7,
+                "matches": 1,
+                "mean_probability": 0.6176470588235294,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "first_innings_metrics": {
+            "innings": 2,
+            "mae_runs": 9.739999999999995,
+            "rmse_runs": 9.916007260989671,
+            "mean_bias_runs": -9.739999999999995,
+            "mean_wicket_bias": -1.2999999999999998,
+            "mean_runs_mc_standard_error": 2.888424211873243,
+            "predictive_coverage": {
+              "0.8": 1.0,
+              "0.9": 1.0
+            },
+            "mean_interval_width": {
+              "0.8": 51.60000000000001,
+              "0.9": 65.32499999999999
+            }
+          },
+          "second_innings_metrics": {
+            "innings": 2,
+            "mae_runs": 23.489999999999995,
+            "rmse_runs": 23.634555210538654,
+            "mean_bias_runs": -23.489999999999995,
+            "mean_wicket_bias": 0.6400000000000001,
+            "mean_runs_mc_standard_error": 2.2378254307437553,
+            "predictive_coverage": {
+              "0.8": 0.0,
+              "0.9": 0.5
+            },
+            "mean_interval_width": {
+              "0.8": 35.349999999999994,
+              "0.9": 47.949999999999996
+            }
+          },
+          "neutral_win_metrics": {
+            "matches": 2,
+            "brier_score": 0.25,
+            "log_loss": 0.6931471805599453,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 0.5,
+            "calibration_error_10_bins": 0.5,
+            "calibration_bins": [
+              {
+                "lower": 0.5,
+                "upper_exclusive": 0.6,
+                "matches": 2,
+                "mean_probability": 0.5,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "prior_only_batting_first_baseline_metrics": {
+            "matches": 2,
+            "brier_score": 0.23097055466021835,
+            "log_loss": 0.6550692334453014,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 1.0,
+            "calibration_error_10_bins": 0.48059313926472597,
+            "calibration_bins": [
+              {
+                "lower": 0.4,
+                "upper_exclusive": 0.5,
+                "matches": 2,
+                "mean_probability": 0.48059313926472597,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "paired_win_gain_vs_neutral": {
+            "brier": {
+              "mean_gain": -0.07079394463667821,
+              "95_percent_date_cluster_interval": [
+                -0.13148788927335642,
+                -0.010099999999999998
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            },
+            "log_loss": {
+              "mean_gain": -0.14423334695609946,
+              "95_percent_date_cluster_interval": [
+                -0.2682639865946794,
+                -0.020202707317519497
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            }
+          },
+          "paired_win_gain_vs_batting_first": {
+            "brier": {
+              "mean_gain": -0.08982338997645986,
+              "95_percent_date_cluster_interval": [
+                -0.14966347226375426,
+                -0.02998330768916546
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            },
+            "log_loss": {
+              "mean_gain": -0.18231129407074326,
+              "95_percent_date_cluster_interval": [
+                -0.30463163076555433,
+                -0.059990957375932186
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            }
+          },
+          "mean_simulated_regular_tie_probability": 0.01,
+          "mean_unconditional_win_sampling_interval_half_width": 0.1317443378128907
+        },
+        "participant_raw": {
+          "win_metrics": {
+            "matches": 2,
+            "brier_score": 0.207768339100346,
+            "log_loss": 0.6083999089428451,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 1.0,
+            "calibration_error_10_bins": 0.4555882352941176,
+            "calibration_bins": [
+              {
+                "lower": 0.4,
+                "upper_exclusive": 0.5,
+                "matches": 2,
+                "mean_probability": 0.4555882352941176,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "first_innings_metrics": {
+            "innings": 2,
+            "mae_runs": 9.269999999999996,
+            "rmse_runs": 9.722026537713209,
+            "mean_bias_runs": -9.269999999999996,
+            "mean_wicket_bias": -1.3800000000000003,
+            "mean_runs_mc_standard_error": 2.73939088355396,
+            "predictive_coverage": {
+              "0.8": 1.0,
+              "0.9": 1.0
+            },
+            "mean_interval_width": {
+              "0.8": 39.8,
+              "0.9": 59.49999999999997
+            }
+          },
+          "second_innings_metrics": {
+            "innings": 2,
+            "mae_runs": 20.52000000000001,
+            "rmse_runs": 20.906228736909974,
+            "mean_bias_runs": -20.52000000000001,
+            "mean_wicket_bias": 0.9300000000000002,
+            "mean_runs_mc_standard_error": 2.132347538638916,
+            "predictive_coverage": {
+              "0.8": 0.0,
+              "0.9": 0.5
+            },
+            "mean_interval_width": {
+              "0.8": 36.64999999999999,
+              "0.9": 45.69999999999999
+            }
+          },
+          "neutral_win_metrics": {
+            "matches": 2,
+            "brier_score": 0.25,
+            "log_loss": 0.6931471805599453,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 0.5,
+            "calibration_error_10_bins": 0.5,
+            "calibration_bins": [
+              {
+                "lower": 0.5,
+                "upper_exclusive": 0.6,
+                "matches": 2,
+                "mean_probability": 0.5,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "prior_only_batting_first_baseline_metrics": {
+            "matches": 2,
+            "brier_score": 0.23097055466021835,
+            "log_loss": 0.6550692334453014,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 1.0,
+            "calibration_error_10_bins": 0.48059313926472597,
+            "calibration_bins": [
+              {
+                "lower": 0.4,
+                "upper_exclusive": 0.5,
+                "matches": 2,
+                "mean_probability": 0.48059313926472597,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "paired_win_gain_vs_neutral": {
+            "brier": {
+              "mean_gain": 0.042231660899653994,
+              "95_percent_date_cluster_interval": [
+                0.029100000000000015,
+                0.055363321799307974
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            },
+            "log_loss": {
+              "mean_gain": 0.0847472716171001,
+              "95_percent_date_cluster_interval": [
+                0.05826890812397578,
+                0.11122563511022443
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            }
+          },
+          "paired_win_gain_vs_batting_first": {
+            "brier": {
+              "mean_gain": 0.02320221555987234,
+              "95_percent_date_cluster_interval": [
+                0.009216692310834551,
+                0.03718773880891013
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            },
+            "log_loss": {
+              "mean_gain": 0.04666932450245631,
+              "95_percent_date_cluster_interval": [
+                0.018480658065563094,
+                0.07485799093934953
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            }
+          },
+          "mean_simulated_regular_tie_probability": 0.01,
+          "mean_unconditional_win_sampling_interval_half_width": 0.1329081229392604
+        }
+      },
+      "matched_participant_cohort_comparisons": {
+        "population": {
+          "matches": 2,
+          "compared_win_metrics": {
+            "matches": 2,
+            "brier_score": 0.3207939446366782,
+            "log_loss": 0.8373805275160447,
+            "top_pick_accuracy_with_half_credit_for_50_percent_ties": 0.0,
+            "calibration_error_10_bins": 0.5638235294117647,
+            "calibration_bins": [
+              {
+                "lower": 0.5,
+                "upper_exclusive": 0.6,
+                "matches": 1,
+                "mean_probability": 0.51,
+                "observed_win_frequency": 0.0
+              },
+              {
+                "lower": 0.6,
+                "upper_exclusive": 0.7,
+                "matches": 1,
+                "mean_probability": 0.6176470588235294,
+                "observed_win_frequency": 0.0
+              }
+            ],
+            "accuracy_note": "threshold classification is not probability calibration; bins may be very sparse"
+          },
+          "raw_win_gain_vs_compared": {
+            "brier": {
+              "mean_gain": 0.1130256055363322,
+              "95_percent_date_cluster_interval": [
+                0.03920000000000001,
+                0.1868512110726644
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            },
+            "log_loss": {
+              "mean_gain": 0.22898061857319957,
+              "95_percent_date_cluster_interval": [
+                0.07847161544149528,
+                0.37948962170490386
+              ],
+              "interpretation": "positive favors selected model; interval does not capture all season/team dependence"
+            }
+          }
+        }
+      }
+    }
+  },
+  "predictions": [
+    {
+      "match_id": "1422119",
+      "date": "2024-03-22",
+      "season": 2024,
+      "variant": "population",
+      "team_a_id": "RCB",
+      "team_b_id": "CSK",
+      "team_a_is_batting_first": true,
+      "venue_id": "venue_4534efadc8",
+      "probability": 0.6176470588235294,
+      "raw_conditional_probability": 0.62,
+      "probability_estimator": "Jeffreys_half_count_smoothing_of_decisive_Monte_Carlo_counts",
+      "outcome": 0,
+      "winning_trials": 31,
+      "decisive_trials": 50,
+      "regular_tie_probability": 0.0,
+      "sampling_interval": {
+        "level": 0.95,
+        "lower": 0.4815044693099298,
+        "upper": 0.7413721068980641,
+        "interpretation": "monte_carlo_sampling_error_not_model_accuracy"
+      },
+      "sampling_interval_scope": "unconditional_team_win_mass_not_decisive_conditional_probability",
+      "latest_training_date": "2023-05-29",
+      "window_start": "2020-03-22",
+      "delivery_calibration": "raw_default",
+      "strategies": null,
+      "exposures": {
+        "legal_delivery_draws": 11633,
+        "no_direct_history_draws": 11633,
+        "under_30_direct_history_draws": 11633,
+        "no_direct_history_fraction": 1.0,
+        "interpretation": "actual_sampled_legal_events_including_any_super_overs_not_independent_observations"
+      },
+      "first_innings": {
+        "team_id": "RCB",
+        "mean_runs": 161.4,
+        "score_quantiles": {
+          "p05": 133.6,
+          "p10": 140.9,
+          "p50": 164.5,
+          "p90": 181.0,
+          "p95": 184.1
+        },
+        "score_standard_deviation": 17.28040060004279,
+        "mean_runs_mc_standard_error": 2.443817689182068,
+        "mean_wickets": 6.04,
+        "mean_legal_balls": 119.12,
+        "score_histogram": [
+          {
+            "lower": 110,
+            "upper_exclusive": 120,
+            "count": 2
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 2
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 7
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 8
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 15
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 9
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 6
+          },
+          {
+            "lower": 190,
+            "upper_exclusive": 200,
+            "count": 1
+          }
+        ],
+        "actual_runs": 173,
+        "actual_wickets": 6
+      },
+      "second_innings": {
+        "team_id": "CSK",
+        "mean_runs": 149.9,
+        "score_quantiles": {
+          "p05": 123.85000000000001,
+          "p10": 136.0,
+          "p50": 149.5,
+          "p90": 166.1,
+          "p95": 169.64999999999998
+        },
+        "score_standard_deviation": 15.007821090269934,
+        "mean_runs_mc_standard_error": 2.122426412752871,
+        "mean_wickets": 5.74,
+        "mean_legal_balls": 113.54,
+        "score_histogram": [
+          {
+            "lower": 110,
+            "upper_exclusive": 120,
+            "count": 3
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 11
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 11
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 10
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 12
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 2
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 1
+          }
+        ],
+        "actual_runs": 176,
+        "actual_wickets": 4,
+        "scope": "joint_unconditional_chase_score_NOT_conditional_on_actual_target"
+      },
+      "seed": 2713843159
+    },
+    {
+      "match_id": "1422119",
+      "date": "2024-03-22",
+      "season": 2024,
+      "variant": "participant_raw",
+      "team_a_id": "RCB",
+      "team_b_id": "CSK",
+      "team_a_is_batting_first": true,
+      "venue_id": "venue_4534efadc8",
+      "probability": 0.4411764705882353,
+      "raw_conditional_probability": 0.44,
+      "probability_estimator": "Jeffreys_half_count_smoothing_of_decisive_Monte_Carlo_counts",
+      "outcome": 0,
+      "winning_trials": 22,
+      "decisive_trials": 50,
+      "regular_tie_probability": 0.0,
+      "sampling_interval": {
+        "level": 0.95,
+        "lower": 0.3116219921125717,
+        "upper": 0.5769397197834315,
+        "interpretation": "monte_carlo_sampling_error_not_model_accuracy"
+      },
+      "sampling_interval_scope": "unconditional_team_win_mass_not_decisive_conditional_probability",
+      "latest_training_date": "2023-05-29",
+      "window_start": "2020-03-22",
+      "delivery_calibration": "raw_default",
+      "strategies": {
+        "RCB": {
+          "strategy_version": "prior-only-position-phase-usage-v1",
+          "latest_strategy_evidence_date": "2023-05-26",
+          "participants_with_no_prior_appearances": [],
+          "selected_bowlers_without_prior_bowling": [],
+          "participant_pool_source": "post_match_cricsheet_match_players_not_verified_announced_xi",
+          "impact_policy": "hypothetical_interval_swap_selected_from_observed_pool_using_prior_usage",
+          "actual_target_batting_order_or_bowling_usage_used": false,
+          "historical_registration_and_overseas_eligibility_checked": false
+        },
+        "CSK": {
+          "strategy_version": "prior-only-position-phase-usage-v1",
+          "latest_strategy_evidence_date": "2023-05-29",
+          "participants_with_no_prior_appearances": [
+            "ba5e1069",
+            "f89d3b11"
+          ],
+          "selected_bowlers_without_prior_bowling": [],
+          "participant_pool_source": "post_match_cricsheet_match_players_not_verified_announced_xi",
+          "impact_policy": "hypothetical_interval_swap_selected_from_observed_pool_using_prior_usage",
+          "actual_target_batting_order_or_bowling_usage_used": false,
+          "historical_registration_and_overseas_eligibility_checked": false
+        }
+      },
+      "exposures": {
+        "legal_delivery_draws": 11639,
+        "no_direct_history_draws": 11095,
+        "under_30_direct_history_draws": 11639,
+        "no_direct_history_fraction": 0.9532605893977146,
+        "interpretation": "actual_sampled_legal_events_including_any_super_overs_not_independent_observations"
+      },
+      "first_innings": {
+        "team_id": "RCB",
+        "mean_runs": 160.8,
+        "score_quantiles": {
+          "p05": 129.45,
+          "p10": 139.4,
+          "p50": 162.0,
+          "p90": 178.2,
+          "p95": 185.29999999999998
+        },
+        "score_standard_deviation": 18.173764450044857,
+        "mean_runs_mc_standard_error": 2.570158416462745,
+        "mean_wickets": 6.52,
+        "mean_legal_balls": 119.22,
+        "score_histogram": [
+          {
+            "lower": 120,
+            "upper_exclusive": 130,
+            "count": 3
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 2
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 7
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 11
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 13
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 9
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 3
+          },
+          {
+            "lower": 200,
+            "upper_exclusive": 210,
+            "count": 1
+          },
+          {
+            "lower": 210,
+            "upper_exclusive": 220,
+            "count": 1
+          }
+        ],
+        "actual_runs": 173,
+        "actual_wickets": 6
+      },
+      "second_innings": {
+        "team_id": "CSK",
+        "mean_runs": 151.48,
+        "score_quantiles": {
+          "p05": 128.0,
+          "p10": 132.8,
+          "p50": 154.0,
+          "p90": 172.0,
+          "p95": 175.0
+        },
+        "score_standard_deviation": 15.184901201186523,
+        "mean_runs_mc_standard_error": 2.1474693222013483,
+        "mean_wickets": 6.48,
+        "mean_legal_balls": 113.56,
+        "score_histogram": [
+          {
+            "lower": 120,
+            "upper_exclusive": 130,
+            "count": 4
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 7
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 11
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 15
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 6
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 6
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 1
+          }
+        ],
+        "actual_runs": 176,
+        "actual_wickets": 4,
+        "scope": "joint_unconditional_chase_score_NOT_conditional_on_actual_target"
+      },
+      "seed": 2713843159
+    },
+    {
+      "match_id": "1422120",
+      "date": "2024-03-23",
+      "season": 2024,
+      "variant": "population",
+      "team_a_id": "DC",
+      "team_b_id": "PBKS",
+      "team_a_is_batting_first": true,
+      "venue_id": "venue_74687cdf8e",
+      "probability": 0.51,
+      "raw_conditional_probability": 0.5102040816326531,
+      "probability_estimator": "Jeffreys_half_count_smoothing_of_decisive_Monte_Carlo_counts",
+      "outcome": 0,
+      "winning_trials": 25,
+      "decisive_trials": 49,
+      "regular_tie_probability": 0.02,
+      "sampling_interval": {
+        "level": 0.95,
+        "lower": 0.3664451431682858,
+        "upper": 0.6335548568317142,
+        "interpretation": "monte_carlo_sampling_error_not_model_accuracy"
+      },
+      "sampling_interval_scope": "unconditional_team_win_mass_not_decisive_conditional_probability",
+      "latest_training_date": "2024-03-22",
+      "window_start": "2020-03-23",
+      "delivery_calibration": "raw_default",
+      "strategies": null,
+      "exposures": {
+        "legal_delivery_draws": 11540,
+        "no_direct_history_draws": 11540,
+        "under_30_direct_history_draws": 11540,
+        "no_direct_history_fraction": 1.0,
+        "interpretation": "actual_sampled_legal_events_including_any_super_overs_not_independent_observations"
+      },
+      "first_innings": {
+        "team_id": "DC",
+        "mean_runs": 166.12,
+        "score_quantiles": {
+          "p05": 131.15,
+          "p10": 137.7,
+          "p50": 163.5,
+          "p90": 200.8,
+          "p95": 211.29999999999998
+        },
+        "score_standard_deviation": 23.568086343136795,
+        "mean_runs_mc_standard_error": 3.3330307345644177,
+        "mean_wickets": 6.36,
+        "mean_legal_balls": 118.8,
+        "score_histogram": [
+          {
+            "lower": 110,
+            "upper_exclusive": 120,
+            "count": 1
+          },
+          {
+            "lower": 120,
+            "upper_exclusive": 130,
+            "count": 2
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 4
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 4
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 9
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 9
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 10
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 4
+          },
+          {
+            "lower": 190,
+            "upper_exclusive": 200,
+            "count": 1
+          },
+          {
+            "lower": 200,
+            "upper_exclusive": 210,
+            "count": 3
+          },
+          {
+            "lower": 210,
+            "upper_exclusive": 220,
+            "count": 2
+          },
+          {
+            "lower": 220,
+            "upper_exclusive": 230,
+            "count": 1
+          }
+        ],
+        "actual_runs": 174,
+        "actual_wickets": 9
+      },
+      "second_innings": {
+        "team_id": "PBKS",
+        "mean_runs": 156.12,
+        "score_quantiles": {
+          "p05": 130.45,
+          "p10": 135.8,
+          "p50": 155.5,
+          "p90": 176.4,
+          "p95": 180.55
+        },
+        "score_standard_deviation": 16.63980965354239,
+        "mean_runs_mc_standard_error": 2.3532244487346397,
+        "mean_wickets": 5.54,
+        "mean_legal_balls": 112.0,
+        "score_histogram": [
+          {
+            "lower": 110,
+            "upper_exclusive": 120,
+            "count": 1
+          },
+          {
+            "lower": 120,
+            "upper_exclusive": 130,
+            "count": 1
+          },
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 6
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 9
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 16
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 5
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 7
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 4
+          },
+          {
+            "lower": 190,
+            "upper_exclusive": 200,
+            "count": 1
+          }
+        ],
+        "actual_runs": 177,
+        "actual_wickets": 6,
+        "scope": "joint_unconditional_chase_score_NOT_conditional_on_actual_target"
+      },
+      "seed": 3213818242
+    },
+    {
+      "match_id": "1422120",
+      "date": "2024-03-23",
+      "season": 2024,
+      "variant": "participant_raw",
+      "team_a_id": "DC",
+      "team_b_id": "PBKS",
+      "team_a_is_batting_first": true,
+      "venue_id": "venue_74687cdf8e",
+      "probability": 0.47,
+      "raw_conditional_probability": 0.46938775510204084,
+      "probability_estimator": "Jeffreys_half_count_smoothing_of_decisive_Monte_Carlo_counts",
+      "outcome": 0,
+      "winning_trials": 23,
+      "decisive_trials": 49,
+      "regular_tie_probability": 0.02,
+      "sampling_interval": {
+        "level": 0.95,
+        "lower": 0.3296965219222435,
+        "upper": 0.5960112860084253,
+        "interpretation": "monte_carlo_sampling_error_not_model_accuracy"
+      },
+      "sampling_interval_scope": "unconditional_team_win_mass_not_decisive_conditional_probability",
+      "latest_training_date": "2024-03-22",
+      "window_start": "2020-03-23",
+      "delivery_calibration": "raw_default",
+      "strategies": {
+        "DC": {
+          "strategy_version": "prior-only-position-phase-usage-v1",
+          "latest_strategy_evidence_date": "2023-05-20",
+          "participants_with_no_prior_appearances": [
+            "1fc6ef83",
+            "8998a68f",
+            "b63e358a"
+          ],
+          "selected_bowlers_without_prior_bowling": [],
+          "participant_pool_source": "post_match_cricsheet_match_players_not_verified_announced_xi",
+          "impact_policy": "hypothetical_interval_swap_selected_from_observed_pool_using_prior_usage",
+          "actual_target_batting_order_or_bowling_usage_used": false,
+          "historical_registration_and_overseas_eligibility_checked": false
+        },
+        "PBKS": {
+          "strategy_version": "prior-only-position-phase-usage-v1",
+          "latest_strategy_evidence_date": "2023-05-21",
+          "participants_with_no_prior_appearances": [],
+          "selected_bowlers_without_prior_bowling": [],
+          "participant_pool_source": "post_match_cricsheet_match_players_not_verified_announced_xi",
+          "impact_policy": "hypothetical_interval_swap_selected_from_observed_pool_using_prior_usage",
+          "actual_target_batting_order_or_bowling_usage_used": false,
+          "historical_registration_and_overseas_eligibility_checked": false
+        }
+      },
+      "exposures": {
+        "legal_delivery_draws": 11509,
+        "no_direct_history_draws": 11509,
+        "under_30_direct_history_draws": 11509,
+        "no_direct_history_fraction": 1.0,
+        "interpretation": "actual_sampled_legal_events_including_any_super_overs_not_independent_observations"
+      },
+      "first_innings": {
+        "team_id": "DC",
+        "mean_runs": 167.66,
+        "score_quantiles": {
+          "p05": 138.9,
+          "p10": 144.7,
+          "p50": 169.5,
+          "p90": 185.5,
+          "p95": 202.04999999999995
+        },
+        "score_standard_deviation": 20.56707295158741,
+        "mean_runs_mc_standard_error": 2.9086233506451755,
+        "mean_wickets": 5.72,
+        "mean_legal_balls": 119.3,
+        "score_histogram": [
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 3
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 6
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 8
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 8
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 17
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 3
+          },
+          {
+            "lower": 190,
+            "upper_exclusive": 200,
+            "count": 2
+          },
+          {
+            "lower": 200,
+            "upper_exclusive": 210,
+            "count": 1
+          },
+          {
+            "lower": 220,
+            "upper_exclusive": 230,
+            "count": 1
+          },
+          {
+            "lower": 230,
+            "upper_exclusive": 240,
+            "count": 1
+          }
+        ],
+        "actual_runs": 174,
+        "actual_wickets": 9
+      },
+      "second_innings": {
+        "team_id": "PBKS",
+        "mean_runs": 160.48,
+        "score_quantiles": {
+          "p05": 136.25,
+          "p10": 141.9,
+          "p50": 160.5,
+          "p90": 176.0,
+          "p95": 180.64999999999998
+        },
+        "score_standard_deviation": 14.971046887173896,
+        "mean_runs_mc_standard_error": 2.117225755076483,
+        "mean_wickets": 5.38,
+        "mean_legal_balls": 110.88,
+        "score_histogram": [
+          {
+            "lower": 130,
+            "upper_exclusive": 140,
+            "count": 4
+          },
+          {
+            "lower": 140,
+            "upper_exclusive": 150,
+            "count": 9
+          },
+          {
+            "lower": 150,
+            "upper_exclusive": 160,
+            "count": 12
+          },
+          {
+            "lower": 160,
+            "upper_exclusive": 170,
+            "count": 8
+          },
+          {
+            "lower": 170,
+            "upper_exclusive": 180,
+            "count": 14
+          },
+          {
+            "lower": 180,
+            "upper_exclusive": 190,
+            "count": 2
+          },
+          {
+            "lower": 200,
+            "upper_exclusive": 210,
+            "count": 1
+          }
+        ],
+        "actual_runs": 177,
+        "actual_wickets": 6,
+        "scope": "joint_unconditional_chase_score_NOT_conditional_on_actual_target"
+      },
+      "seed": 3213818242
+    }
+  ],
+  "limitations": [
+    "Participant models condition on post-match observed participant pools, NOT verified announced XIs.",
+    "Participant strategies are hypothetical interval swaps/order/schedules selected solely from earlier usage; actual tactical choices are not reconstructed.",
+    "Historical overseas/registration/concussion eligibility and actual impact timing are not validated.",
+    "Population forecasts do not use participant identities; they are post-toss, venue/phase-only complete two-innings simulations.",
+    "Both models lack learned score pressure, pitch, weather and dated injury information.",
+    "2024 delivery hyperparameters and correction were already selected/fitted on 2024; 2024 match results are development diagnostics.",
+    "2025/2026 archive data were previously inspected for other model diagnostics; these are retrospective evaluations, not newly untouched data.",
+    "Win metrics condition on decisive outcomes and exclude observed ties/super overs/no-results; simulated ties are retained and reported separately.",
+    "Finite Monte Carlo estimates add scoring noise; half-count smoothing prevents infinite estimated log loss, not model misspecification.",
+    "Second-innings scores are unconditional joint predictions with simulated targets; they are not forecasts conditioned on the observed first-innings target.",
+    "Date-cluster bootstrap intervals do not capture all team/season dependencies or model-selection uncertainty.",
+    "No XI counterfactual benefit or global win-optimality is established; challenger corrections are not automatically served."
+  ],
+  "signature": {
+    "protocol_version": "full-match-date-blocked-observed-pool-v1",
+    "simulator_version": "ipl-uninterrupted-monte-carlo-v2-audited",
+    "database_sha256": "6f6c395ace7ccb6d240fa825d9b5f6e68c5b844102d23bdb8a563e233c9cf51f",
+    "dataset_catalog_sha256": "5563c618ffea1629b50207f7fc2ba993574befa8c4a06239133154a8d6a31569",
+    "source_sha256": {
+      "backend/__init__.py": "f702e15008a9c59574ccd0a3f7401fb474d12a7cacba1efff9c89fdbbc757568",
+      "backend/__main__.py": "cda7f216e44a010c55010cabaa56fce875673e5e96ddddbfeca455112eae61f0",
+      "backend/api.py": "e8c08b2a73247ef0973e013169c678590431f2d09ed062a11b4f7c76f7058a3b",
+      "backend/backtesting.py": "6e424787b3a7aec486039e4c67188eed6f0ecc62edfa902061074f84a91de3c7",
+      "backend/bayesian.py": "706578e120e46aa3428467135b179c96835d6a150171dfd15b95b4779ca6db1a",
+      "backend/config.py": "9c9ae9068f5959a22bd253be86b49661a48bce8916dcca3296a9c0f9c4564f4f",
+      "backend/database.py": "22ff9f1c56dd0b18e78b640f138a01054158501a3ec19846bd7be763bb3f89fd",
+      "backend/delivery_calibration.py": "439192de036dfbdc2397db670441a8f67bb7631d34b7e6884f27873a62e970d7",
+      "backend/historical_evidence.py": "7ddf0bb9ae37b8ef361c002d34b7dc7c4c7899064acd0b1500a87d36baf29af5",
+      "backend/historical_planning.py": "cf023c34d1ca1fe0706feb117616c06c7b0adc750a0e0fc18ba3912aebc53ced",
+      "backend/ipl_rules.py": "38b1ac87b4a922a4c8d260228d1d29bc5752241fafda2fb93337378a91842a5b",
+      "backend/main.py": "3b1727fd11c2288024c8c4b2f8eb9c9c4d7e53c76320c71b6732a50537ffd70a",
+      "backend/match_backtesting.py": "ca08ef8cf8b840eba8734b6f704947476411725d7e39aa6e4faeb7c5cab1c539",
+      "backend/match_models.py": "93c5e91b639da9bb68327a18890fcddb68ecf32766b02b6104c4a688c5a029b3",
+      "backend/models.py": "c42bc4cc4e169d42ca1896e894333da1198e322a4c2b9d807f276b5b340b02a9",
+      "backend/optimizer.py": "d91b31523ac6948864f66fef4ac6b7e56f51a395c94e28e9da7a0e4d1f9e7e7d",
+      "backend/reliability.py": "efcf4e2dfd442a069f30c9b277ef54e9118cb7673d5da56f2474ca3c68fe2d8a",
+      "backend/reliability_backtesting.py": "22947e27355dc55bb902da60566107852cc61e17b1db01fe585772353809cd42",
+      "backend/services.py": "e069ca94e04caad0c572c004a1fc3ac9811bae08a4b32ce65d807fdb92c0eba5",
+      "backend/simulation_evidence.py": "12c10b21562d29e137941704030837eaf424c299a33d4f131042fdd0414bc77b",
+      "backend/simulator.py": "49181b8b406ac67af5229e017fd87fdd7507a931cd2b31263579645ca34b8e09",
+      "scripts/backtest_matches.py": "f0bc7c66a8b2f009f59c50bae016f9db66cc5c499ef87f77d61770a4d6be28fa"
+    },
+    "simulations": 50,
+    "seed": 20261104,
+    "limit": 2
+  },
+  "total_format_eligible_matches": 2,
+  "participant_pool_cohort_exclusions": [],
+  "format_result_exclusions": [
+    {
+      "match_id": "1426298",
+      "season": 2024,
+      "reason": "first_innings_not_complete"
+    },
+    {
+      "match_id": "1473469",
+      "season": 2025,
+      "reason": "tie_super_over_or_no_decisive_regular_result"
+    },
+    {
+      "match_id": "1473471",
+      "season": 2025,
+      "reason": "first_innings_not_complete"
+    },
+    {
+      "match_id": "1473481",
+      "season": 2025,
+      "reason": "tie_super_over_or_no_decisive_regular_result"
+    },
+    {
+      "match_id": "1473492",
+      "season": 2025,
+      "reason": "not_two_recorded_regular_innings"
+    },
+    {
+      "match_id": "1473493",
+      "season": 2025,
+      "reason": "adjusted_result_method"
+    },
+    {
+      "match_id": "1473495",
+      "season": 2025,
+      "reason": "not_two_recorded_regular_innings"
+    },
+    {
+      "match_id": "1527685",
+      "season": 2026,
+      "reason": "not_two_recorded_regular_innings"
+    },
+    {
+      "match_id": "1527686",
+      "season": 2026,
+      "reason": "first_innings_not_complete"
+    },
+    {
+      "match_id": "1529281",
+      "season": 2026,
+      "reason": "tie_super_over_or_no_decisive_regular_result"
+    },
+    {
+      "match_id": "1529293",
+      "season": 2026,
+      "reason": "adjusted_result_method"
+    }
+  ],
+  "scenario_plans": {
+    "1422119": {
+      "RCB": {
+        "team_id": "RCB",
+        "starting_xi": [
+          "ba607b88",
+          "3355b542",
+          "eaa76d3c",
+          "c740ea83",
+          "b681e71e",
+          "c8f5f961",
+          "c03f1114",
+          "a457cfb5",
+          "b0946605",
+          "119678fd",
+          "2f49c897"
+        ],
+        "batting_order": [
+          "ba607b88",
+          "3355b542",
+          "eaa76d3c",
+          "c740ea83",
+          "b681e71e",
+          "c8f5f961",
+          "c03f1114",
+          "a457cfb5",
+          "b0946605",
+          "119678fd",
+          "2f49c897"
+        ],
+        "bowling_plan": [
+          "2f49c897",
+          "7210d461",
+          "2f49c897",
+          "7210d461",
+          "2f49c897",
+          "7210d461",
+          "119678fd",
+          "a457cfb5",
+          "119678fd",
+          "a457cfb5",
+          "119678fd",
+          "a457cfb5",
+          "b0946605",
+          "119678fd",
+          "b0946605",
+          "a457cfb5",
+          "b0946605",
+          "7210d461",
+          "2f49c897",
+          "b0946605"
+        ],
+        "captain_id": "ba607b88",
+        "substitutes": [
+          "7210d461"
+        ],
+        "impact": {
+          "outgoing_id": "c03f1114",
+          "incoming_id": "7210d461",
+          "timing": "innings_interval"
+        }
+      },
+      "CSK": {
+        "team_id": "CSK",
+        "starting_xi": [
+          "f24c6701",
+          "0a8fce53",
+          "23eeb873",
+          "46a9bea1",
+          "fe93fd9d",
+          "eade4650",
+          "ba5e1069",
+          "f89d3b11",
+          "a4e37e47",
+          "29e95537",
+          "45a43fe2"
+        ],
+        "batting_order": [
+          "45a43fe2",
+          "29e95537",
+          "a4e37e47",
+          "eade4650",
+          "4a8a2e3b",
+          "fe93fd9d",
+          "ba5e1069",
+          "f89d3b11",
+          "23eeb873",
+          "46a9bea1",
+          "f24c6701"
+        ],
+        "bowling_plan": [
+          "23eeb873",
+          "46a9bea1",
+          "23eeb873",
+          "46a9bea1",
+          "23eeb873",
+          "46a9bea1",
+          "fe93fd9d",
+          "f24c6701",
+          "fe93fd9d",
+          "f24c6701",
+          "fe93fd9d",
+          "f24c6701",
+          "0a8fce53",
+          "fe93fd9d",
+          "0a8fce53",
+          "f24c6701",
+          "0a8fce53",
+          "46a9bea1",
+          "0a8fce53",
+          "23eeb873"
+        ],
+        "captain_id": "f24c6701",
+        "substitutes": [
+          "4a8a2e3b"
+        ],
+        "impact": {
+          "outgoing_id": "0a8fce53",
+          "incoming_id": "4a8a2e3b",
+          "timing": "innings_interval"
+        }
+      }
+    },
+    "1422120": {
+      "DC": {
+        "team_id": "DC",
+        "starting_xi": [
+          "dcce6f09",
+          "3d8feaf8",
+          "919a3be2",
+          "85b3fab2",
+          "2e171977",
+          "ad3b6e95",
+          "1fc6ef83",
+          "8998a68f",
+          "b63e358a",
+          "8d2c70ad",
+          "a2f46292"
+        ],
+        "batting_order": [
+          "dcce6f09",
+          "3d8feaf8",
+          "919a3be2",
+          "85b3fab2",
+          "2e171977",
+          "ad3b6e95",
+          "1fc6ef83",
+          "8998a68f",
+          "b63e358a",
+          "8d2c70ad",
+          "a2f46292"
+        ],
+        "bowling_plan": [
+          "5bb1a1c4",
+          "a2f46292",
+          "5bb1a1c4",
+          "a2f46292",
+          "5bb1a1c4",
+          "a2f46292",
+          "8d2c70ad",
+          "2e171977",
+          "8d2c70ad",
+          "2e171977",
+          "8d2c70ad",
+          "2e171977",
+          "3d8feaf8",
+          "8d2c70ad",
+          "3d8feaf8",
+          "2e171977",
+          "3d8feaf8",
+          "a2f46292",
+          "3d8feaf8",
+          "5bb1a1c4"
+        ],
+        "captain_id": "dcce6f09",
+        "substitutes": [
+          "5bb1a1c4"
+        ],
+        "impact": {
+          "outgoing_id": "919a3be2",
+          "incoming_id": "5bb1a1c4",
+          "timing": "innings_interval"
+        }
+      },
+      "PBKS": {
+        "team_id": "PBKS",
+        "starting_xi": [
+          "e62dd25d",
+          "2ed569a0",
+          "f986ca1a",
+          "244048f6",
+          "e94915e6",
+          "c05edf8e",
+          "50c6bc2b",
+          "26989d80",
+          "9418198b",
+          "800d2d97",
+          "abb83e27"
+        ],
+        "batting_order": [
+          "0a476045",
+          "9418198b",
+          "abb83e27",
+          "50c6bc2b",
+          "e94915e6",
+          "800d2d97",
+          "26989d80",
+          "f986ca1a",
+          "c05edf8e",
+          "e62dd25d",
+          "2ed569a0"
+        ],
+        "bowling_plan": [
+          "e94915e6",
+          "e62dd25d",
+          "e94915e6",
+          "e62dd25d",
+          "e94915e6",
+          "e62dd25d",
+          "2ed569a0",
+          "f986ca1a",
+          "2ed569a0",
+          "f986ca1a",
+          "2ed569a0",
+          "f986ca1a",
+          "244048f6",
+          "2ed569a0",
+          "244048f6",
+          "f986ca1a",
+          "244048f6",
+          "e62dd25d",
+          "244048f6",
+          "e94915e6"
+        ],
+        "captain_id": "e62dd25d",
+        "substitutes": [
+          "0a476045"
+        ],
+        "impact": {
+          "outgoing_id": "244048f6",
+          "incoming_id": "0a476045",
+          "timing": "innings_interval"
+        }
+      }
+    }
+  },
+  "live_evidence_adapter_bridge_checks": [
+    {
+      "season": 2024,
+      "match_id": "1422119",
+      "status": "passed",
+      "pair_phase_checks": 27
+    }
+  ],
+  "database_unchanged": true,
+  "completed_at": "2026-11-04T15:50:02.325072+00:00",
+  "elapsed_seconds": 5.219,
+  "complete_requested_cohort": false
+}

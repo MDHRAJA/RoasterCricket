@@ -1,0 +1,1202 @@
+{
+  "data": {
+    "calibrated_forecast": {
+      "status": "experimental_calibration_candidate",
+      "version": "joint-event-logit-2024-v1",
+      "fit_season": 2024,
+      "exclusive_fit_cutoff": "2025-01-01",
+      "offsets_boundary_dot_dismissal": [
+        0.15614920048857436,
+        -0.03169681980336517,
+        0.1059841253397679
+      ],
+      "events": {
+        "boundary": {
+          "probability": 0.25313754865861543
+        },
+        "dot": {
+          "probability": 0.383998425193148
+        },
+        "striker_dismissal": {
+          "probability": 0.038343626361741746
+        }
+      },
+      "joint_outcomes": [
+        {
+          "batter_runs": "0",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 0.34568686700215356
+        },
+        {
+          "batter_runs": "0",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 0.03831155819099443
+        },
+        {
+          "batter_runs": "1",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 0.29862354262401586
+        },
+        {
+          "batter_runs": "1",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 3.1313386090189506e-05
+        },
+        {
+          "batter_runs": "2",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 0.06023266724259546
+        },
+        {
+          "batter_runs": "2",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 6.683231804777562e-07
+        },
+        {
+          "batter_runs": "3",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 0.003366038803283137
+        },
+        {
+          "batter_runs": "3",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 1.6300565377506245e-08
+        },
+        {
+          "batter_runs": "4",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 3.546583714637489e-06
+        },
+        {
+          "batter_runs": "4",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 1.6300565377506252e-09
+        },
+        {
+          "batter_runs": "4",
+          "boundary": true,
+          "striker_dismissed": false,
+          "probability": 0.1875187062122763
+        },
+        {
+          "batter_runs": "4",
+          "boundary": true,
+          "striker_dismissed": true,
+          "probability": 1.714983371726262e-08
+        },
+        {
+          "batter_runs": "5",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 0.0006053041465396933
+        },
+        {
+          "batter_runs": "5",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 1.6300565377506245e-08
+        },
+        {
+          "batter_runs": "6",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 6.143111105552327e-07
+        },
+        {
+          "batter_runs": "6",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 1.6300565377506252e-09
+        },
+        {
+          "batter_runs": "6",
+          "boundary": true,
+          "striker_dismissed": false,
+          "probability": 0.0656188081466717
+        },
+        {
+          "batter_runs": "6",
+          "boundary": true,
+          "striker_dismissed": true,
+          "probability": 1.714983371726262e-08
+        },
+        {
+          "batter_runs": "7+",
+          "boundary": false,
+          "striker_dismissed": false,
+          "probability": 2.7856589738781444e-07
+        },
+        {
+          "batter_runs": "7+",
+          "boundary": false,
+          "striker_dismissed": true,
+          "probability": 1.6300565377506245e-08
+        }
+      ],
+      "expected_capped_batter_runs_per_legal_delivery": 1.5760540924835282,
+      "intervals": null,
+      "interpretation": "normalized_joint_logit_correction_not_replacement_Bayesian_credible_intervals",
+      "limitations": [
+        "calibration_parameter_uncertainty_not_propagated",
+        "delivery_backtest_not_match_win_calibration"
+      ]
+    },
+    "model_version": "legal-delivery-eb-v1",
+    "status": "experimental",
+    "batter_id": "ba607b88",
+    "bowler_id": "fe93fd9d",
+    "as_of": "2026-05-31",
+    "context": {
+      "phase": "powerplay",
+      "venue_id": "venue_fb4f23161a",
+      "bowling_category": null,
+      "bowling_arm": null
+    },
+    "training": {
+      "window_start": "2022-05-31",
+      "exclusive_cutoff": "2026-05-31",
+      "first_included_date": "2023-03-31",
+      "last_included_date": "2026-05-29",
+      "disjoint_pool_deliveries": {
+        "background": 61296,
+        "context": 2309,
+        "batter": 61,
+        "bowler": 6,
+        "target": 0
+      },
+      "prior_strength": 60,
+      "direct_evidence_weight": 0.0,
+      "configuration": {
+        "context_strength": 120,
+        "player_strength": 80,
+        "matchup_strength": 60,
+        "lookback_days": 1461
+      }
+    },
+    "prior_event_probabilities": {
+      "boundary": 0.2228276247807965,
+      "dot": 0.4037784377755715,
+      "striker_dismissal": 0.03663080250040545
+    },
+    "events": {
+      "boundary": {
+        "probability": 0.22282762478079657,
+        "observed_successes": 0,
+        "observed_deliveries": 0,
+        "posterior_alpha": 13.369657486847792,
+        "posterior_beta": 46.6303425131522,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.14068821847103466,
+          "upper": 0.3155470293692388,
+          "interpretation": "conditional_parameter_credible_interval"
+        },
+        "density_curve": [
+          {
+            "probability": 0.10469660540577093,
+            "density": 0.4114154494753094
+          },
+          {
+            "probability": 0.10920217481460033,
+            "density": 0.5503629813569574
+          },
+          {
+            "probability": 0.11370774422342973,
+            "density": 0.7200425667475991
+          },
+          {
+            "probability": 0.11821331363225913,
+            "density": 0.9228132507098049
+          },
+          {
+            "probability": 0.12271888304108852,
+            "density": 1.1602259300965605
+          },
+          {
+            "probability": 0.12722445244991792,
+            "density": 1.432855444895688
+          },
+          {
+            "probability": 0.13173002185874733,
+            "density": 1.7401725454064363
+          },
+          {
+            "probability": 0.13623559126757673,
+            "density": 2.0804650770386797
+          },
+          {
+            "probability": 0.14074116067640613,
+            "density": 2.4508143843374075
+          },
+          {
+            "probability": 0.14524673008523553,
+            "density": 2.8471292656494085
+          },
+          {
+            "probability": 0.14975229949406493,
+            "density": 3.2642361201015424
+          },
+          {
+            "probability": 0.15425786890289434,
+            "density": 3.6960205020140093
+          },
+          {
+            "probability": 0.15876343831172374,
+            "density": 4.135612368375514
+          },
+          {
+            "probability": 0.16326900772055314,
+            "density": 4.575605043798217
+          },
+          {
+            "probability": 0.16777457712938254,
+            "density": 5.008296436917872
+          },
+          {
+            "probability": 0.17228014653821194,
+            "density": 5.425940356851608
+          },
+          {
+            "probability": 0.17678571594704134,
+            "density": 5.820995870508873
+          },
+          {
+            "probability": 0.18129128535587075,
+            "density": 6.186363432095299
+          },
+          {
+            "probability": 0.18579685476470015,
+            "density": 6.515597887083593
+          },
+          {
+            "probability": 0.19030242417352955,
+            "density": 6.803090261303472
+          },
+          {
+            "probability": 0.19480799358235895,
+            "density": 7.04421233727635
+          },
+          {
+            "probability": 0.19931356299118833,
+            "density": 7.235420241015285
+          },
+          {
+            "probability": 0.20381913240001773,
+            "density": 7.374315470904703
+          },
+          {
+            "probability": 0.20832470180884713,
+            "density": 7.4596638726444455
+          },
+          {
+            "probability": 0.21283027121767653,
+            "density": 7.491374901538757
+          },
+          {
+            "probability": 0.21733584062650593,
+            "density": 7.470445043609086
+          },
+          {
+            "probability": 0.22184141003533533,
+            "density": 7.398870445623057
+          },
+          {
+            "probability": 0.22634697944416474,
+            "density": 7.27953461281907
+          },
+          {
+            "probability": 0.2308525488529941,
+            "density": 7.116077476804517
+          },
+          {
+            "probability": 0.2353581182618235,
+            "density": 6.912752239201237
+          },
+          {
+            "probability": 0.23986368767065291,
+            "density": 6.674276198474004
+          },
+          {
+            "probability": 0.24436925707948232,
+            "density": 6.4056813177824985
+          },
+          {
+            "probability": 0.24887482648831172,
+            "density": 6.112169646346623
+          },
+          {
+            "probability": 0.2533803958971411,
+            "density": 5.798977923295545
+          },
+          {
+            "probability": 0.2578859653059705,
+            "density": 5.471254827278564
+          },
+          {
+            "probability": 0.2623915347147999,
+            "density": 5.133953438878258
+          },
+          {
+            "probability": 0.2668971041236293,
+            "density": 4.791740601295942
+          },
+          {
+            "probability": 0.2714026735324587,
+            "density": 4.448924035342365
+          },
+          {
+            "probability": 0.27590824294128813,
+            "density": 4.109397316526509
+          },
+          {
+            "probability": 0.28041381235011753,
+            "density": 3.7766021755575414
+          },
+          {
+            "probability": 0.28491938175894693,
+            "density": 3.4535070513339186
+          },
+          {
+            "probability": 0.28942495116777633,
+            "density": 3.142600412612539
+          },
+          {
+            "probability": 0.29393052057660574,
+            "density": 2.8458970698261843
+          },
+          {
+            "probability": 0.29843608998543514,
+            "density": 2.5649555155635317
+          },
+          {
+            "probability": 0.30294165939426454,
+            "density": 2.3009042507024513
+          },
+          {
+            "probability": 0.30744722880309394,
+            "density": 2.0544750599815984
+          },
+          {
+            "probability": 0.31195279821192334,
+            "density": 1.8260412811493218
+          },
+          {
+            "probability": 0.31645836762075275,
+            "density": 1.6156592503168952
+          },
+          {
+            "probability": 0.32096393702958215,
+            "density": 1.4231112875200373
+          },
+          {
+            "probability": 0.32546950643841155,
+            "density": 1.2479487963565157
+          },
+          {
+            "probability": 0.32997507584724095,
+            "density": 1.0895342768667815
+          },
+          {
+            "probability": 0.33448064525607035,
+            "density": 0.9470812801978722
+          },
+          {
+            "probability": 0.33898621466489975,
+            "density": 0.8196915575607432
+          },
+          {
+            "probability": 0.34349178407372916,
+            "density": 0.7063888670335994
+          },
+          {
+            "probability": 0.34799735348255856,
+            "density": 0.6061490942684271
+          },
+          {
+            "probability": 0.35250292289138796,
+            "density": 0.5179265133095243
+          },
+          {
+            "probability": 0.3570084923002173,
+            "density": 0.44067615933132614
+          },
+          {
+            "probability": 0.3615140617090467,
+            "density": 0.37337240534546096
+          },
+          {
+            "probability": 0.3660196311178761,
+            "density": 0.31502393016961927
+          },
+          {
+            "probability": 0.3705252005267055,
+            "density": 0.2646853364650151
+          },
+          {
+            "probability": 0.3750307699355349,
+            "density": 0.22146572738734432
+          }
+        ]
+      },
+      "dot": {
+        "probability": 0.40377843777557154,
+        "observed_successes": 0,
+        "observed_deliveries": 0,
+        "posterior_alpha": 24.22670626653429,
+        "posterior_beta": 35.77329373346571,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.3022037157956205,
+          "upper": 0.5090318528970053,
+          "interpretation": "conditional_parameter_credible_interval"
+        },
+        "density_curve": [
+          {
+            "probability": 0.2503381415284805,
+            "density": 0.2713582238277905
+          },
+          {
+            "probability": 0.2556505611135462,
+            "density": 0.3451160388342426
+          },
+          {
+            "probability": 0.26096298069861196,
+            "density": 0.43377183218116494
+          },
+          {
+            "probability": 0.2662754002836777,
+            "density": 0.5390091146051135
+          },
+          {
+            "probability": 0.2715878198687434,
+            "density": 0.662404523601303
+          },
+          {
+            "probability": 0.27690023945380915,
+            "density": 0.8053541430953933
+          },
+          {
+            "probability": 0.28221265903887494,
+            "density": 0.9689956175324445
+          },
+          {
+            "probability": 0.2875250786239406,
+            "density": 1.154129238845222
+          },
+          {
+            "probability": 0.2928374982090064,
+            "density": 1.3611416275335249
+          },
+          {
+            "probability": 0.29814991779407213,
+            "density": 1.5899358999143463
+          },
+          {
+            "probability": 0.30346233737913786,
+            "density": 1.8398722797148102
+          },
+          {
+            "probability": 0.3087747569642036,
+            "density": 2.1097229528478194
+          },
+          {
+            "probability": 0.3140871765492693,
+            "density": 2.3976445729845066
+          },
+          {
+            "probability": 0.31939959613433505,
+            "density": 2.7011712114402027
+          },
+          {
+            "probability": 0.3247120157194008,
+            "density": 3.0172297324565704
+          },
+          {
+            "probability": 0.3300244353044665,
+            "density": 3.342178603080562
+          },
+          {
+            "probability": 0.33533685488953224,
+            "density": 3.671870066489291
+          },
+          {
+            "probability": 0.340649274474598,
+            "density": 4.001734478624451
+          },
+          {
+            "probability": 0.3459616940596637,
+            "density": 4.326884495141338
+          },
+          {
+            "probability": 0.3512741136447295,
+            "density": 4.642235764290927
+          },
+          {
+            "probability": 0.35658653322979517,
+            "density": 4.9426398929438635
+          },
+          {
+            "probability": 0.36189895281486095,
+            "density": 5.223024761050361
+          },
+          {
+            "probability": 0.3672113723999267,
+            "density": 5.478536806348999
+          },
+          {
+            "probability": 0.3725237919849924,
+            "density": 5.704679713705175
+          },
+          {
+            "probability": 0.37783621157005814,
+            "density": 5.897444033635538
+          },
+          {
+            "probability": 0.3831486311551239,
+            "density": 6.053422617269751
+          },
+          {
+            "probability": 0.3884610507401896,
+            "density": 6.1699073690185005
+          },
+          {
+            "probability": 0.39377347032525534,
+            "density": 6.2449636479013915
+          },
+          {
+            "probability": 0.39908588991032107,
+            "density": 6.27747964625351
+          },
+          {
+            "probability": 0.4043983094953868,
+            "density": 6.267189184168183
+          },
+          {
+            "probability": 0.4097107290804526,
+            "density": 6.21466751842545
+          },
+          {
+            "probability": 0.41502314866551826,
+            "density": 6.121300913707618
+          },
+          {
+            "probability": 0.42033556825058405,
+            "density": 5.989231802359304
+          },
+          {
+            "probability": 0.4256479878356497,
+            "density": 5.821282313867512
+          },
+          {
+            "probability": 0.4309604074207155,
+            "density": 5.620859742877503
+          },
+          {
+            "probability": 0.4362728270057812,
+            "density": 5.391848112548562
+          },
+          {
+            "probability": 0.44158524659084697,
+            "density": 5.1384903586918576
+          },
+          {
+            "probability": 0.4468976661759127,
+            "density": 4.865265802839638
+          },
+          {
+            "probability": 0.45221008576097843,
+            "density": 4.576767505294568
+          },
+          {
+            "probability": 0.45752250534604416,
+            "density": 4.277583809944281
+          },
+          {
+            "probability": 0.4628349249311099,
+            "density": 3.9721879385594554
+          },
+          {
+            "probability": 0.4681473445161756,
+            "density": 3.664838898207206
+          },
+          {
+            "probability": 0.47345976410124135,
+            "density": 3.3594962709549265
+          },
+          {
+            "probability": 0.47877218368630714,
+            "density": 3.059750702065561
+          },
+          {
+            "probability": 0.4840846032713728,
+            "density": 2.7687711328756963
+          },
+          {
+            "probability": 0.4893970228564386,
+            "density": 2.489269076288078
+          },
+          {
+            "probability": 0.4947094424415043,
+            "density": 2.2234795404305996
+          },
+          {
+            "probability": 0.5000218620265701,
+            "density": 1.97315759751882
+          },
+          {
+            "probability": 0.5053342816116357,
+            "density": 1.739589091167629
+          },
+          {
+            "probability": 0.5106467011967015,
+            "density": 1.5236135896089467
+          },
+          {
+            "probability": 0.5159591207817673,
+            "density": 1.3256574302354627
+          },
+          {
+            "probability": 0.521271540366833,
+            "density": 1.1457745613128179
+          },
+          {
+            "probability": 0.5265839599518987,
+            "density": 0.9836928621098254
+          },
+          {
+            "probability": 0.5318963795369644,
+            "density": 0.8388637005565742
+          },
+          {
+            "probability": 0.5372087991220302,
+            "density": 0.7105126515626554
+          },
+          {
+            "probability": 0.5425212187070959,
+            "density": 0.5976895306220413
+          },
+          {
+            "probability": 0.5478336382921616,
+            "density": 0.4993161765465942
+          },
+          {
+            "probability": 0.5531460578772274,
+            "density": 0.41423072452113874
+          },
+          {
+            "probability": 0.5584584774622932,
+            "density": 0.341227427801215
+          },
+          {
+            "probability": 0.5637708970473589,
+            "density": 0.27909139699072033
+          },
+          {
+            "probability": 0.5690833166324246,
+            "density": 0.2266279163293459
+          }
+        ]
+      },
+      "striker_dismissal": {
+        "probability": 0.03663080250040546,
+        "observed_successes": 0,
+        "observed_deliveries": 0,
+        "posterior_alpha": 2.197848150024327,
+        "posterior_beta": 57.802151849975665,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.007464199220265913,
+          "upper": 0.08302668199048947,
+          "interpretation": "conditional_parameter_credible_interval"
+        },
+        "density_curve": [
+          {
+            "probability": 0.002396592063671484,
+            "density": 4.391814268721417
+          },
+          {
+            "probability": 0.004443305913629125,
+            "density": 8.187252078546052
+          },
+          {
+            "probability": 0.006490019763586768,
+            "density": 11.467380303208095
+          },
+          {
+            "probability": 0.00853673361354441,
+            "density": 14.164151352646021
+          },
+          {
+            "probability": 0.010583447463502052,
+            "density": 16.293514166841053
+          },
+          {
+            "probability": 0.012630161313459693,
+            "density": 17.902125538482505
+          },
+          {
+            "probability": 0.014676875163417336,
+            "density": 19.047801641210423
+          },
+          {
+            "probability": 0.01672358901337498,
+            "density": 19.790759129256887
+          },
+          {
+            "probability": 0.01877030286333262,
+            "density": 20.189350863739815
+          },
+          {
+            "probability": 0.02081701671329026,
+            "density": 20.297969969360246
+          },
+          {
+            "probability": 0.022863730563247902,
+            "density": 20.166095716585613
+          },
+          {
+            "probability": 0.024910444413205547,
+            "density": 19.837971659093014
+          },
+          {
+            "probability": 0.026957158263163188,
+            "density": 19.352641491686384
+          },
+          {
+            "probability": 0.02900387211312083,
+            "density": 18.744185968438387
+          },
+          {
+            "probability": 0.031050585963078473,
+            "density": 18.04206789232742
+          },
+          {
+            "probability": 0.033097299813036114,
+            "density": 17.271528600861046
+          },
+          {
+            "probability": 0.03514401366299375,
+            "density": 16.45400113310447
+          },
+          {
+            "probability": 0.037190727512951396,
+            "density": 15.607518711158152
+          },
+          {
+            "probability": 0.039237441362909034,
+            "density": 14.747105687108565
+          },
+          {
+            "probability": 0.04128415521286668,
+            "density": 13.885143593712085
+          },
+          {
+            "probability": 0.043330869062824316,
+            "density": 13.03170850539874
+          },
+          {
+            "probability": 0.04537758291278196,
+            "density": 12.19487824054222
+          },
+          {
+            "probability": 0.047424296762739605,
+            "density": 11.381009438868459
+          },
+          {
+            "probability": 0.04947101061269724,
+            "density": 10.594985500911791
+          },
+          {
+            "probability": 0.05151772446265489,
+            "density": 9.840436957990502
+          },
+          {
+            "probability": 0.05356443831261253,
+            "density": 9.119936170679424
+          },
+          {
+            "probability": 0.05561115216257017,
+            "density": 8.43516841235562
+          },
+          {
+            "probability": 0.057657866012527814,
+            "density": 7.787081437894347
+          },
+          {
+            "probability": 0.05970457986248546,
+            "density": 7.176015604729046
+          },
+          {
+            "probability": 0.061751293712443096,
+            "density": 6.601816531299199
+          },
+          {
+            "probability": 0.06379800756240074,
+            "density": 6.063932165322789
+          },
+          {
+            "probability": 0.06584472141235839,
+            "density": 5.561496004586534
+          },
+          {
+            "probability": 0.06789143526231603,
+            "density": 5.093398075263325
+          },
+          {
+            "probability": 0.06993814911227367,
+            "density": 4.6583451334932136
+          },
+          {
+            "probability": 0.07198486296223132,
+            "density": 4.254911419400597
+          },
+          {
+            "probability": 0.07403157681218896,
+            "density": 3.8815811616928984
+          },
+          {
+            "probability": 0.0760782906621466,
+            "density": 3.5367839072686778
+          },
+          {
+            "probability": 0.07812500451210425,
+            "density": 3.2189236348725605
+          },
+          {
+            "probability": 0.08017171836206188,
+            "density": 2.9264025052531104
+          },
+          {
+            "probability": 0.08221843221201952,
+            "density": 2.657640002612719
+          },
+          {
+            "probability": 0.08426514606197716,
+            "density": 2.411088133231528
+          },
+          {
+            "probability": 0.08631185991193481,
+            "density": 2.18524326667049
+          },
+          {
+            "probability": 0.08835857376189245,
+            "density": 1.9786551324706916
+          },
+          {
+            "probability": 0.09040528761185009,
+            "density": 1.7899334202580677
+          },
+          {
+            "probability": 0.09245200146180774,
+            "density": 1.6177523730924468
+          },
+          {
+            "probability": 0.09449871531176537,
+            "density": 1.4608537122138476
+          },
+          {
+            "probability": 0.09654542916172301,
+            "density": 1.3180481854898742
+          },
+          {
+            "probability": 0.09859214301168066,
+            "density": 1.1882159913263113
+          },
+          {
+            "probability": 0.1006388568616383,
+            "density": 1.0703062940628651
+          },
+          {
+            "probability": 0.10268557071159594,
+            "density": 0.9633360154625299
+          },
+          {
+            "probability": 0.10473228456155359,
+            "density": 0.8663880593724682
+          },
+          {
+            "probability": 0.10677899841151123,
+            "density": 0.7786091025766974
+          },
+          {
+            "probability": 0.10882571226146887,
+            "density": 0.6992070638996355
+          },
+          {
+            "probability": 0.11087242611142652,
+            "density": 0.6274483454102123
+          },
+          {
+            "probability": 0.11291913996138415,
+            "density": 0.5626549238062278
+          },
+          {
+            "probability": 0.11496585381134179,
+            "density": 0.5042013564443962
+          },
+          {
+            "probability": 0.11701256766129944,
+            "density": 0.4515117547678605
+          },
+          {
+            "probability": 0.11905928151125708,
+            "density": 0.40405676784025607
+          },
+          {
+            "probability": 0.12110599536121472,
+            "density": 0.36135061011809017
+          },
+          {
+            "probability": 0.12315270921117236,
+            "density": 0.3229481602976645
+          },
+          {
+            "probability": 0.12519942306113,
+            "density": 0.2884421518954255
+          }
+        ]
+      }
+    },
+    "run_distribution": [
+      {
+        "batter_runs": "0",
+        "probability": 0.40377843777557154,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.3022037157956205,
+          "upper": 0.5090318528970053,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "1",
+        "probability": 0.30732097644010825,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.21386186293633097,
+          "upper": 0.4081426253642783,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "2",
+        "probability": 0.06198172120195303,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.020702276535869455,
+          "upper": 0.1197773183879382,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "3",
+        "probability": 0.0034637633500954777,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 6.067223595994626e-09,
+          "upper": 0.0176884424195607,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "4",
+        "probability": 0.16506945078354496,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.09368377194663567,
+          "upper": 0.24922097387008146,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "5",
+        "probability": 0.0006228900176299813,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 1.5010280060702114e-37,
+          "upper": 0.0028876853290457473,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "6",
+        "probability": 0.057762458692028104,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 0.01826824819835258,
+          "upper": 0.11390899088440871,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      },
+      {
+        "batter_runs": "7+",
+        "probability": 3.0173906876956957e-07,
+        "observed_deliveries": 0,
+        "credible_interval": {
+          "level": 0.9,
+          "lower": 2.225073858507201e-308,
+          "upper": 2.225073858507201e-308,
+          "interpretation": "conditional_parameter_credible_interval"
+        }
+      }
+    ],
+    "expected_capped_batter_runs_per_legal_delivery": 1.4516448264422805,
+    "joint_outcomes": [
+      {
+        "batter_runs": "0",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 0.3671773113125796
+      },
+      {
+        "batter_runs": "0",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 0.03660112646299197
+      },
+      {
+        "batter_runs": "1",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 0.3072919944025529
+      },
+      {
+        "batter_runs": "1",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 2.8982037555317158e-05
+      },
+      {
+        "batter_runs": "2",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 0.06198110263686205
+      },
+      {
+        "batter_runs": "2",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 6.185650909776175e-07
+      },
+      {
+        "batter_runs": "3",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 0.0034637482631420394
+      },
+      {
+        "batter_runs": "3",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 1.5086953438478473e-08
+      },
+      {
+        "batter_runs": "4",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 3.649534036767943e-06
+      },
+      {
+        "batter_runs": "4",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 1.5086953438478479e-09
+      },
+      {
+        "batter_runs": "4",
+        "boundary": true,
+        "striker_dismissed": false,
+        "probability": 0.16506578616255474
+      },
+      {
+        "batter_runs": "4",
+        "boundary": true,
+        "striker_dismissed": true,
+        "probability": 1.357825809463063e-08
+      },
+      {
+        "batter_runs": "5",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 0.0006228749306765428
+      },
+      {
+        "batter_runs": "5",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 1.5086953438478473e-08
+      },
+      {
+        "batter_runs": "6",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 6.321433490722482e-07
+      },
+      {
+        "batter_runs": "6",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 1.5086953438478479e-09
+      },
+      {
+        "batter_runs": "6",
+        "boundary": true,
+        "striker_dismissed": false,
+        "probability": 0.05776181146172559
+      },
+      {
+        "batter_runs": "6",
+        "boundary": true,
+        "striker_dismissed": true,
+        "probability": 1.357825809463063e-08
+      },
+      {
+        "batter_runs": "7+",
+        "boundary": false,
+        "striker_dismissed": false,
+        "probability": 2.8665211533109114e-07
+      },
+      {
+        "batter_runs": "7+",
+        "boundary": false,
+        "striker_dismissed": true,
+        "probability": 1.5086953438478473e-08
+      }
+    ]
+  },
+  "meta": {
+    "dataset_version": "2026-10-02",
+    "before": "2026-05-31",
+    "warnings": [
+      "experimental_prediction_not_production_validated",
+      "intervals_condition_on_empirical_prior",
+      "legal_deliveries_only_no_extras_or_super_overs",
+      "not_an_innings_or_match_win_prediction",
+      "no_pitch_weather_or_injury_effects",
+      "four_year_window_not_fitted_recent_form_effect",
+      "seven_plus_runs_bucket_is_capped_for_expectation",
+      "sparse_target_evidence_shrunk_to_prior",
+      "no_direct_history_prior_only_prediction",
+      "fixed_20_over_phases_not_rescaled_for_shortened_games",
+      "venue_is_scoring_context_not_measured_pitch",
+      "corrected_forecast_separate_from_raw_posterior_credible_intervals"
+    ]
+  }
+}

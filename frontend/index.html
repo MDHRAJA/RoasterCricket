@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#F3F1EA" />
+    <meta
+      name="description"
+      content="The Concourse. An IPL match archive and experimental cricket analysis workspace."
+    />
+    <link rel="icon" type="image/svg+xml" href="/concourse.svg" />
+    <title>Fixtures — The Concourse</title>
+    <script>
+      try {
+        const saved = localStorage.getItem('concourse-theme');
+        document.documentElement.dataset.theme =
+          saved === 'dark' || saved === 'light'
+            ? saved
+            : matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

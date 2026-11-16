@@ -1,0 +1,1639 @@
+{
+  "protocol": "date_blocked_prequential",
+  "validation_season": 2024,
+  "test_seasons": [
+    2025,
+    2026
+  ],
+  "selected_configuration": {
+    "context_strength": 120,
+    "player_strength": 80,
+    "matchup_strength": 60,
+    "lookback_days": 1461
+  },
+  "selection_metric": "validation_joint_log_loss",
+  "served_configuration": {
+    "context_strength": 120,
+    "player_strength": 80,
+    "matchup_strength": 60,
+    "lookback_days": 1461
+  },
+  "validation_candidates": {
+    "20": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.5189325476753046,
+      "run_log_loss": 1.3677304856258734,
+      "capped_run_rmse_per_delivery": 1.8081170354029192,
+      "events": {
+        "boundary": {
+          "brier_score": 0.16411361380377862,
+          "log_loss": 0.508773035949905,
+          "expected_calibration_error_10_bins": 0.026573959167458035,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 156,
+              "mean_probability": 0.09303441287875602,
+              "observed_frequency": 0.05128205128205128
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 10442,
+              "mean_probability": 0.16037561030774725,
+              "observed_frequency": 0.1838728212986018
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 5649,
+              "mean_probability": 0.227977265761966,
+              "observed_frequency": 0.26004602584528236
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 52,
+              "mean_probability": 0.30964017661836907,
+              "observed_frequency": 0.3076923076923077
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9801029962546817,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.22250653301454337,
+          "log_loss": 0.6366794784082852,
+          "expected_calibration_error_10_bins": 0.01451223750865976,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 2756,
+              "mean_probability": 0.28346004208689823,
+              "observed_frequency": 0.26959361393323655
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 8623,
+              "mean_probability": 0.33247990625945123,
+              "observed_frequency": 0.3185666241447292
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "deliveries": 4759,
+              "mean_probability": 0.44832882520635614,
+              "observed_frequency": 0.433494431603278
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6,
+              "deliveries": 158,
+              "mean_probability": 0.5242751242992544,
+              "observed_frequency": 0.4810126582278481
+            },
+            {
+              "bin_lower": 0.6,
+              "bin_upper": 0.7,
+              "deliveries": 3,
+              "mean_probability": 0.6375008968582075,
+              "observed_frequency": 0.3333333333333333
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9892322097378277,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.04938106316871304,
+          "log_loss": 0.204111710243595,
+          "expected_calibration_error_10_bins": 0.0035724184876061472,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 16025,
+              "mean_probability": 0.04866365207617419,
+              "observed_frequency": 0.051794071762870514
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 274,
+              "mean_probability": 0.10606523157001443,
+              "observed_frequency": 0.07664233576642336
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9763576779026217,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.51931590665821
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5152051381961054
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    },
+    "60": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.5182874464201142,
+      "run_log_loss": 1.3672515565109968,
+      "capped_run_rmse_per_delivery": 1.8079554609958413,
+      "events": {
+        "boundary": {
+          "brier_score": 0.16409243131841764,
+          "log_loss": 0.508729795886202,
+          "expected_calibration_error_10_bins": 0.025982371159140368,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 85,
+              "mean_probability": 0.0960352096649535,
+              "observed_frequency": 0.058823529411764705
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 10528,
+              "mean_probability": 0.1606661850778962,
+              "observed_frequency": 0.1829407294832827
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 5657,
+              "mean_probability": 0.2275732221506284,
+              "observed_frequency": 0.26020859112603856
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 29,
+              "mean_probability": 0.30348314112056607,
+              "observed_frequency": 0.3448275862068966
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9740168539325843,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.22241565619673143,
+          "log_loss": 0.6365095983722348,
+          "expected_calibration_error_10_bins": 0.01480969086652368,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 2670,
+              "mean_probability": 0.2854907083456807,
+              "observed_frequency": 0.2711610486891386
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 8695,
+              "mean_probability": 0.3318375450092658,
+              "observed_frequency": 0.3167337550316274
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "deliveries": 4818,
+              "mean_probability": 0.44859831082581286,
+              "observed_frequency": 0.4339975093399751
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6,
+              "deliveries": 116,
+              "mean_probability": 0.5133720281364702,
+              "observed_frequency": 0.5258620689655172
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9824438202247191,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.04936439369166457,
+          "log_loss": 0.20393786395497662,
+          "expected_calibration_error_10_bins": 0.0035356952579402544,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 16034,
+              "mean_probability": 0.0487291980426764,
+              "observed_frequency": 0.05182736684545341
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 265,
+              "mean_probability": 0.10548022047336462,
+              "observed_frequency": 0.07547169811320754
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9765917602996255,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.51931590665821
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5082877004603326
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    },
+    "120": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.518322962371893,
+      "run_log_loss": 1.3673046241409077,
+      "capped_run_rmse_per_delivery": 1.8079891138360311,
+      "events": {
+        "boundary": {
+          "brier_score": 0.1641001984836237,
+          "log_loss": 0.5087674429771253,
+          "expected_calibration_error_10_bins": 0.025813946484531464,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 84,
+              "mean_probability": 0.09713262946956537,
+              "observed_frequency": 0.07142857142857142
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 10497,
+              "mean_probability": 0.1606571290629242,
+              "observed_frequency": 0.1823378108030866
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 5693,
+              "mean_probability": 0.22736731559188153,
+              "observed_frequency": 0.26067099947303707
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 25,
+              "mean_probability": 0.30390462743872687,
+              "observed_frequency": 0.36
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9723782771535581,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.22241075107138952,
+          "log_loss": 0.6365062706989802,
+          "expected_calibration_error_10_bins": 0.014711637193457836,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 2664,
+              "mean_probability": 0.2860276932244787,
+              "observed_frequency": 0.27064564564564564
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 8684,
+              "mean_probability": 0.33160808204751074,
+              "observed_frequency": 0.31609857208659603
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "deliveries": 4848,
+              "mean_probability": 0.44858806507033416,
+              "observed_frequency": 0.43543729372937295
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6,
+              "deliveries": 103,
+              "mean_probability": 0.5109934378194687,
+              "observed_frequency": 0.5145631067961165
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9817415730337079,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.049363168506926645,
+          "log_loss": 0.20392210082728177,
+          "expected_calibration_error_10_bins": 0.003521262402747336,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 16034,
+              "mean_probability": 0.04874399395175692,
+              "observed_frequency": 0.05182736684545341
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 265,
+              "mean_probability": 0.1054877544333939,
+              "observed_frequency": 0.07547169811320754
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9765917602996255,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.51931590665821
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5086685389459038
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    }
+  },
+  "validation_baselines": {
+    "league": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.5464480816425497,
+      "run_log_loss": 1.393042730139032,
+      "capped_run_rmse_per_delivery": 1.8166588964122161,
+      "events": {
+        "boundary": {
+          "brier_score": 0.16651624874165355,
+          "log_loss": 0.5163173918778245,
+          "expected_calibration_error_10_bins": 0.031181076322080115,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 16299,
+              "mean_probability": 0.17821827333127285,
+              "observed_frequency": 0.20939934965335297
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9611423220973783,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.22661375771659906,
+          "log_loss": 0.6456687318596651,
+          "expected_calibration_error_10_bins": 0.022044994886265046,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 16299,
+              "mean_probability": 0.36746495930125983,
+              "observed_frequency": 0.3454199644149948
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9754213483146067,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.04949072561016228,
+          "log_loss": 0.20502893493849106,
+          "expected_calibration_error_10_bins": 0.0022416546760030825,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 16299,
+              "mean_probability": 0.04997013745848369,
+              "observed_frequency": 0.052211792134486776
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9688670411985019,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.5474915585877655
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5363023278443213
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    },
+    "context": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.52039958894265,
+      "run_log_loss": 1.369669596184787,
+      "capped_run_rmse_per_delivery": 1.809917931841647,
+      "events": {
+        "boundary": {
+          "brier_score": 0.1644672641631598,
+          "log_loss": 0.5099418794283431,
+          "expected_calibration_error_10_bins": 0.026009124402730437,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 10496,
+              "mean_probability": 0.16065077565819333,
+              "observed_frequency": 0.18168826219512196
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 5803,
+              "mean_probability": 0.22451951405333442,
+              "observed_frequency": 0.25952093744614857
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9693352059925093,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.22276698348730184,
+          "log_loss": 0.6373077248866796,
+          "expected_calibration_error_10_bins": 0.016673172304029617,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 2055,
+              "mean_probability": 0.29254388448405316,
+              "observed_frequency": 0.29683698296836986
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 9276,
+              "mean_probability": 0.32891955583754384,
+              "observed_frequency": 0.3072445019404916
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "deliveries": 4968,
+              "mean_probability": 0.44925038608072687,
+              "observed_frequency": 0.4367954911433172
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9786985018726592,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.04935463076830626,
+          "log_loss": 0.20382306930200053,
+          "expected_calibration_error_10_bins": 0.0036504586025516753,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 15955,
+              "mean_probability": 0.048466776999298564,
+              "observed_frequency": 0.051645252272015045
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 344,
+              "mean_probability": 0.104029801705809,
+              "observed_frequency": 0.07848837209302326
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.975187265917603,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.5211011959985283
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5135778450750108
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    },
+    "batter_only": {
+      "deliveries": 16299,
+      "groups": 4272,
+      "matches": 71,
+      "joint_log_loss": 1.519130391538672,
+      "run_log_loss": 1.3679635714562925,
+      "capped_run_rmse_per_delivery": 1.8073795132718715,
+      "events": {
+        "boundary": {
+          "brier_score": 0.16400331766858145,
+          "log_loss": 0.5086429765425182,
+          "expected_calibration_error_10_bins": 0.02346788283228744,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 287,
+              "mean_probability": 0.09449397000479096,
+              "observed_frequency": 0.12195121951219512
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 10136,
+              "mean_probability": 0.1609168453790225,
+              "observed_frequency": 0.18330702446724545
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 5708,
+              "mean_probability": 0.23093147672270506,
+              "observed_frequency": 0.25508058864751226
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 168,
+              "mean_probability": 0.3224237763702336,
+              "observed_frequency": 0.38095238095238093
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9735486891385767,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "dot": {
+          "brier_score": 0.222399491269284,
+          "log_loss": 0.6364378010077784,
+          "expected_calibration_error_10_bins": 0.012016876748451739,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 3,
+              "mean_probability": 0.19817817139665586,
+              "observed_frequency": 0.6666666666666666
+            },
+            {
+              "bin_lower": 0.2,
+              "bin_upper": 0.3,
+              "deliveries": 3060,
+              "mean_probability": 0.2774886378612552,
+              "observed_frequency": 0.2797385620915033
+            },
+            {
+              "bin_lower": 0.3,
+              "bin_upper": 0.4,
+              "deliveries": 8598,
+              "mean_probability": 0.33394408021587324,
+              "observed_frequency": 0.319609211444522
+            },
+            {
+              "bin_lower": 0.4,
+              "bin_upper": 0.5,
+              "deliveries": 4509,
+              "mean_probability": 0.44859171762027283,
+              "observed_frequency": 0.43601685517853184
+            },
+            {
+              "bin_lower": 0.5,
+              "bin_upper": 0.6,
+              "deliveries": 129,
+              "mean_probability": 0.5086944499748643,
+              "observed_frequency": 0.4496124031007752
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9805711610486891,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        },
+        "striker_dismissal": {
+          "brier_score": 0.04935942203777911,
+          "log_loss": 0.20395617820124587,
+          "expected_calibration_error_10_bins": 0.004165871353335204,
+          "calibration_bins": [
+            {
+              "bin_lower": 0.0,
+              "bin_upper": 0.1,
+              "deliveries": 16032,
+              "mean_probability": 0.04775186043046499,
+              "observed_frequency": 0.051646706586826345
+            },
+            {
+              "bin_lower": 0.1,
+              "bin_upper": 0.2,
+              "deliveries": 267,
+              "mean_probability": 0.10658188617687357,
+              "observed_frequency": 0.08614232209737828
+            }
+          ],
+          "90_percent_predictive_count_interval_group_coverage": 0.9765917602996255,
+          "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+        }
+      },
+      "sparse_target_segments": {
+        "no_direct_history": {
+          "deliveries": 14779,
+          "joint_log_loss": 1.5199763523963625
+        },
+        "one_to_29": {
+          "deliveries": 1520,
+          "joint_log_loss": 1.5109050918572373
+        },
+        "at_least_30": {
+          "deliveries": 0,
+          "joint_log_loss": null
+        }
+      }
+    }
+  },
+  "holdout": {
+    "2025": {
+      "metrics": {
+        "bayesian": {
+          "deliveries": 16507,
+          "groups": 4344,
+          "matches": 74,
+          "joint_log_loss": 1.5101257396445766,
+          "run_log_loss": 1.365900263301153,
+          "capped_run_rmse_per_delivery": 1.8190830932350075,
+          "events": {
+            "boundary": {
+              "brier_score": 0.16747887479758392,
+              "log_loss": 0.5169078314098046,
+              "expected_calibration_error_10_bins": 0.018974609788804494,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 94,
+                  "mean_probability": 0.09383928408987804,
+                  "observed_frequency": 0.13829787234042554
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 8995,
+                  "mean_probability": 0.16493834215961065,
+                  "observed_frequency": 0.1841022790439133
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 7266,
+                  "mean_probability": 0.23283596675399196,
+                  "observed_frequency": 0.2515827140104597
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 152,
+                  "mean_probability": 0.31211380689768103,
+                  "observed_frequency": 0.3092105263157895
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9774401473296501,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.2201700991338921,
+              "log_loss": 0.6317562832056344,
+              "expected_calibration_error_10_bins": 0.014108452766451498,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 3894,
+                  "mean_probability": 0.2814026387098378,
+                  "observed_frequency": 0.27606574216743707
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 7480,
+                  "mean_probability": 0.3271249243179622,
+                  "observed_frequency": 0.31136363636363634
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 5042,
+                  "mean_probability": 0.4404088025361252,
+                  "observed_frequency": 0.4228480761602539
+                },
+                {
+                  "bin_lower": 0.5,
+                  "bin_upper": 0.6,
+                  "deliveries": 91,
+                  "mean_probability": 0.5128652570791871,
+                  "observed_frequency": 0.45054945054945056
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9827348066298343,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04830578817669638,
+              "log_loss": 0.19951639298490217,
+              "expected_calibration_error_10_bins": 0.0012843979790639031,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16392,
+                  "mean_probability": 0.0497750210331357,
+                  "observed_frequency": 0.05093948267447535
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 115,
+                  "mean_probability": 0.1053365410049413,
+                  "observed_frequency": 0.08695652173913043
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9841160220994475,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14748,
+              "joint_log_loss": 1.5136865884902329
+            },
+            "one_to_29": {
+              "deliveries": 1759,
+              "joint_log_loss": 1.480270481670853
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "league": {
+          "deliveries": 16507,
+          "groups": 4344,
+          "matches": 74,
+          "joint_log_loss": 1.5355938891150955,
+          "run_log_loss": 1.3865542510915407,
+          "capped_run_rmse_per_delivery": 1.825254392307524,
+          "events": {
+            "boundary": {
+              "brier_score": 0.1692365734875072,
+              "log_loss": 0.5221154333823831,
+              "expected_calibration_error_10_bins": 0.025450272205634367,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 16507,
+                  "mean_probability": 0.1892465230933297,
+                  "observed_frequency": 0.21469679529896407
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9654696132596685,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.2243133819412555,
+              "log_loss": 0.6409233520620543,
+              "expected_calibration_error_10_bins": 0.024950320606042187,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 16507,
+                  "mean_probability": 0.3628069874746434,
+                  "observed_frequency": 0.3378566668686012
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9735267034990792,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04857057256616747,
+              "log_loss": 0.2020119258822841,
+              "expected_calibration_error_10_bins": 0.00019736789460301357,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16507,
+                  "mean_probability": 0.05138777196560319,
+                  "observed_frequency": 0.05119040407100018
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 1.0,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14748,
+              "joint_log_loss": 1.5392121029161052
+            },
+            "one_to_29": {
+              "deliveries": 1759,
+              "joint_log_loss": 1.5052576656146692
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "context": {
+          "deliveries": 16507,
+          "groups": 4344,
+          "matches": 74,
+          "joint_log_loss": 1.5120269535494053,
+          "run_log_loss": 1.3677388682016123,
+          "capped_run_rmse_per_delivery": 1.8210309135741298,
+          "events": {
+            "boundary": {
+              "brier_score": 0.16788083514065968,
+              "log_loss": 0.5180980811421619,
+              "expected_calibration_error_10_bins": 0.019894736028596975,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 9236,
+                  "mean_probability": 0.1660820969952871,
+                  "observed_frequency": 0.1855781723689909
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 7271,
+                  "mean_probability": 0.2312836397369658,
+                  "observed_frequency": 0.2516847751340944
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9723756906077348,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.22061008652180392,
+              "log_loss": 0.6327538170611645,
+              "expected_calibration_error_10_bins": 0.015153663551250354,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 3474,
+                  "mean_probability": 0.2861149050181826,
+                  "observed_frequency": 0.28612550374208406
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 7807,
+                  "mean_probability": 0.3236571911137639,
+                  "observed_frequency": 0.3031894453695402
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 5226,
+                  "mean_probability": 0.4413151575293726,
+                  "observed_frequency": 0.42403367776502104
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9792817679558011,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04831140571073132,
+              "log_loss": 0.19961179389778447,
+              "expected_calibration_error_10_bins": 0.0009304790856868749,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16416,
+                  "mean_probability": 0.0501211664824056,
+                  "observed_frequency": 0.05098684210526316
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 91,
+                  "mean_probability": 0.10053282684179832,
+                  "observed_frequency": 0.08791208791208792
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9822744014732965,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14748,
+              "joint_log_loss": 1.5152538055612028
+            },
+            "one_to_29": {
+              "deliveries": 1759,
+              "joint_log_loss": 1.4849720283248375
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "batter_only": {
+          "deliveries": 16507,
+          "groups": 4344,
+          "matches": 74,
+          "joint_log_loss": 1.511690610371785,
+          "run_log_loss": 1.3670791908625435,
+          "capped_run_rmse_per_delivery": 1.8195361091810596,
+          "events": {
+            "boundary": {
+              "brier_score": 0.1674649857274623,
+              "log_loss": 0.5169451089713437,
+              "expected_calibration_error_10_bins": 0.01567584687006081,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 165,
+                  "mean_probability": 0.08927111955308002,
+                  "observed_frequency": 0.15151515151515152
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 8529,
+                  "mean_probability": 0.1650045267168723,
+                  "observed_frequency": 0.18525032242935865
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 7431,
+                  "mean_probability": 0.23407799972902163,
+                  "observed_frequency": 0.24424707307226484
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 382,
+                  "mean_probability": 0.32525697215946464,
+                  "observed_frequency": 0.32460732984293195
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9755985267034991,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.2202375778759691,
+              "log_loss": 0.6318736043445776,
+              "expected_calibration_error_10_bins": 0.013240005300012979,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 52,
+                  "mean_probability": 0.19425014221395293,
+                  "observed_frequency": 0.25
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 4389,
+                  "mean_probability": 0.2772509912212576,
+                  "observed_frequency": 0.2811574390521759
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 7402,
+                  "mean_probability": 0.33210779328613166,
+                  "observed_frequency": 0.3165360713320724
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 4569,
+                  "mean_probability": 0.4425897743592029,
+                  "observed_frequency": 0.42525716787043116
+                },
+                {
+                  "bin_lower": 0.5,
+                  "bin_upper": 0.6,
+                  "deliveries": 95,
+                  "mean_probability": 0.5058295831725784,
+                  "observed_frequency": 0.4631578947368421
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.981353591160221,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.048333585700734615,
+              "log_loss": 0.19989810083211368,
+              "expected_calibration_error_10_bins": 0.001833599473167668,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16366,
+                  "mean_probability": 0.04899121670790717,
+                  "observed_frequency": 0.05077599902236344
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 141,
+                  "mean_probability": 0.10679063223537125,
+                  "observed_frequency": 0.09929078014184398
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9836556169429097,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14748,
+              "joint_log_loss": 1.5156569229784966
+            },
+            "one_to_29": {
+              "deliveries": 1759,
+              "joint_log_loss": 1.478435818828972
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "league": {
+          "joint_log_loss_improvement": 0.025468149470522675,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": 0.02107070057183311,
+            "upper": 0.029916156924398585
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        },
+        "context": {
+          "joint_log_loss_improvement": 0.0019012139048245399,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": 0.0009236086603005208,
+            "upper": 0.003000724709485003
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        },
+        "batter_only": {
+          "joint_log_loss_improvement": 0.0015648707272017542,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": 0.0002898771876294898,
+            "upper": 0.0028195784423207955
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        }
+      }
+    },
+    "2026": {
+      "metrics": {
+        "bayesian": {
+          "deliveries": 16664,
+          "groups": 4388,
+          "matches": 74,
+          "joint_log_loss": 1.5210598140266465,
+          "run_log_loss": 1.3763205216508672,
+          "capped_run_rmse_per_delivery": 1.865244649269751,
+          "events": {
+            "boundary": {
+              "brier_score": 0.1731299918930638,
+              "log_loss": 0.5299283544946793,
+              "expected_calibration_error_10_bins": 0.020267534043001505,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 6,
+                  "mean_probability": 0.09609135172747717,
+                  "observed_frequency": 0.16666666666666666
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 7893,
+                  "mean_probability": 0.16689956577947948,
+                  "observed_frequency": 0.19054858735588495
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 8659,
+                  "mean_probability": 0.23709325969161246,
+                  "observed_frequency": 0.2541863956576972
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 106,
+                  "mean_probability": 0.3052495870750378,
+                  "observed_frequency": 0.330188679245283
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9742479489516864,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.22123305622925027,
+              "log_loss": 0.6340473298797357,
+              "expected_calibration_error_10_bins": 0.010958428808117981,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 4012,
+                  "mean_probability": 0.2816091289022391,
+                  "observed_frequency": 0.2908773678963111
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 7631,
+                  "mean_probability": 0.3235683602918547,
+                  "observed_frequency": 0.31031319617350284
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 4983,
+                  "mean_probability": 0.43649231627922036,
+                  "observed_frequency": 0.4286574352799518
+                },
+                {
+                  "bin_lower": 0.5,
+                  "bin_upper": 0.6,
+                  "deliveries": 38,
+                  "mean_probability": 0.5062029844148159,
+                  "observed_frequency": 0.3684210526315789
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9788058340929808,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04856151782748593,
+              "log_loss": 0.20131952909507844,
+              "expected_calibration_error_10_bins": 0.0005374206610693746,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16611,
+                  "mean_probability": 0.05067680244970703,
+                  "observed_frequency": 0.051170910842212994
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 53,
+                  "mean_probability": 0.10845176204044281,
+                  "observed_frequency": 0.09433962264150944
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9774384685505926,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14181,
+              "joint_log_loss": 1.5279540125228452
+            },
+            "one_to_29": {
+              "deliveries": 2483,
+              "joint_log_loss": 1.481685416574132
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "league": {
+          "deliveries": 16664,
+          "groups": 4388,
+          "matches": 74,
+          "joint_log_loss": 1.5437508630932262,
+          "run_log_loss": 1.3954975559144411,
+          "capped_run_rmse_per_delivery": 1.8681132214057588,
+          "events": {
+            "boundary": {
+              "brier_score": 0.17452808153433552,
+              "log_loss": 0.5338380313858258,
+              "expected_calibration_error_10_bins": 0.020982290837548177,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 2638,
+                  "mean_probability": 0.19896376495071263,
+                  "observed_frequency": 0.2247915087187263
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 14026,
+                  "mean_probability": 0.20436936357786376,
+                  "observed_frequency": 0.22444032511050904
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9694621695533272,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.22487119905601996,
+              "log_loss": 0.6420251927300457,
+              "expected_calibration_error_10_bins": 0.009523279819205033,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 16664,
+                  "mean_probability": 0.3506778645527624,
+                  "observed_frequency": 0.34115458473355736
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9694621695533272,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04867595586376647,
+              "log_loss": 0.20235216271626358,
+              "expected_calibration_error_10_bins": 0.000336894546596328,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16664,
+                  "mean_probability": 0.051645103860086486,
+                  "observed_frequency": 0.05130820931349016
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 1.0,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14181,
+              "joint_log_loss": 1.5491698177336808
+            },
+            "one_to_29": {
+              "deliveries": 2483,
+              "joint_log_loss": 1.5128019320596855
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "context": {
+          "deliveries": 16664,
+          "groups": 4388,
+          "matches": 74,
+          "joint_log_loss": 1.523754625654044,
+          "run_log_loss": 1.3792807850588142,
+          "capped_run_rmse_per_delivery": 1.8673724328376433,
+          "events": {
+            "boundary": {
+              "brier_score": 0.1735016484769877,
+              "log_loss": 0.5310102728793128,
+              "expected_calibration_error_10_bins": 0.020815831303376636,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 8303,
+                  "mean_probability": 0.17048155682339325,
+                  "observed_frequency": 0.19282187161267011
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 8361,
+                  "mean_probability": 0.23664832207342393,
+                  "observed_frequency": 0.25595024518598253
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9676390154968095,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.22170540694610993,
+              "log_loss": 0.635161831426522,
+              "expected_calibration_error_10_bins": 0.018865963396406178,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 3152,
+                  "mean_probability": 0.2876932192318978,
+                  "observed_frequency": 0.31789340101522845
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 8378,
+                  "mean_probability": 0.31836883048959785,
+                  "observed_frequency": 0.2956552876581523
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 5134,
+                  "mean_probability": 0.43531308516065514,
+                  "observed_frequency": 0.4296844565640826
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9747037374658158,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.0485392447730307,
+              "log_loss": 0.20108889004638716,
+              "expected_calibration_error_10_bins": 0.0002051426234922077,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16664,
+                  "mean_probability": 0.05110306668999795,
+                  "observed_frequency": 0.05130820931349016
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.973792160437557,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14181,
+              "joint_log_loss": 1.530519969416734
+            },
+            "one_to_29": {
+              "deliveries": 2483,
+              "joint_log_loss": 1.4851161480468096
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        },
+        "batter_only": {
+          "deliveries": 16664,
+          "groups": 4388,
+          "matches": 74,
+          "joint_log_loss": 1.5222455831710917,
+          "run_log_loss": 1.3773504994166823,
+          "capped_run_rmse_per_delivery": 1.8646294892003343,
+          "events": {
+            "boundary": {
+              "brier_score": 0.17313864129150316,
+              "log_loss": 0.530077712964251,
+              "expected_calibration_error_10_bins": 0.018030873479868547,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 41,
+                  "mean_probability": 0.08920602656928585,
+                  "observed_frequency": 0.21951219512195122
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 7542,
+                  "mean_probability": 0.16673552101824665,
+                  "observed_frequency": 0.1926544683107929
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 8628,
+                  "mean_probability": 0.23774688755740142,
+                  "observed_frequency": 0.24837737598516457
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 453,
+                  "mean_probability": 0.3177116294100353,
+                  "observed_frequency": 0.30022075055187636
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9733363719234275,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "dot": {
+              "brier_score": 0.22137511952693645,
+              "log_loss": 0.634384926632208,
+              "expected_calibration_error_10_bins": 0.01339290054884979,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 64,
+                  "mean_probability": 0.1945561128622865,
+                  "observed_frequency": 0.28125
+                },
+                {
+                  "bin_lower": 0.2,
+                  "bin_upper": 0.3,
+                  "deliveries": 4334,
+                  "mean_probability": 0.2749079907099006,
+                  "observed_frequency": 0.29487771112136596
+                },
+                {
+                  "bin_lower": 0.3,
+                  "bin_upper": 0.4,
+                  "deliveries": 7727,
+                  "mean_probability": 0.3285332027468462,
+                  "observed_frequency": 0.31292869160088005
+                },
+                {
+                  "bin_lower": 0.4,
+                  "bin_upper": 0.5,
+                  "deliveries": 4496,
+                  "mean_probability": 0.43578852497321574,
+                  "observed_frequency": 0.43416370106761565
+                },
+                {
+                  "bin_lower": 0.5,
+                  "bin_upper": 0.6,
+                  "deliveries": 43,
+                  "mean_probability": 0.5162988791039446,
+                  "observed_frequency": 0.4418604651162791
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9762989972652689,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            },
+            "striker_dismissal": {
+              "brier_score": 0.04859019685043143,
+              "log_loss": 0.20172873765389543,
+              "expected_calibration_error_10_bins": 0.0017620057463755517,
+              "calibration_bins": [
+                {
+                  "bin_lower": 0.0,
+                  "bin_upper": 0.1,
+                  "deliveries": 16549,
+                  "mean_probability": 0.04967829026556135,
+                  "observed_frequency": 0.0511813402622515
+                },
+                {
+                  "bin_lower": 0.1,
+                  "bin_upper": 0.2,
+                  "deliveries": 115,
+                  "mean_probability": 0.10859208141197359,
+                  "observed_frequency": 0.06956521739130435
+                }
+              ],
+              "90_percent_predictive_count_interval_group_coverage": 0.9783500455788514,
+              "coverage_note": "Discrete beta-binomial intervals for held-out group event counts; not latent-parameter credible interval coverage."
+            }
+          },
+          "sparse_target_segments": {
+            "no_direct_history": {
+              "deliveries": 14181,
+              "joint_log_loss": 1.5293824979369959
+            },
+            "one_to_29": {
+              "deliveries": 2483,
+              "joint_log_loss": 1.481484975722329
+            },
+            "at_least_30": {
+              "deliveries": 0,
+              "joint_log_loss": null
+            }
+          }
+        }
+      },
+      "comparisons": {
+        "league": {
+          "joint_log_loss_improvement": 0.02269104906658892,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": 0.018616012970185388,
+            "upper": 0.026649509343771912
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        },
+        "context": {
+          "joint_log_loss_improvement": 0.002694811627397974,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": 0.0012045021400765138,
+            "upper": 0.004229042989266474
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        },
+        "batter_only": {
+          "joint_log_loss_improvement": 0.0011857691444450461,
+          "95_percent_match_cluster_bootstrap_interval": {
+            "lower": -0.0003570108044493471,
+            "upper": 0.002643940315109452
+          },
+          "resamples": 2000,
+          "seed": 20261002,
+          "positive_means_model_better": true
+        }
+      }
+    }
+  },
+  "first_prediction_cutoffs": {
+    "2024": {
+      "prediction_date": "2024-03-22",
+      "latest_training_date": "2023-05-29"
+    },
+    "2025": {
+      "prediction_date": "2025-03-22",
+      "latest_training_date": "2024-05-26"
+    },
+    "2026": {
+      "prediction_date": "2026-03-28",
+      "latest_training_date": "2025-06-03"
+    }
+  },
+  "limitations": [
+    "conditional_empirical_bayes_not_full_hierarchical_posterior",
+    "predictions_fixed_before_each_date_no_within_match_updates",
+    "no_current_attributes_used_in_primary_backtest",
+    "legal_deliveries_only",
+    "match_cluster_intervals_do_not_account_for_all_season_or_player_dependence",
+    "no_independent_type_feature_backtest",
+    "no_joint_context_default_without_phase_venue_evaluation"
+  ],
+  "model_version": "legal-delivery-eb-v1",
+  "database_sha256": "6f6c395ace7ccb6d240fa825d9b5f6e68c5b844102d23bdb8a563e233c9cf51f",
+  "dataset_catalog_sha256": "5563c618ffea1629b50207f7fc2ba993574befa8c4a06239133154a8d6a31569",
+  "completed_at": "2026-10-02T05:12:25.083944+00:00",
+  "elapsed_seconds": 80.516
+}

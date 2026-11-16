@@ -1,0 +1,16 @@
+[
+  {
+    "file": "raw/ipl/TATA_IPL_2026_Match_Playing_Conditions_current.pdf",
+    "source_url": "https://documents.iplt20.com/bcci/documents/1775736835406_TATA_IPL_2026_Match_Playing_Conditions.pdf",
+    "license_note": "Official IPL playing conditions; website terms apply",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "file": "raw/ipl/TATA_IPL_Schedule_2026.pdf",
+    "source_url": "https://documents.iplt20.com/bcci/documents/1774332251856_1773233174530_TATA-IPL-Schedule-2026.pdf",
+    "license_note": "Official initial partial schedule; website terms apply",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

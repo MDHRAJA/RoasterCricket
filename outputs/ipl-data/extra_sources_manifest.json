@@ -1,0 +1,54 @@
+[
+  {
+    "file": "raw/espn/athletes/1202098.json",
+    "source_url": "http://core.espnuk.org/v2/sports/cricket/athletes/1202098",
+    "license_note": "ESPN public athlete facts; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T03:05:04.200153+00:00",
+    "bytes": 4068,
+    "sha256": "35a465c8dc2ee3a4241856709ff27040e48994feaafc4afb1d25c48e73d9069d"
+  },
+  {
+    "file": "raw/espn/athletes/1515186.json",
+    "source_url": "http://core.espnuk.org/v2/sports/cricket/athletes/1515186",
+    "license_note": "ESPN public athlete facts; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:47:43.168295+00:00",
+    "bytes": 2777,
+    "sha256": "95b8cc5aa063bf89df422c3a32c642e5ec0c5d18a1caea7e8aa9b5e30b8562f6"
+  },
+  {
+    "file": "raw/espn/athletes/1281569.json",
+    "source_url": "http://core.espnuk.org/v2/sports/cricket/athletes/1281569",
+    "license_note": "ESPN public athlete facts; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T03:05:04.276177+00:00",
+    "bytes": 3084,
+    "sha256": "f398fbbba9333b306c83fecb892705012ca9c59d98d258894e6c1dfc6e56d6dc"
+  },
+  {
+    "file": "raw/espn/athletes/1327725.json",
+    "source_url": "http://core.espnuk.org/v2/sports/cricket/athletes/1327725",
+    "license_note": "ESPN public athlete facts; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=UTF-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T03:05:04.391861+00:00",
+    "bytes": 2864,
+    "sha256": "e2d5b3be6c7bdb37fc413bdf6aa1fd34fd6a70502fc96d98675ab9216c2e3356"
+  },
+  {
+    "file": "raw/ipl/TATA_IPL_2026_Match_Playing_Conditions.pdf",
+    "source_url": "https://documents.iplt20.com/bcci/documents/1774265031558_TATA_IPL_2026_Match_Playing_Conditions.pdf",
+    "license_note": "Official IPL playing conditions; website terms apply",
+    "status": "failed",
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

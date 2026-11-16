@@ -1,0 +1,10 @@
+{
+  "match_day_strict.jsonl": {
+    "fixture_records": 75,
+    "complete_lineups_and_substitute_lists": 72
+  },
+  "match_day_source_checked.jsonl": {
+    "fixture_records": 75,
+    "complete_lineups_and_substitute_lists": 72
+  }
+}

@@ -1,0 +1,311 @@
+[
+  {
+    "file": "raw/cricsheet/ipl_json.zip",
+    "source_url": "https://cricsheet.org/downloads/ipl_json.zip",
+    "license_note": "Cricsheet match archive; retain bundled license notice",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:07.757008+00:00",
+    "bytes": 5180977,
+    "sha256": "841b98290a08bdf2a063a9f4d6342fb2363ff246491ed3db4c571bddb6ea2a79"
+  },
+  {
+    "file": "raw/cricsheet/people.csv",
+    "source_url": "https://cricsheet.org/register/people.csv",
+    "license_note": "Open Data Commons Attribution 1.0",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:06.744327+00:00",
+    "bytes": 1178979,
+    "sha256": "71d2bf507f8bde92ca4fe8bcaac4b1bce85e74d432633e8b1667a0594f66405b"
+  },
+  {
+    "file": "raw/cricsheet/names.csv",
+    "source_url": "https://cricsheet.org/register/names.csv",
+    "license_note": "Open Data Commons Attribution 1.0",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:05.407173+00:00",
+    "bytes": 162433,
+    "sha256": "864bb683c219249194a7dabf4be4086ce97c7f2e351bcee31c026ed46d308601"
+  },
+  {
+    "file": "raw/cricsheet/downloads.html",
+    "source_url": "https://cricsheet.org/downloads/",
+    "license_note": "Reference snapshot",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:05.730718+00:00",
+    "bytes": 304530,
+    "sha256": "7afb4f883426c3820d93ae0f2e6c0b8f718e35eb4a536fc7ba9e4bb23c855777"
+  },
+  {
+    "file": "raw/cricsheet/register.html",
+    "source_url": "https://cricsheet.org/register/",
+    "license_note": "Reference snapshot",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:06.030370+00:00",
+    "bytes": 9816,
+    "sha256": "9b32f5077d14e91da65cad3325e7c15240f2ac51eaa3cb954ce741941dd65152"
+  },
+  {
+    "file": "raw/cricsheet/format.json.html",
+    "source_url": "https://cricsheet.org/format/json/",
+    "license_note": "Reference snapshot",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:07.806722+00:00",
+    "bytes": 158156,
+    "sha256": "407533641755e1f9474be9ea4706a5ea31db3485c4f5d6fb7371df0c14746d19"
+  },
+  {
+    "file": "raw/cricketdata/player_meta.rda",
+    "source_url": "https://raw.githubusercontent.com/robjhyndman/cricketdata/master/data/player_meta.rda",
+    "license_note": "cricketdata package GPL-3; upstream ESPN data terms separately apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:07.754800+00:00",
+    "bytes": 471381,
+    "sha256": "d9edf6f569650a96dc66880dc34ad8aebe76250c83b9536e6916312da0aeb6f1"
+  },
+  {
+    "file": "raw/cricketdata/DESCRIPTION",
+    "source_url": "https://raw.githubusercontent.com/robjhyndman/cricketdata/master/DESCRIPTION",
+    "license_note": "Package source/license record",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:07.751281+00:00",
+    "bytes": 1537,
+    "sha256": "310bc556fe31b09dec599cfdc88abfaa18b20bf8f2f16a115c47ed029dd6071f"
+  },
+  {
+    "file": "raw/cricketdata/data.R",
+    "source_url": "https://raw.githubusercontent.com/robjhyndman/cricketdata/master/R/data.R",
+    "license_note": "Metadata snapshot date documentation",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:08.338651+00:00",
+    "bytes": 666,
+    "sha256": "0bf18042a960e687e3be60a30301ef82f325f70108a4e7a1a7207f11b96fa2bb"
+  },
+  {
+    "file": "raw/ipl/playing-conditions.html",
+    "source_url": "https://www.iplt20.com/playing-conditions",
+    "license_note": "Official IPL reference; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:08.271043+00:00",
+    "bytes": 155763,
+    "sha256": "256fe12b13cd2baa24f0fe446ce2609be1a41d44f4b6524085d06ef3d779808f"
+  },
+  {
+    "file": "raw/ipl/terms.html",
+    "source_url": "https://www.iplt20.com/terms-and-conditions",
+    "license_note": "Official website terms",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:08.392651+00:00",
+    "bytes": 179262,
+    "sha256": "cb0fba022c752694d8079a2d2d08e1ed8922c863bc2acb8ea19cb5d74313ad22"
+  },
+  {
+    "file": "raw/ipl/squads/CSK.html",
+    "source_url": "https://www.iplt20.com/teams/chennai-super-kings/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:08.379652+00:00",
+    "bytes": 327703,
+    "sha256": "eb6ff25ecfa5798bbe8ff51b80ed66e22b88830c2901c95694ad3f1a0b6d6aa7"
+  },
+  {
+    "file": "raw/ipl/squads/DC.html",
+    "source_url": "https://www.iplt20.com/teams/delhi-capitals/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.075397+00:00",
+    "bytes": 289723,
+    "sha256": "9f67214a8fa1084f26d424fdf1986c98ed8f5f30fd132f03e9f1001c6c72f997"
+  },
+  {
+    "file": "raw/ipl/squads/GT.html",
+    "source_url": "https://www.iplt20.com/teams/gujarat-titans/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:08.889225+00:00",
+    "bytes": 329514,
+    "sha256": "bf93038fd8d9df1252e343b347f62741a15b0db989545ad498cb50eef07aec69"
+  },
+  {
+    "file": "raw/ipl/squads/KKR.html",
+    "source_url": "https://www.iplt20.com/teams/kolkata-knight-riders/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.261688+00:00",
+    "bytes": 329261,
+    "sha256": "d29fda7719703c03e38fcc21683d967d571eb68b8c2a0b47088d4cdbbea2537d"
+  },
+  {
+    "file": "raw/ipl/squads/LSG.html",
+    "source_url": "https://www.iplt20.com/teams/lucknow-super-giants/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.252259+00:00",
+    "bytes": 285317,
+    "sha256": "feb94b73d201f2a9c9ede011a80e830f786832bdcbc32de522cf258ba3f55c69"
+  },
+  {
+    "file": "raw/ipl/squads/MI.html",
+    "source_url": "https://www.iplt20.com/teams/mumbai-indians/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.561331+00:00",
+    "bytes": 327563,
+    "sha256": "4beba9f593a34d8140edd779accc840fe1904ce9f87b166354490e20bbdc61e0"
+  },
+  {
+    "file": "raw/ipl/squads/PBKS.html",
+    "source_url": "https://www.iplt20.com/teams/punjab-kings/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.677733+00:00",
+    "bytes": 286156,
+    "sha256": "db0eb099a110d55aaff76004134d63989bd30237ca1e12dabe0814c758e1e86f"
+  },
+  {
+    "file": "raw/ipl/squads/RR.html",
+    "source_url": "https://www.iplt20.com/teams/rajasthan-royals/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.913803+00:00",
+    "bytes": 330431,
+    "sha256": "5d7224635f482249a7d0b925c3e5bb1a87508306dc60e0cc5157d9c80d38a8ea"
+  },
+  {
+    "file": "raw/ipl/squads/RCB.html",
+    "source_url": "https://www.iplt20.com/teams/royal-challengers-bengaluru/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:09.932431+00:00",
+    "bytes": 330530,
+    "sha256": "d27fe843d0030ddac5e6c491096f47acdcc9bed088dd58b7d9e93d42cbf02eba"
+  },
+  {
+    "file": "raw/ipl/squads/SRH.html",
+    "source_url": "https://www.iplt20.com/teams/sunrisers-hyderabad/squad",
+    "license_note": "Official IPL squad snapshot; website terms apply",
+    "status": "cached",
+    "retrieved_at_utc": "2026-10-02T02:34:10.053539+00:00",
+    "bytes": 328765,
+    "sha256": "a5709bc7a688cf752f193a9658ce46f078811fbca66002896d27629583d0ccc6"
+  },
+  {
+    "file": "raw/ipl/squads/CSK.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/chennai-super-kings?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.277976+00:00",
+    "bytes": 35684,
+    "sha256": "9556ac470e6921b8bb652270ae303054585b902beea9e644b5556671f581139c"
+  },
+  {
+    "file": "raw/ipl/squads/DC.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/delhi-capitals?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.201492+00:00",
+    "bytes": 31757,
+    "sha256": "ade5c053108695753fa9b16550650720af638c5fe0a5c0639e9905e95cd4eec8"
+  },
+  {
+    "file": "raw/ipl/squads/GT.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/gujarat-titans?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.218514+00:00",
+    "bytes": 32276,
+    "sha256": "9b61abd9cf8c2f3fb1dc56616fef7a4fcd3feefd0b7f9d82bb40589033e6156e"
+  },
+  {
+    "file": "raw/ipl/squads/KKR.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/kolkata-knight-riders?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.352543+00:00",
+    "bytes": 34971,
+    "sha256": "8d0b4c7e1c317c9e1b7dee33ff8aa4080ce19cab186d234496dbc40d2d3999e9"
+  },
+  {
+    "file": "raw/ipl/squads/LSG.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/lucknow-super-giants?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.611129+00:00",
+    "bytes": 31713,
+    "sha256": "806a7ff90d310c35f43a3db639c7a5b7686b04acc6ae3ec23e00a33ac3391698"
+  },
+  {
+    "file": "raw/ipl/squads/MI.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/mumbai-indians?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.475008+00:00",
+    "bytes": 34945,
+    "sha256": "67a3f8af938c2e2f44da1d8d6d2c141ae41bfe8cf05d6075bb429e50d693f5b4"
+  },
+  {
+    "file": "raw/ipl/squads/PBKS.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/punjab-kings?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.702684+00:00",
+    "bytes": 30703,
+    "sha256": "ab81bcf15b96eabcca54ddabc17c3b18dd16c2f8207cfc34e31fbd2f3b3abe4f"
+  },
+  {
+    "file": "raw/ipl/squads/RR.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/rajasthan-royals?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.633684+00:00",
+    "bytes": 32847,
+    "sha256": "bf7d2cf907dd7423f709f98016d6adba99d42696fba414a0fd7e786b064d0882"
+  },
+  {
+    "file": "raw/ipl/squads/RCB.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/royal-challengers-bengaluru?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:33.067077+00:00",
+    "bytes": 31826,
+    "sha256": "02b37ba290b3e655b01eb9b910a8741c36363ed1a48b30e7f5fc9e111c273d52"
+  },
+  {
+    "file": "raw/ipl/squads/SRH.json",
+    "source_url": "https://www.iplt20.com/api/bff/cms/teams/sunrisers-hyderabad?tab=squad",
+    "license_note": "Official IPL complete squad snapshot; website terms apply",
+    "http_status": 200,
+    "content_type": "application/json; charset=utf-8",
+    "last_modified": null,
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T02:42:32.839833+00:00",
+    "bytes": 34915,
+    "sha256": "01e7ef202e5ce136aa0c520f073aaccd35a839ee10d9d7da82c25ae0938df1a7"
+  }
+]

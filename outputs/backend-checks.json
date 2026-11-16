@@ -1,0 +1,275 @@
+{
+  "checked_on": "2026-11-05",
+  "dataset_version": "2026-10-02",
+  "passed_checks": 78,
+  "checks": [
+    "GET /health {}: 200",
+    "GET /ready {}: 200",
+    "GET /api/v1/metadata {}: 200",
+    "Saved players count matches coverage",
+    "Saved matches count matches coverage",
+    "Saved deliveries count matches coverage",
+    "Saved venues count matches coverage",
+    "Saved squads_current count matches coverage",
+    "Predictions explicitly experimental",
+    "GET /api/v1/datasets {}: 200",
+    "All catalog entries served",
+    "GET /api/v1/seasons {}: 200",
+    "All seasons served",
+    "GET /api/v1/players {'limit': 100}: 200",
+    "Player count and bounded page",
+    "GET /api/v1/players {'q': '1c2a64cd'}: 200",
+    "GET /api/v1/players {'q': '99b202b3'}: 200",
+    "GET /api/v1/players {'q': 'e249fdaa'}: 200",
+    "GET /api/v1/players/ba607b88 {}: 200",
+    "GET /api/v1/players/ba607b88/attributes {}: 200",
+    "GET /api/v1/players/ba607b88/statistics {'season': 2026}: 200",
+    "GET /api/v1/players/ba607b88/form {'window': 5, 'before': '2026-05-31'}: 200",
+    "Form window 5 respects exclusive cutoff",
+    "GET /api/v1/players/ba607b88/form {'window': 10, 'before': '2026-05-31'}: 200",
+    "Form window 10 respects exclusive cutoff",
+    "GET /api/v1/players/ba607b88/phases {'before': '2026-05-31'}: 200",
+    "GET /api/v1/players/fe93fd9d/phases {'side': 'bowling', 'before': '2026-05-31'}: 200",
+    "GET /api/v1/analytics/matchup {'batter_id': 'ba607b88', 'bowler_id': 'fe93fd9d'}: 200",
+    "Matchup counts equal independent raw-delivery sums",
+    "Outcome groups conserve deliveries",
+    "GET /api/v1/analytics/matchup {'batter_id': 'ba607b88', 'bowler_id': 'fe93fd9d', 'before': '2026-05-31', 'phase': 'powerplay'}: 200",
+    "Filtered matchup respects cutoff",
+    "GET /api/v1/analytics/bowling-type {'batter_id': 'ba607b88', 'category': 'spin', 'arm': 'right', 'before': '2026-05-31'}: 200",
+    "GET /api/v1/predictions/matchup {'batter_id': 'ba607b88', 'bowler_id': 'fe93fd9d', 'as_of': '2026-05-31', 'phase': 'powerplay', 'venue_id': 'venue_fb4f23161a', 'curves': 'true'}: 200",
+    "Forecast run probabilities sum to one",
+    "Forecast training ends before target day",
+    "Posterior probability curves exported",
+    "GET /api/v1/predictions/bowling-type {'batter_id': 'ba607b88', 'category': 'spin', 'as_of': '2026-05-31'}: 200",
+    "GET /api/v1/matches {'limit': 100}: 200",
+    "Match count matches database",
+    "GET /api/v1/matches {'season': 2026, 'venue_id': 'venue_fb4f23161a', 'team_id': 'GT', 'before': '2026-05-31'}: 200",
+    "GET /api/v1/matches/1535465 {}: 200",
+    "GET /api/v1/venues {}: 200",
+    "Venue count matches database",
+    "GET /api/v1/venues/venue_fb4f23161a/profile {'before': '2026-05-31'}: 200",
+    "GET /api/v1/venues/venue_fb4f23161a/phases {'season': 2026, 'before': '2026-05-31'}: 200",
+    "GET /api/v1/teams {}: 200",
+    "GET /api/v1/teams {'current_only': 'false'}: 200",
+    "GET /api/v1/teams/CSK/roster {'season': 2026}: 200",
+    "CSK roster does not assert eligibility",
+    "GET /api/v1/teams/DC/roster {'season': 2026}: 200",
+    "DC roster does not assert eligibility",
+    "GET /api/v1/teams/GT/roster {'season': 2026}: 200",
+    "GT roster does not assert eligibility",
+    "GET /api/v1/teams/PBKS/roster {'season': 2026}: 200",
+    "PBKS roster does not assert eligibility",
+    "GET /api/v1/teams/KKR/roster {'season': 2026}: 200",
+    "KKR roster does not assert eligibility",
+    "GET /api/v1/teams/LSG/roster {'season': 2026}: 200",
+    "LSG roster does not assert eligibility",
+    "GET /api/v1/teams/MI/roster {'season': 2026}: 200",
+    "MI roster does not assert eligibility",
+    "GET /api/v1/teams/RR/roster {'season': 2026}: 200",
+    "RR roster does not assert eligibility",
+    "GET /api/v1/teams/RCB/roster {'season': 2026}: 200",
+    "RCB roster does not assert eligibility",
+    "GET /api/v1/teams/SRH/roster {'season': 2026}: 200",
+    "SRH roster does not assert eligibility",
+    "All saved current roster rows served",
+    "GET /api/v1/teams/CSK/observed-roster {'season': 2026, 'before': '2026-05-31'}: 200",
+    "Unknown IDs return 404",
+    "Invalid limits return 422",
+    "GET /openapi.json {}: 200",
+    "GET /api/v1/predictions/match-benchmark {'team_a_id': 'CSK', 'team_b_id': 'MI', 'venue_id': 'venue_fb4f23161a', 'as_of': '2026-05-31'}: 200",
+    "Benchmark cutoff excludes same-day outcomes",
+    "Validation-selected neutral benchmark is not a simulated favorite",
+    "Only analytics GETs and two computational POSTs",
+    "Original database byte-for-byte unchanged"
+  ],
+  "counts": {
+    "players": 840,
+    "matches": 1243,
+    "deliveries": 295732,
+    "venues": 37,
+    "squads_current": 274
+  },
+  "documented_get_endpoints": 25,
+  "database_sha256_before_and_after": "6f6c395ace7ccb6d240fa825d9b5f6e68c5b844102d23bdb8a563e233c9cf51f",
+  "timings": [
+    {
+      "path": "/health",
+      "milliseconds": 3.603
+    },
+    {
+      "path": "/ready",
+      "milliseconds": 5.995
+    },
+    {
+      "path": "/api/v1/metadata",
+      "milliseconds": 67.189
+    },
+    {
+      "path": "/api/v1/datasets",
+      "milliseconds": 3.093
+    },
+    {
+      "path": "/api/v1/seasons",
+      "milliseconds": 2.643
+    },
+    {
+      "path": "/api/v1/players",
+      "milliseconds": 6.398
+    },
+    {
+      "path": "/api/v1/players",
+      "milliseconds": 136.297
+    },
+    {
+      "path": "/api/v1/players",
+      "milliseconds": 129.413
+    },
+    {
+      "path": "/api/v1/players",
+      "milliseconds": 128.335
+    },
+    {
+      "path": "/api/v1/players/ba607b88",
+      "milliseconds": 3.326
+    },
+    {
+      "path": "/api/v1/players/ba607b88/attributes",
+      "milliseconds": 4.864
+    },
+    {
+      "path": "/api/v1/players/ba607b88/statistics",
+      "milliseconds": 4.096
+    },
+    {
+      "path": "/api/v1/players/ba607b88/form",
+      "milliseconds": 5.452
+    },
+    {
+      "path": "/api/v1/players/ba607b88/form",
+      "milliseconds": 4.028
+    },
+    {
+      "path": "/api/v1/players/ba607b88/phases",
+      "milliseconds": 23.346
+    },
+    {
+      "path": "/api/v1/players/fe93fd9d/phases",
+      "milliseconds": 20.179
+    },
+    {
+      "path": "/api/v1/analytics/matchup",
+      "milliseconds": 4.528
+    },
+    {
+      "path": "/api/v1/analytics/matchup",
+      "milliseconds": 3.518
+    },
+    {
+      "path": "/api/v1/analytics/bowling-type",
+      "milliseconds": 21.923
+    },
+    {
+      "path": "/api/v1/predictions/matchup",
+      "milliseconds": 98.744
+    },
+    {
+      "path": "/api/v1/predictions/bowling-type",
+      "milliseconds": 73.378
+    },
+    {
+      "path": "/api/v1/matches",
+      "milliseconds": 7.124
+    },
+    {
+      "path": "/api/v1/matches",
+      "milliseconds": 3.615
+    },
+    {
+      "path": "/api/v1/matches/1535465",
+      "milliseconds": 6.51
+    },
+    {
+      "path": "/api/v1/venues",
+      "milliseconds": 2.753
+    },
+    {
+      "path": "/api/v1/venues/venue_fb4f23161a/profile",
+      "milliseconds": 4.291
+    },
+    {
+      "path": "/api/v1/venues/venue_fb4f23161a/phases",
+      "milliseconds": 211.631
+    },
+    {
+      "path": "/api/v1/teams",
+      "milliseconds": 4.078
+    },
+    {
+      "path": "/api/v1/teams",
+      "milliseconds": 3.251
+    },
+    {
+      "path": "/api/v1/teams/CSK/roster",
+      "milliseconds": 13.039
+    },
+    {
+      "path": "/api/v1/teams/DC/roster",
+      "milliseconds": 8.335
+    },
+    {
+      "path": "/api/v1/teams/GT/roster",
+      "milliseconds": 12.342
+    },
+    {
+      "path": "/api/v1/teams/PBKS/roster",
+      "milliseconds": 11.171
+    },
+    {
+      "path": "/api/v1/teams/KKR/roster",
+      "milliseconds": 9.501
+    },
+    {
+      "path": "/api/v1/teams/LSG/roster",
+      "milliseconds": 8.403
+    },
+    {
+      "path": "/api/v1/teams/MI/roster",
+      "milliseconds": 8.665
+    },
+    {
+      "path": "/api/v1/teams/RR/roster",
+      "milliseconds": 9.326
+    },
+    {
+      "path": "/api/v1/teams/RCB/roster",
+      "milliseconds": 8.361
+    },
+    {
+      "path": "/api/v1/teams/SRH/roster",
+      "milliseconds": 8.685
+    },
+    {
+      "path": "/api/v1/teams/CSK/observed-roster",
+      "milliseconds": 35.462
+    },
+    {
+      "path": "/openapi.json",
+      "milliseconds": 116.707
+    },
+    {
+      "path": "/api/v1/predictions/match-benchmark",
+      "milliseconds": 16.632
+    }
+  ],
+  "timing_note": "Single local TestClient requests, including serialization; not a load test or production SLA.",
+  "capabilities": {
+    "descriptive_analytics": true,
+    "bayesian_predictions": true,
+    "production_validated_predictions": false,
+    "match_simulation": true,
+    "xi_optimization": true,
+    "verified_match_eligibility": false,
+    "historically_evaluated_match_benchmarks": true,
+    "optional_delivery_calibration_candidate": true
+  }
+}

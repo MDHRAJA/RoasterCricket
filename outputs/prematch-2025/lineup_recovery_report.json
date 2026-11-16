@@ -1,0 +1,137 @@
+{
+  "scope": "2025 IPL original starting XIs and five nominated substitutes; research source coverage",
+  "baseline_previously_reported": {
+    "starting_xi_team_slots": 103,
+    "substitute_team_slots": 81,
+    "complete_source_checked_fixtures": 30,
+    "complete_source_reviewed_fixtures": 1
+  },
+  "current": {
+    "starting_xi_team_slots": 144,
+    "substitute_team_slots": 144,
+    "complete_source_reviewed_fixtures": 72,
+    "reviewed_training_eligible_matches": 68,
+    "training_eligible_population": 68,
+    "integrity_checks_passed": 10613
+  },
+  "source_review_ledger_sha256": "907df80e501e35db2852569176ed9115f5c9d93372138988ec66a4ed52f99a6d",
+  "source_packet_sha256": "a8be7e21c8434942ef472ffbf44677713b1645539092227b5eb8dfa0c98a177a",
+  "database_sha256": "17df47447e343a1c74d8ad1e3990dcb9ea846357e1c41d08a3bda6a58643b800",
+  "source_database_unchanged_sha256": "6f6c395ace7ccb6d240fa825d9b5f6e68c5b844102d23bdb8a563e233c9cf51f",
+  "timestamp_evidence_counts": {
+    "publisher_declared_datePublished": 259,
+    "with_declared_modification_time": 259,
+    "publisher_comment_timestamp_not_immutable_publication_proof": 29,
+    "without_declared_modification_time": 29
+  },
+  "inventory_exceptions": [
+    {
+      "pilot_match_id": "1473471",
+      "date": "2025-04-18",
+      "teams": [
+        "RCB",
+        "PBKS"
+      ],
+      "cutoff_at": "2025-04-18T14:00:00Z",
+      "official_gid": "8b6751aa-dc0e-4e72-ae02-fd8fcffff4e2",
+      "official_result": "Punjab Kings win by 5 wickets",
+      "missing_slots": [
+        {
+          "team_id": "RCB",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "RCB",
+          "kind": "nominated_substitutes"
+        },
+        {
+          "team_id": "PBKS",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "PBKS",
+          "kind": "nominated_substitutes"
+        }
+      ],
+      "decision": "Rain-delayed 18 April fixture: retained nomination reports were after the scheduled-start cutoff and remain withheld. Outside the existing uninterrupted-match training population."
+    },
+    {
+      "pilot_match_id": "1473495",
+      "date": "2025-05-08",
+      "teams": [
+        "PBKS",
+        "DC"
+      ],
+      "cutoff_at": "2025-05-08T14:00:00Z",
+      "official_gid": "8db7e229-146f-43c6-9d4c-818c81304a21",
+      "official_result": "No result",
+      "missing_slots": [
+        {
+          "team_id": "PBKS",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "PBKS",
+          "kind": "nominated_substitutes"
+        },
+        {
+          "team_id": "DC",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "DC",
+          "kind": "nominated_substitutes"
+        }
+      ],
+      "decision": "Abandoned 8 May fixture: retained nomination reports were after the scheduled-start cutoff and remain withheld. The replay on 24 May is a separate inventory entry with sourced lists."
+    },
+    {
+      "pilot_match_id": "official:a80f1839-0588-43dc-afc7-ec3f2a4fca2a",
+      "date": "2025-05-17",
+      "teams": [
+        "RCB",
+        "KKR"
+      ],
+      "cutoff_at": "2025-05-17T14:00:00Z",
+      "official_gid": "a80f1839-0588-43dc-afc7-ec3f2a4fca2a",
+      "official_result": "Match Abandoned without a ball bowled",
+      "missing_slots": [
+        {
+          "team_id": "RCB",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "RCB",
+          "kind": "nominated_substitutes"
+        },
+        {
+          "team_id": "KKR",
+          "kind": "starting_xi"
+        },
+        {
+          "team_id": "KKR",
+          "kind": "nominated_substitutes"
+        }
+      ],
+      "decision": "17 May fixture abandoned without a ball bowled; no admissible nomination reports were located. Retained in the official inventory, absent from frozen ball data."
+    }
+  ],
+  "quality_improvements": [
+    "Preserved explicit XI/bench boundaries and rejected projected Impact choices.",
+    "Resolved reviewed spelling variants and separately registered bench-only identities; never invented their history.",
+    "Retained public older-update pages and commentary entry timestamps.",
+    "Source inspection caught swapped PBKS/KKR bench labels on 15 April; team-membership checks now reject those records and independent correctly labelled reports replace them.",
+    "Retained incompatible reports and unknowns rather than altering reconstructed originals to fit them.",
+    "Exact nomination/source hashes bind the assistant's inspection decisions; changed evidence requires renewed review."
+  ],
+  "nomination_research_gate_passed": true,
+  "production_validated": false,
+  "accuracy_improvement_tested": false,
+  "last_measured_winner_accuracy": 0.5571428571428572,
+  "limitations": [
+    "Current retrievals of historical publisher reports are not immutable announcement-time captures; undeclared edits remain possible.",
+    "Some commentary entries expose an entry timestamp without modification history; this absence remains explicit.",
+    "Fourteen availability claims are not comprehensive date-valid player availability coverage.",
+    "Nomination coverage readiness is not production readiness or proof of a 70 percent accuracy target."
+  ]
+}

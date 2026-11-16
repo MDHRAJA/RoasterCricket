@@ -1,0 +1,4637 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "IPL Roster Analytics API",
+    "description": "Read-only IPL observations, Bayesian delivery forecasts, uninterrupted match simulations and constrained XI planning with exclusive historical cutoffs. No production-validated predictions, verified eligible XI or live injury/pitch feed yet.",
+    "version": "0.5.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "Health",
+        "operationId": "health_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ready": {
+      "get": {
+        "tags": [
+          "Operations"
+        ],
+        "summary": "Ready",
+        "operationId": "ready_ready_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_dict_"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/metadata": {
+      "get": {
+        "tags": [
+          "Dataset"
+        ],
+        "summary": "Dataset Metadata",
+        "operationId": "dataset_metadata_api_v1_metadata_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_dict_"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/simulations/match": {
+      "post": {
+        "tags": [
+          "Planning"
+        ],
+        "summary": "Simulate Match",
+        "operationId": "simulate_match_api_v1_simulations_match_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimulationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_SimulationResult_"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/optimization/xi": {
+      "post": {
+        "tags": [
+          "Planning"
+        ],
+        "summary": "Optimize Xi",
+        "operationId": "optimize_xi_api_v1_optimization_xi_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OptimizationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_OptimizationResult_"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too Many Requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/rules": {
+      "get": {
+        "tags": [
+          "Planning"
+        ],
+        "summary": "Rules",
+        "operationId": "rules_api_v1_rules_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_dict_"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/predictions/match-benchmark": {
+      "get": {
+        "tags": [
+          "Prediction"
+        ],
+        "summary": "Historical Match Benchmark",
+        "operationId": "historical_match_benchmark_api_v1_predictions_match_benchmark_get",
+        "parameters": [
+          {
+            "name": "team_a_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "title": "Team A Id"
+            }
+          },
+          {
+            "name": "team_b_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "title": "Team B Id"
+            }
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80,
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "title": "As Of"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_dict_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/datasets": {
+      "get": {
+        "tags": [
+          "Dataset"
+        ],
+        "summary": "Datasets",
+        "operationId": "datasets_api_v1_datasets_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_DatasetInfo__"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/seasons": {
+      "get": {
+        "tags": [
+          "Dataset"
+        ],
+        "summary": "Seasons",
+        "operationId": "seasons_api_v1_seasons_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_dict__"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/teams": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "summary": "Teams",
+        "operationId": "teams_api_v1_teams_get",
+        "parameters": [
+          {
+            "name": "current_only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Current Only"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_Team__"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/teams/{team_id}/roster": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "summary": "Roster",
+        "operationId": "roster_api_v1_teams__team_id__roster_get",
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 2100,
+              "minimum": 2008,
+              "title": "Season"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Roster_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/teams/{team_id}/observed-roster": {
+      "get": {
+        "tags": [
+          "Teams"
+        ],
+        "summary": "Observed Roster",
+        "operationId": "observed_roster_api_v1_teams__team_id__observed_roster_get",
+        "parameters": [
+          {
+            "name": "team_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "maximum": 2100,
+              "minimum": 2008,
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_dict__"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players": {
+      "get": {
+        "tags": [
+          "Players"
+        ],
+        "summary": "Players",
+        "operationId": "players_api_v1_players_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Q"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Role"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Role"
+            }
+          },
+          {
+            "name": "hand",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Hand"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Hand"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100000,
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_Player_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players/{player_id}": {
+      "get": {
+        "tags": [
+          "Players"
+        ],
+        "summary": "Player",
+        "operationId": "player_api_v1_players__player_id__get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Player_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players/{player_id}/attributes": {
+      "get": {
+        "tags": [
+          "Players"
+        ],
+        "summary": "Attributes",
+        "operationId": "attributes_api_v1_players__player_id__attributes_get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_dict__"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players/{player_id}/statistics": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Player Statistics",
+        "operationId": "player_statistics_api_v1_players__player_id__statistics_get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_PlayerStatistics_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players/{player_id}/form": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Form",
+        "operationId": "form_api_v1_players__player_id__form_get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          },
+          {
+            "name": "window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FormWindow",
+              "default": 5
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "timeline_limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 20,
+              "title": "Timeline Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_RecentForm_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/players/{player_id}/phases": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Player Phases",
+        "operationId": "player_phases_api_v1_players__player_id__phases_get",
+        "parameters": [
+          {
+            "name": "player_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Player Id"
+            }
+          },
+          {
+            "name": "side",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/Side",
+              "default": "batting"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_PhaseMetrics__"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/matchup": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Matchup",
+        "operationId": "matchup_api_v1_analytics_matchup_get",
+        "parameters": [
+          {
+            "name": "batter_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batter Id"
+            }
+          },
+          {
+            "name": "bowler_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Bowler Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Phase"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Matchup_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/analytics/bowling-type": {
+      "get": {
+        "tags": [
+          "Analytics"
+        ],
+        "summary": "Bowling Type",
+        "operationId": "bowling_type_api_v1_analytics_bowling_type_get",
+        "parameters": [
+          {
+            "name": "batter_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batter Id"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BowlingCategory"
+            }
+          },
+          {
+            "name": "arm",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/BowlingArm"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Arm"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Phase"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Matchup_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/matches": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "summary": "Matches",
+        "operationId": "matches_api_v1_matches_get",
+        "parameters": [
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "team_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Team Id"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100000,
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Page_Match_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/matches/{match_id}": {
+      "get": {
+        "tags": [
+          "Matches"
+        ],
+        "summary": "Match Detail",
+        "operationId": "match_detail_api_v1_matches__match_id__get",
+        "parameters": [
+          {
+            "name": "match_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Match Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_MatchDetail_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/venues": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "Venues",
+        "operationId": "venues_api_v1_venues_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_Venue__"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/venues/{venue_id}/profile": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "Venue Profile",
+        "operationId": "venue_profile_api_v1_venues__venue_id__profile_get",
+        "parameters": [
+          {
+            "name": "venue_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_VenueProfile_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/venues/{venue_id}/phases": {
+      "get": {
+        "tags": [
+          "Venues"
+        ],
+        "summary": "Venue Phases",
+        "operationId": "venue_phases_api_v1_venues__venue_id__phases_get",
+        "parameters": [
+          {
+            "name": "venue_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "season",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 2100,
+                  "minimum": 2008
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Season"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Exclusive cutoff: only match_date < before",
+              "title": "Before"
+            },
+            "description": "Exclusive cutoff: only match_date < before"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_list_PhaseMetrics__"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/predictions/matchup": {
+      "get": {
+        "tags": [
+          "Predictions"
+        ],
+        "summary": "Predict Matchup",
+        "operationId": "predict_matchup_api_v1_predictions_matchup_get",
+        "parameters": [
+          {
+            "name": "batter_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batter Id"
+            }
+          },
+          {
+            "name": "bowler_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Bowler Id"
+            }
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Required exclusive training cutoff; all results on this date are excluded",
+              "title": "As Of"
+            },
+            "description": "Required exclusive training cutoff; all results on this date are excluded"
+          },
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Phase"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "curves",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Curves"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Prediction_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    },
+    "/api/v1/predictions/bowling-type": {
+      "get": {
+        "tags": [
+          "Predictions"
+        ],
+        "summary": "Predict Type",
+        "operationId": "predict_type_api_v1_predictions_bowling_type_get",
+        "parameters": [
+          {
+            "name": "batter_id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Batter Id"
+            }
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/BowlingCategory"
+            }
+          },
+          {
+            "name": "as_of",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date",
+              "description": "Required exclusive training cutoff; all results on this date are excluded",
+              "title": "As Of"
+            },
+            "description": "Required exclusive training cutoff; all results on this date are excluded"
+          },
+          {
+            "name": "arm",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/BowlingArm"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Arm"
+            }
+          },
+          {
+            "name": "phase",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/Phase"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Phase"
+            }
+          },
+          {
+            "name": "venue_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Venue Id"
+            }
+          },
+          {
+            "name": "curves",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Curves"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Envelope_Prediction_"
+                }
+              }
+            }
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Not Found"
+          },
+          "422": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Unprocessable Entity"
+          },
+          "503": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Service Unavailable"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Availability": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "default": "unknown"
+          },
+          "effective_on": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Effective On"
+          },
+          "source_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Source Url"
+          },
+          "notes": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notes"
+          }
+        },
+        "type": "object",
+        "title": "Availability"
+      },
+      "BowlingArm": {
+        "type": "string",
+        "enum": [
+          "left",
+          "right",
+          "mixed",
+          "unknown"
+        ],
+        "title": "BowlingArm"
+      },
+      "BowlingCategory": {
+        "type": "string",
+        "enum": [
+          "pace",
+          "spin",
+          "mixed",
+          "unknown"
+        ],
+        "title": "BowlingCategory"
+      },
+      "CredibleInterval": {
+        "properties": {
+          "level": {
+            "type": "number",
+            "title": "Level"
+          },
+          "lower": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Lower"
+          },
+          "upper": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Upper"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "level",
+          "lower",
+          "upper",
+          "interpretation"
+        ],
+        "title": "CredibleInterval"
+      },
+      "DatasetInfo": {
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "title": "Dataset"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "rows": {
+            "type": "integer",
+            "title": "Rows"
+          },
+          "columns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Columns"
+          },
+          "sha256": {
+            "type": "string",
+            "title": "Sha256"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "dataset",
+          "path",
+          "rows",
+          "columns",
+          "sha256"
+        ],
+        "title": "DatasetInfo"
+      },
+      "DeliveryMetrics": {
+        "properties": {
+          "deliveries": {
+            "type": "integer",
+            "title": "Deliveries"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          },
+          "legal_balls": {
+            "type": "integer",
+            "title": "Legal Balls"
+          },
+          "balls_faced": {
+            "type": "integer",
+            "title": "Balls Faced"
+          },
+          "batter_runs": {
+            "type": "integer",
+            "title": "Batter Runs"
+          },
+          "team_runs": {
+            "type": "integer",
+            "title": "Team Runs"
+          },
+          "bowler_runs_conceded": {
+            "type": "integer",
+            "title": "Bowler Runs Conceded"
+          },
+          "bowler_wickets": {
+            "type": "integer",
+            "title": "Bowler Wickets"
+          },
+          "striker_dismissals": {
+            "type": "integer",
+            "title": "Striker Dismissals"
+          },
+          "fours": {
+            "type": "integer",
+            "title": "Fours"
+          },
+          "sixes": {
+            "type": "integer",
+            "title": "Sixes"
+          },
+          "batting_dots": {
+            "type": "integer",
+            "title": "Batting Dots"
+          },
+          "bowling_dots": {
+            "type": "integer",
+            "title": "Bowling Dots"
+          },
+          "strike_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Strike Rate"
+          },
+          "economy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Economy"
+          },
+          "boundary_ball_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Boundary Ball Rate"
+          },
+          "bowling_dot_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowling Dot Rate"
+          },
+          "first_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Date"
+          },
+          "last_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Date"
+          }
+        },
+        "type": "object",
+        "required": [
+          "deliveries",
+          "matches",
+          "legal_balls",
+          "balls_faced",
+          "batter_runs",
+          "team_runs",
+          "bowler_runs_conceded",
+          "bowler_wickets",
+          "striker_dismissals",
+          "fours",
+          "sixes",
+          "batting_dots",
+          "bowling_dots",
+          "strike_rate",
+          "economy",
+          "boundary_ball_rate",
+          "bowling_dot_rate",
+          "first_date",
+          "last_date"
+        ],
+        "title": "DeliveryMetrics"
+      },
+      "DensityPoint": {
+        "properties": {
+          "probability": {
+            "type": "number",
+            "exclusiveMaximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Probability"
+          },
+          "density": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Density"
+          }
+        },
+        "type": "object",
+        "required": [
+          "probability",
+          "density"
+        ],
+        "title": "DensityPoint"
+      },
+      "Envelope_MatchDetail_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/MatchDetail"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[MatchDetail]"
+      },
+      "Envelope_Matchup_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Matchup"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[Matchup]"
+      },
+      "Envelope_OptimizationResult_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/OptimizationResult"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[OptimizationResult]"
+      },
+      "Envelope_PlayerStatistics_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PlayerStatistics"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[PlayerStatistics]"
+      },
+      "Envelope_Player_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Player"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[Player]"
+      },
+      "Envelope_Prediction_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Prediction"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[Prediction]"
+      },
+      "Envelope_RecentForm_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RecentForm"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[RecentForm]"
+      },
+      "Envelope_Roster_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Roster"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[Roster]"
+      },
+      "Envelope_SimulationResult_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SimulationResult"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[SimulationResult]"
+      },
+      "Envelope_VenueProfile_": {
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/VenueProfile"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[VenueProfile]"
+      },
+      "Envelope_dict_": {
+        "properties": {
+          "data": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[dict]"
+      },
+      "Envelope_list_DatasetInfo__": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/DatasetInfo"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[list[DatasetInfo]]"
+      },
+      "Envelope_list_PhaseMetrics__": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/PhaseMetrics"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[list[PhaseMetrics]]"
+      },
+      "Envelope_list_Team__": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/Team"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[list[Team]]"
+      },
+      "Envelope_list_Venue__": {
+        "properties": {
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/Venue"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[list[Venue]]"
+      },
+      "Envelope_list_dict__": {
+        "properties": {
+          "data": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Data"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "meta"
+        ],
+        "title": "Envelope[list[dict]]"
+      },
+      "ErrorDetail": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "details": {
+            "title": "Details"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "title": "ErrorDetail"
+      },
+      "ErrorResponse": {
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "error"
+        ],
+        "title": "ErrorResponse"
+      },
+      "FormSummary": {
+        "properties": {
+          "batting_innings": {
+            "type": "integer",
+            "title": "Batting Innings"
+          },
+          "bowling_innings": {
+            "type": "integer",
+            "title": "Bowling Innings"
+          },
+          "runs": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runs"
+          },
+          "balls_faced": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Balls Faced"
+          },
+          "strike_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Strike Rate"
+          },
+          "runs_per_innings": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runs Per Innings"
+          },
+          "recency_weighted_runs": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recency Weighted Runs"
+          },
+          "runs_trend_per_innings": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runs Trend Per Innings"
+          },
+          "wickets": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wickets"
+          },
+          "legal_balls_bowled": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Legal Balls Bowled"
+          },
+          "economy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Economy"
+          }
+        },
+        "type": "object",
+        "required": [
+          "batting_innings",
+          "bowling_innings",
+          "runs",
+          "balls_faced",
+          "strike_rate",
+          "runs_per_innings",
+          "recency_weighted_runs",
+          "runs_trend_per_innings",
+          "wickets",
+          "legal_balls_bowled",
+          "economy"
+        ],
+        "title": "FormSummary"
+      },
+      "FormWindow": {
+        "type": "integer",
+        "enum": [
+          5,
+          10
+        ],
+        "title": "FormWindow"
+      },
+      "Hand": {
+        "type": "string",
+        "enum": [
+          "left",
+          "right"
+        ],
+        "title": "Hand"
+      },
+      "ImpactPlan": {
+        "properties": {
+          "outgoing_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Outgoing Id"
+          },
+          "incoming_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Incoming Id"
+          },
+          "timing": {
+            "type": "string",
+            "pattern": "^innings_interval$",
+            "title": "Timing",
+            "default": "innings_interval"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "outgoing_id",
+          "incoming_id"
+        ],
+        "title": "ImpactPlan"
+      },
+      "JointOutcome": {
+        "properties": {
+          "batter_runs": {
+            "type": "string",
+            "title": "Batter Runs"
+          },
+          "boundary": {
+            "type": "boolean",
+            "title": "Boundary"
+          },
+          "striker_dismissed": {
+            "type": "boolean",
+            "title": "Striker Dismissed"
+          },
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          }
+        },
+        "type": "object",
+        "required": [
+          "batter_runs",
+          "boundary",
+          "striker_dismissed",
+          "probability"
+        ],
+        "title": "JointOutcome"
+      },
+      "Match": {
+        "properties": {
+          "match_id": {
+            "type": "string",
+            "title": "Match Id"
+          },
+          "match_date": {
+            "type": "string",
+            "format": "date",
+            "title": "Match Date"
+          },
+          "season": {
+            "type": "integer",
+            "title": "Season"
+          },
+          "team1_id": {
+            "type": "string",
+            "title": "Team1 Id"
+          },
+          "team2_id": {
+            "type": "string",
+            "title": "Team2 Id"
+          },
+          "venue_id": {
+            "type": "string",
+            "title": "Venue Id"
+          },
+          "winner_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Winner Id"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "match_id",
+          "match_date",
+          "season",
+          "team1_id",
+          "team2_id",
+          "venue_id"
+        ],
+        "title": "Match"
+      },
+      "MatchDetail": {
+        "properties": {
+          "match": {
+            "$ref": "#/components/schemas/Match"
+          },
+          "innings": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Innings"
+          },
+          "participants": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Participants"
+          },
+          "replacements": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Replacements"
+          }
+        },
+        "type": "object",
+        "required": [
+          "match",
+          "innings",
+          "participants",
+          "replacements"
+        ],
+        "title": "MatchDetail"
+      },
+      "Matchup": {
+        "properties": {
+          "batter_id": {
+            "type": "string",
+            "title": "Batter Id"
+          },
+          "bowler_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowler Id"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/DeliveryMetrics"
+          },
+          "outcomes": {
+            "items": {
+              "$ref": "#/components/schemas/OutcomeCount"
+            },
+            "type": "array",
+            "title": "Outcomes"
+          },
+          "interpretation": {
+            "type": "string",
+            "title": "Interpretation",
+            "default": "Observed event counts; not predicted success probabilities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "batter_id",
+          "metrics",
+          "outcomes"
+        ],
+        "title": "Matchup"
+      },
+      "Metadata": {
+        "properties": {
+          "dataset_version": {
+            "type": "string",
+            "title": "Dataset Version"
+          },
+          "before": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Before",
+            "description": "Exclusive match-date cutoff"
+          },
+          "warnings": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Warnings"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dataset_version"
+        ],
+        "title": "Metadata"
+      },
+      "OptimizationRequest": {
+        "properties": {
+          "season": {
+            "type": "integer",
+            "maximum": 2026.0,
+            "minimum": 2026.0,
+            "title": "Season",
+            "default": 2026
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "venue_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Venue Id"
+          },
+          "team_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Team Id"
+          },
+          "opponent": {
+            "$ref": "#/components/schemas/TeamPlan"
+          },
+          "batting_first_team_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Batting First Team Id"
+          },
+          "candidate_ids": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string",
+                  "maxLength": 80,
+                  "minLength": 1
+                },
+                "type": "array",
+                "maxItems": 40,
+                "minItems": 11
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Candidate Ids"
+          },
+          "locked_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 11,
+            "title": "Locked Ids"
+          },
+          "excluded_ids": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 40,
+            "title": "Excluded Ids"
+          },
+          "allow_unknown_availability": {
+            "type": "boolean",
+            "title": "Allow Unknown Availability",
+            "default": false
+          },
+          "minimum_batting_options": {
+            "type": "integer",
+            "maximum": 11.0,
+            "minimum": 0.0,
+            "title": "Minimum Batting Options",
+            "default": 6
+          },
+          "risk_aversion": {
+            "type": "number",
+            "maximum": 3.0,
+            "minimum": 0.0,
+            "title": "Risk Aversion",
+            "default": 1
+          },
+          "use_delivery_calibration": {
+            "type": "boolean",
+            "title": "Use Delivery Calibration",
+            "default": false
+          },
+          "candidate_count": {
+            "type": "integer",
+            "maximum": 3.0,
+            "minimum": 1.0,
+            "title": "Candidate Count",
+            "default": 3
+          },
+          "simulations": {
+            "type": "integer",
+            "maximum": 500.0,
+            "minimum": 50.0,
+            "title": "Simulations",
+            "default": 200
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 4294967295.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 20261002
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "as_of",
+          "venue_id",
+          "team_id",
+          "opponent",
+          "batting_first_team_id"
+        ],
+        "title": "OptimizationRequest"
+      },
+      "OptimizationResult": {
+        "properties": {
+          "reliability": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Reliability"
+          },
+          "optimizer_version": {
+            "type": "string",
+            "title": "Optimizer Version"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "eligibility_verified": {
+            "type": "boolean",
+            "title": "Eligibility Verified"
+          },
+          "objective": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Objective"
+          },
+          "recommended": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Recommended"
+          },
+          "alternatives": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Alternatives"
+          },
+          "candidate_scores": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Candidate Scores"
+          },
+          "exclusions": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Exclusions"
+          },
+          "constraints": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Constraints"
+          },
+          "confirmation": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Confirmation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "optimizer_version",
+          "status",
+          "eligibility_verified",
+          "objective",
+          "recommended",
+          "alternatives",
+          "candidate_scores",
+          "exclusions",
+          "constraints",
+          "confirmation"
+        ],
+        "title": "OptimizationResult"
+      },
+      "OutcomeCount": {
+        "properties": {
+          "batter_runs": {
+            "type": "integer",
+            "title": "Batter Runs"
+          },
+          "striker_dismissed": {
+            "type": "integer",
+            "title": "Striker Dismissed"
+          },
+          "deliveries": {
+            "type": "integer",
+            "title": "Deliveries"
+          },
+          "legal_balls": {
+            "type": "integer",
+            "title": "Legal Balls"
+          },
+          "balls_faced": {
+            "type": "integer",
+            "title": "Balls Faced"
+          }
+        },
+        "type": "object",
+        "required": [
+          "batter_runs",
+          "striker_dismissed",
+          "deliveries",
+          "legal_balls",
+          "balls_faced"
+        ],
+        "title": "OutcomeCount"
+      },
+      "Page_Match_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Match"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset",
+          "meta"
+        ],
+        "title": "Page[Match]"
+      },
+      "Page_Player_": {
+        "properties": {
+          "items": {
+            "items": {
+              "$ref": "#/components/schemas/Player"
+            },
+            "type": "array",
+            "title": "Items"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Metadata"
+          }
+        },
+        "type": "object",
+        "required": [
+          "items",
+          "total",
+          "limit",
+          "offset",
+          "meta"
+        ],
+        "title": "Page[Player]"
+      },
+      "Phase": {
+        "type": "string",
+        "enum": [
+          "powerplay",
+          "middle",
+          "death"
+        ],
+        "title": "Phase"
+      },
+      "PhaseMetrics": {
+        "properties": {
+          "phase": {
+            "$ref": "#/components/schemas/Phase"
+          },
+          "metrics": {
+            "$ref": "#/components/schemas/DeliveryMetrics"
+          }
+        },
+        "type": "object",
+        "required": [
+          "phase",
+          "metrics"
+        ],
+        "title": "PhaseMetrics"
+      },
+      "Player": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "full_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Name"
+          },
+          "cricsheet_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cricsheet Name"
+          },
+          "country": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Country"
+          },
+          "primary_role": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Primary Role"
+          },
+          "batting_hand": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Batting Hand"
+          },
+          "bowling_style": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowling Style"
+          },
+          "bowling_category": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowling Category"
+          },
+          "bowling_arm": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowling Arm"
+          },
+          "is_wicketkeeper": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Wicketkeeper"
+          },
+          "is_overseas": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Is Overseas"
+          },
+          "has_ipl_history": {
+            "type": "boolean",
+            "title": "Has Ipl History",
+            "default": false
+          },
+          "metadata_conflict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata Conflict"
+          },
+          "metadata_confidence": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metadata Confidence"
+          },
+          "identity_status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Identity Status"
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "player_id",
+          "display_name"
+        ],
+        "title": "Player"
+      },
+      "PlayerStatistics": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "matches_involved": {
+            "type": "integer",
+            "title": "Matches Involved"
+          },
+          "batting_innings": {
+            "type": "integer",
+            "title": "Batting Innings"
+          },
+          "bowling_innings": {
+            "type": "integer",
+            "title": "Bowling Innings"
+          },
+          "runs": {
+            "type": "integer",
+            "title": "Runs"
+          },
+          "balls_faced": {
+            "type": "integer",
+            "title": "Balls Faced"
+          },
+          "dismissals": {
+            "type": "integer",
+            "title": "Dismissals"
+          },
+          "fours": {
+            "type": "integer",
+            "title": "Fours"
+          },
+          "sixes": {
+            "type": "integer",
+            "title": "Sixes"
+          },
+          "wickets": {
+            "type": "integer",
+            "title": "Wickets"
+          },
+          "legal_balls_bowled": {
+            "type": "integer",
+            "title": "Legal Balls Bowled"
+          },
+          "runs_conceded": {
+            "type": "integer",
+            "title": "Runs Conceded"
+          },
+          "batting_average": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Batting Average"
+          },
+          "strike_rate": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Strike Rate"
+          },
+          "economy": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Economy"
+          },
+          "bowling_average": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowling Average"
+          }
+        },
+        "type": "object",
+        "required": [
+          "player_id",
+          "matches_involved",
+          "batting_innings",
+          "bowling_innings",
+          "runs",
+          "balls_faced",
+          "dismissals",
+          "fours",
+          "sixes",
+          "wickets",
+          "legal_balls_bowled",
+          "runs_conceded",
+          "batting_average",
+          "strike_rate",
+          "economy",
+          "bowling_average"
+        ],
+        "title": "PlayerStatistics"
+      },
+      "PredictedEvent": {
+        "properties": {
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          },
+          "observed_successes": {
+            "type": "integer",
+            "title": "Observed Successes"
+          },
+          "observed_deliveries": {
+            "type": "integer",
+            "title": "Observed Deliveries"
+          },
+          "posterior_alpha": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Posterior Alpha"
+          },
+          "posterior_beta": {
+            "type": "number",
+            "exclusiveMinimum": 0.0,
+            "title": "Posterior Beta"
+          },
+          "credible_interval": {
+            "$ref": "#/components/schemas/CredibleInterval"
+          },
+          "density_curve": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/DensityPoint"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Density Curve"
+          }
+        },
+        "type": "object",
+        "required": [
+          "probability",
+          "observed_successes",
+          "observed_deliveries",
+          "posterior_alpha",
+          "posterior_beta",
+          "credible_interval"
+        ],
+        "title": "PredictedEvent"
+      },
+      "PredictedRun": {
+        "properties": {
+          "batter_runs": {
+            "type": "string",
+            "title": "Batter Runs"
+          },
+          "probability": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Probability"
+          },
+          "observed_deliveries": {
+            "type": "integer",
+            "title": "Observed Deliveries"
+          },
+          "credible_interval": {
+            "$ref": "#/components/schemas/CredibleInterval"
+          }
+        },
+        "type": "object",
+        "required": [
+          "batter_runs",
+          "probability",
+          "observed_deliveries",
+          "credible_interval"
+        ],
+        "title": "PredictedRun"
+      },
+      "Prediction": {
+        "properties": {
+          "calibrated_forecast": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Calibrated Forecast"
+          },
+          "model_version": {
+            "type": "string",
+            "title": "Model Version"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "batter_id": {
+            "type": "string",
+            "title": "Batter Id"
+          },
+          "bowler_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bowler Id"
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "context": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Context"
+          },
+          "training": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Training"
+          },
+          "prior_event_probabilities": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Prior Event Probabilities"
+          },
+          "events": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/PredictedEvent"
+            },
+            "type": "object",
+            "title": "Events"
+          },
+          "run_distribution": {
+            "items": {
+              "$ref": "#/components/schemas/PredictedRun"
+            },
+            "type": "array",
+            "title": "Run Distribution"
+          },
+          "expected_capped_batter_runs_per_legal_delivery": {
+            "type": "number",
+            "title": "Expected Capped Batter Runs Per Legal Delivery"
+          },
+          "joint_outcomes": {
+            "items": {
+              "$ref": "#/components/schemas/JointOutcome"
+            },
+            "type": "array",
+            "title": "Joint Outcomes"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_version",
+          "status",
+          "batter_id",
+          "bowler_id",
+          "as_of",
+          "context",
+          "training",
+          "prior_event_probabilities",
+          "events",
+          "run_distribution",
+          "expected_capped_batter_runs_per_legal_delivery",
+          "joint_outcomes"
+        ],
+        "title": "Prediction"
+      },
+      "RecentForm": {
+        "properties": {
+          "player_id": {
+            "type": "string",
+            "title": "Player Id"
+          },
+          "window": {
+            "type": "integer",
+            "title": "Window"
+          },
+          "latest_included_match_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latest Included Match Date"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/FormSummary"
+          },
+          "timeline": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Timeline"
+          }
+        },
+        "type": "object",
+        "required": [
+          "player_id",
+          "window",
+          "latest_included_match_date",
+          "summary",
+          "timeline"
+        ],
+        "title": "RecentForm"
+      },
+      "Role": {
+        "type": "string",
+        "enum": [
+          "batter",
+          "bowler",
+          "allrounder",
+          "wicketkeeper_batter"
+        ],
+        "title": "Role"
+      },
+      "Roster": {
+        "properties": {
+          "team": {
+            "$ref": "#/components/schemas/Team"
+          },
+          "season": {
+            "type": "integer",
+            "title": "Season"
+          },
+          "roster_type": {
+            "type": "string",
+            "title": "Roster Type"
+          },
+          "members": {
+            "items": {
+              "$ref": "#/components/schemas/RosterMember"
+            },
+            "type": "array",
+            "title": "Members"
+          },
+          "eligibility_verified": {
+            "type": "boolean",
+            "title": "Eligibility Verified",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "team",
+          "season",
+          "roster_type",
+          "members"
+        ],
+        "title": "Roster"
+      },
+      "RosterMember": {
+        "properties": {
+          "player": {
+            "$ref": "#/components/schemas/Player"
+          },
+          "roster": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Roster"
+          },
+          "availability": {
+            "$ref": "#/components/schemas/Availability"
+          }
+        },
+        "type": "object",
+        "required": [
+          "player",
+          "roster",
+          "availability"
+        ],
+        "title": "RosterMember"
+      },
+      "Side": {
+        "type": "string",
+        "enum": [
+          "batting",
+          "bowling"
+        ],
+        "title": "Side"
+      },
+      "SimulationRequest": {
+        "properties": {
+          "season": {
+            "type": "integer",
+            "maximum": 2026.0,
+            "minimum": 2026.0,
+            "title": "Season",
+            "default": 2026
+          },
+          "as_of": {
+            "type": "string",
+            "format": "date",
+            "title": "As Of"
+          },
+          "venue_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Venue Id"
+          },
+          "team_a": {
+            "$ref": "#/components/schemas/TeamPlan"
+          },
+          "team_b": {
+            "$ref": "#/components/schemas/TeamPlan"
+          },
+          "batting_first_team_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Batting First Team Id"
+          },
+          "simulations": {
+            "type": "integer",
+            "maximum": 1000.0,
+            "minimum": 50.0,
+            "title": "Simulations",
+            "default": 500
+          },
+          "seed": {
+            "type": "integer",
+            "maximum": 4294967295.0,
+            "minimum": 0.0,
+            "title": "Seed",
+            "default": 20261002
+          },
+          "sample_posterior": {
+            "type": "boolean",
+            "title": "Sample Posterior",
+            "default": true
+          },
+          "use_delivery_calibration": {
+            "type": "boolean",
+            "title": "Use Delivery Calibration",
+            "default": false
+          },
+          "include_sample_match": {
+            "type": "boolean",
+            "title": "Include Sample Match",
+            "default": false
+          },
+          "allow_unknown_availability": {
+            "type": "boolean",
+            "title": "Allow Unknown Availability",
+            "default": false
+          },
+          "max_super_overs": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
+            "title": "Max Super Overs",
+            "default": 6
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "as_of",
+          "venue_id",
+          "team_a",
+          "team_b",
+          "batting_first_team_id"
+        ],
+        "title": "SimulationRequest"
+      },
+      "SimulationResult": {
+        "properties": {
+          "reliability": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Reliability"
+          },
+          "simulator_version": {
+            "type": "string",
+            "title": "Simulator Version"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "eligibility_verified": {
+            "type": "boolean",
+            "title": "Eligibility Verified"
+          },
+          "simulations": {
+            "type": "integer",
+            "title": "Simulations"
+          },
+          "seed": {
+            "type": "integer",
+            "title": "Seed"
+          },
+          "outcomes": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Outcomes"
+          },
+          "innings": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Innings"
+          },
+          "training": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Training"
+          },
+          "assumptions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Assumptions"
+          },
+          "sample_match": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Match"
+          }
+        },
+        "type": "object",
+        "required": [
+          "simulator_version",
+          "status",
+          "eligibility_verified",
+          "simulations",
+          "seed",
+          "outcomes",
+          "innings",
+          "training",
+          "assumptions"
+        ],
+        "title": "SimulationResult"
+      },
+      "Team": {
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "title": "Team Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "is_current": {
+            "type": "boolean",
+            "title": "Is Current"
+          }
+        },
+        "type": "object",
+        "required": [
+          "team_id",
+          "display_name",
+          "is_current"
+        ],
+        "title": "Team"
+      },
+      "TeamPlan": {
+        "properties": {
+          "team_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Team Id"
+          },
+          "starting_xi": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 11,
+            "minItems": 11,
+            "title": "Starting Xi"
+          },
+          "batting_order": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 11,
+            "minItems": 11,
+            "title": "Batting Order"
+          },
+          "bowling_plan": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 20,
+            "minItems": 20,
+            "title": "Bowling Plan"
+          },
+          "captain_id": {
+            "type": "string",
+            "maxLength": 80,
+            "minLength": 1,
+            "title": "Captain Id"
+          },
+          "substitutes": {
+            "items": {
+              "type": "string",
+              "maxLength": 80,
+              "minLength": 1
+            },
+            "type": "array",
+            "maxItems": 5,
+            "title": "Substitutes"
+          },
+          "impact": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ImpactPlan"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "team_id",
+          "starting_xi",
+          "batting_order",
+          "bowling_plan",
+          "captain_id"
+        ],
+        "title": "TeamPlan"
+      },
+      "Venue": {
+        "properties": {
+          "venue_id": {
+            "type": "string",
+            "title": "Venue Id"
+          },
+          "display_name": {
+            "type": "string",
+            "title": "Display Name"
+          },
+          "city": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "City"
+          }
+        },
+        "type": "object",
+        "required": [
+          "venue_id",
+          "display_name"
+        ],
+        "title": "Venue"
+      },
+      "VenueProfile": {
+        "properties": {
+          "venue": {
+            "$ref": "#/components/schemas/Venue"
+          },
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Aliases"
+          },
+          "matches": {
+            "type": "integer",
+            "title": "Matches"
+          },
+          "innings": {
+            "type": "integer",
+            "title": "Innings"
+          },
+          "runs": {
+            "type": "integer",
+            "title": "Runs"
+          },
+          "legal_balls": {
+            "type": "integer",
+            "title": "Legal Balls"
+          },
+          "wickets": {
+            "type": "integer",
+            "title": "Wickets"
+          },
+          "runs_per_over": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runs Per Over"
+          },
+          "first_innings_count": {
+            "type": "integer",
+            "title": "First Innings Count"
+          },
+          "mean_first_innings_runs": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mean First Innings Runs"
+          },
+          "median_first_innings_runs": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Median First Innings Runs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "venue",
+          "aliases",
+          "matches",
+          "innings",
+          "runs",
+          "legal_balls",
+          "wickets",
+          "runs_per_over",
+          "first_innings_count",
+          "mean_first_innings_runs",
+          "median_first_innings_runs"
+        ],
+        "title": "VenueProfile"
+      }
+    }
+  }
+}

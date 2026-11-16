@@ -1,0 +1,103 @@
+[
+  {
+    "check": "archive_match_count",
+    "passed": true,
+    "detail": 1243
+  },
+  {
+    "check": "match_ids_unique",
+    "passed": true,
+    "detail": 1243
+  },
+  {
+    "check": "delivery_ids_unique",
+    "passed": true,
+    "detail": 295732
+  },
+  {
+    "check": "run_arithmetic",
+    "passed": true,
+    "detail": "batter + extras = total"
+  },
+  {
+    "check": "innings_runs_reconciled",
+    "passed": true,
+    "detail": "every source innings independently summed"
+  },
+  {
+    "check": "legal_ball_flags",
+    "passed": true,
+    "detail": "wide/no-ball excluded"
+  },
+  {
+    "check": "delivery_player_foreign_keys",
+    "passed": true,
+    "detail": "all striker, non-striker and bowler IDs"
+  },
+  {
+    "check": "current_squads_all_ten",
+    "passed": true,
+    "detail": {
+      "CSK": 30,
+      "DC": 26,
+      "GT": 27,
+      "KKR": 29,
+      "LSG": 26,
+      "MI": 29,
+      "PBKS": 25,
+      "RCB": 26,
+      "RR": 27,
+      "SRH": 29
+    }
+  },
+  {
+    "check": "current_squad_ids_unique",
+    "passed": true,
+    "detail": 274
+  },
+  {
+    "check": "current_player_hands_and_roles",
+    "passed": true,
+    "detail": "reported hand and selection role for all official snapshot members"
+  },
+  {
+    "check": "statistics_identity_and_dates",
+    "passed": true,
+    "detail": "player match stats fully linked"
+  },
+  {
+    "check": "batting_total_reconciled",
+    "passed": true,
+    "detail": 381235
+  },
+  {
+    "check": "bowling_total_reconciled",
+    "passed": true,
+    "detail": 394281
+  },
+  {
+    "check": "bowling_wickets_reconciled",
+    "passed": true,
+    "detail": 13460
+  },
+  {
+    "check": "recent_form_window_limits",
+    "passed": true,
+    "detail": "last 5/10 actual batting/bowling innings"
+  },
+  {
+    "check": "canonical_season_year",
+    "passed": true,
+    "detail": "calendar IPL year; original season labels retained"
+  },
+  {
+    "check": "wicket_player_foreign_keys",
+    "passed": true,
+    "detail": "including non-striker run outs"
+  },
+  {
+    "check": "lineup_player_foreign_keys",
+    "passed": true,
+    "detail": "listed match participants"
+  }
+]

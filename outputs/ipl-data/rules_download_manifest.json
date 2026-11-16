@@ -1,0 +1,14 @@
+[
+  {
+    "file": "raw/ipl/TATA_IPL_2026_Match_Playing_Conditions_current.pdf",
+    "source_url": "https://www.iplt20.com/cms/files/jot2qw8s50z1/7DScv8UxUc6AJcrXDon2yW/bdc93c1c438bfafad464f2a334862d59/1775736835406_TATA_IPL_2026_Match_Playing_Conditions.pdf",
+    "license_note": "Official IPL playing conditions linked from its public website; source terms apply",
+    "http_status": 200,
+    "content_type": "application/pdf",
+    "last_modified": "Tue, 14 Jul 2026 04:51:42 GMT",
+    "status": "downloaded",
+    "retrieved_at_utc": "2026-10-02T03:29:45.909066+00:00",
+    "bytes": 1282875,
+    "sha256": "8cb00c8428262988b147823628dd78c1e0ef7e623d2aa0a5d456eb7183bae655"
+  }
+]
