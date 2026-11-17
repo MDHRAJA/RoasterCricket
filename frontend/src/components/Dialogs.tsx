@@ -28,11 +28,13 @@ export function MatchRecord({
   missing,
   source,
   onClose,
+  onBack = onClose,
 }: {
   match?: ArchiveMatch;
   missing: boolean;
   source: DataSource;
   onClose: () => void;
+  onBack?: () => void;
 }) {
   const ref = useRef<HTMLDialogElement>(null);
   const { innings, error } = useInnings(match?.match_id, source);
@@ -141,13 +143,13 @@ export function MatchRecord({
               ? 'This reference is not in the selected season.'
               : 'Retrieving the match record.'}
           </p>
-          <button className="text-button" onClick={onClose}>
+          <button className="text-button" onClick={onBack}>
             Return to fixtures <Icon name="arrow" />
           </button>
         </div>
       )}
       <div className="dialog-bottom">
-        <button className="text-button" onClick={onClose}>
+        <button className="text-button" onClick={onBack}>
           ← Back to fixtures
         </button>
         <span className="mono">ESC</span>

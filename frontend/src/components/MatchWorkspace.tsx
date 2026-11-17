@@ -280,7 +280,7 @@ export default function MatchWorkspace({
   );
   const [json, setJson] = useState(''),
     [importError, setImportError] = useState(''),
-    [factsOpen, setFactsOpen] = useState(false);
+    [factsOpen, setFactsOpen] = useState(true);
   const fileRef = useRef<HTMLInputElement>(null),
     heading = useRef<HTMLHeadingElement>(null);
   const simulation = useSimulation(scenario ? scenario.run : example ? savedRun : null),
@@ -781,6 +781,7 @@ export default function MatchWorkspace({
           missing={false}
           source={source}
           onClose={() => setFactsOpen(false)}
+          onBack={onBack}
         />
       )}
     </main>
