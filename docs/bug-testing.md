@@ -38,6 +38,7 @@ Status: automated and live-service checks passed; current browser verification p
 - Hosted Match service: all four live cases passed (five sequential API requests), including identical seed-zero result data, reverse batting order, optional sample omission, 200-trial output and availability rejection.
 - Python simulation/API suites: 93 tests passed. Existing dependency deprecation warning only; no dependency changes in this pass.
 - TypeScript, production build and formatting checks passed.
+- Fixes published in commit `210e68d48f820909c31f74112a27554e28c7a1ae`. Vercel production deployment `dpl_CDoFyqKWSgUFiCYRkSrVGK46r3Ue` reached READY. Public page, entry script and Match chunk returned HTTP 200. No error/fatal runtime logs were returned for that deployment's checked 15-minute window; this is not a browser console check.
 
 DOM-based tests stub native dialog lifecycle, viewport observation and downloads. Export bytes are decoded; OS download dialogs are not exercised. They cannot establish native Escape/focus containment, visual contrast, touch behavior, responsive geometry or absence of browser console errors.
 
@@ -49,3 +50,5 @@ DOM-based tests stub native dialog lifecycle, viewport observation and downloads
 - Fresh browser console check.
 
 Keep Phase 2 open until these are observed. Model prediction accuracy, live match feeds and new prediction features are outside this bug-testing pass.
+
+The current browser observation was rejected by automatic approval review because the available browser window was outside the authorized QA target. Requested a separate Match window from the user. No unrelated page content was inspected and no browser check is marked passed from that attempt.
