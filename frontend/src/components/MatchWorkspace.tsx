@@ -699,9 +699,8 @@ export default function MatchWorkspace({
               </button>
               <button
                 className="text-button"
-                onClick={() =>
-                  saveJson(baseRequest || exampleRequest, 'concourse-request-template.json')
-                }
+                disabled={Boolean(draft && !validSeed)}
+                onClick={() => saveJson(draft || exampleRequest, 'concourse-request-template.json')}
               >
                 {baseRequest ? 'Save current request' : 'Save CSK–MI example request'}{' '}
                 <span aria-hidden="true">↓</span>

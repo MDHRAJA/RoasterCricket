@@ -336,6 +336,7 @@ export function validateSimulationResponse(
   if (!Array.isArray(d.innings) || d.innings.length !== 2) fail();
   const summaries = d.innings as unknown[];
   if (new Set(summaries.map((i) => object(i).team_id)).size !== 2) fail();
+  if (object(summaries[0]).team_id !== request.batting_first_team_id) fail();
   for (const entry of summaries) {
     const i = object(entry),
       q = object(i.score_quantiles);
@@ -348,6 +349,8 @@ export function validateSimulationResponse(
         'score_standard_deviation',
         'mean_runs_mc_standard_error',
       ].every((k) => finite(i[k])) ||
+      !finite(i.mean_wickets, 0, 10) ||
+      !finite(i.mean_legal_balls, 0, 120) ||
       !['p05', 'p10', 'p50', 'p90', 'p95'].every((k) => finite(q[k])) ||
       !Array.isArray(i.score_histogram) ||
       !i.score_histogram.length
@@ -362,6 +365,7 @@ export function validateSimulationResponse(
       const bin = object(entry);
       if (
         !integer(bin.lower, 0, 10000) ||
+        Number(bin.lower) % 10 !== 0 ||
         !integer(bin.upper_exclusive, 1, 10010) ||
         Number(bin.upper_exclusive) - Number(bin.lower) !== 10 ||
         Number(bin.lower) < end ||
@@ -373,11 +377,22 @@ export function validateSimulationResponse(
     }
     if (count !== request.simulations) fail();
   }
+  for (const key of ['first_included_date', 'last_included_date']) {
+    const date = training[key];
+    if (
+      date != null &&
+      (typeof date !== 'string' ||
+        !/^\d{4}-\d{2}-\d{2}$/.test(date) ||
+        !Number.isFinite(Date.parse(date)) ||
+        new Date(`${date}T00:00:00Z`).toISOString().slice(0, 10) !== date ||
+        date >= request.as_of)
+    )
+      fail();
+  }
   if (
-    training.last_included_date != null &&
-    (typeof training.last_included_date !== 'string' ||
-      !/^\d{4}-\d{2}-\d{2}$/.test(training.last_included_date) ||
-      !Number.isFinite(Date.parse(training.last_included_date)))
+    typeof training.first_included_date === 'string' &&
+    typeof training.last_included_date === 'string' &&
+    training.first_included_date > training.last_included_date
   )
     fail();
   if (
@@ -403,6 +418,7 @@ function validateSample(value: unknown, request: SimulationRequest, fail: () => 
     fail();
   if (
     new Set((sample.innings as unknown[]).map((i) => object(i).team_id)).size !== 2 ||
+    object((sample.innings as unknown[])[0]).team_id !== request.batting_first_team_id ||
     (sample.winner_id !== null &&
       ![request.team_a.team_id, request.team_b.team_id].includes(String(sample.winner_id)))
   )
@@ -449,24 +465,27 @@ function validateSample(value: unknown, request: SimulationRequest, fail: () => 
       fail();
     if (i.deliveries != null) {
       if (!Array.isArray(i.deliveries)) fail();
-      let previousLegal = 0;
+      let expectedLegal = 0;
+      let physical = 0;
       for (const raw of i.deliveries as unknown[]) {
         const e = object(raw);
         if (
           !integer(e.legal_balls_before, 0, 120) ||
-          Number(e.legal_balls_before) < previousLegal ||
+          e.legal_balls_before !== expectedLegal ||
           !integer(e.score, 0, 10000) ||
           !integer(e.wickets, 0, 10) ||
           !integer(e.batter_runs, 0, 100) ||
           !integer(e.extras, 0, 100) ||
           !integer(e.physical_delivery, 1, 20000) ||
+          e.physical_delivery !== physical + 1 ||
           !['legal', 'wide', 'noball'].includes(String(e.kind)) ||
           !text(e.striker_id) ||
           !text(e.bowler_id) ||
           (e.dismissed_id !== null && !text(e.dismissed_id))
         )
           fail();
-        previousLegal = Number(e.legal_balls_before);
+        expectedLegal += Number(e.kind === 'legal');
+        physical++;
       }
       const last = object((i.deliveries as unknown[]).at(-1));
       if (

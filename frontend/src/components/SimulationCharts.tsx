@@ -313,7 +313,11 @@ export function OverLine({
   const entry = innings[side],
     maximum = Math.min(
       20,
-      Math.max(entry.deliveries?.length ? 1 : 0, Math.ceil(entry.legal_balls / 6)),
+      Math.max(
+        entry.deliveries?.length ? 1 : 0,
+        Math.ceil(entry.legal_balls / 6),
+        Math.floor((entry.deliveries?.at(-1)?.legal_balls_before ?? -1) / 6) + 1,
+      ),
     ),
     selected = Math.min(over, maximum),
     state = sampleAtOver(entry, selected);
@@ -364,7 +368,7 @@ export function OverLine({
             key={n}
             disabled={n > maximum}
             aria-pressed={n === selected}
-            aria-label={`Over ${n}${wickets.has(n) ? ', wicket recorded' : ''}${n === maximum && entry.legal_balls % 6 ? `, innings ends at ${overs(entry.legal_balls)}` : ''}`}
+            aria-label={`Over ${n}${wickets.has(n) ? ', wicket recorded' : ''}${n === maximum ? `, innings ends at ${overs(entry.legal_balls)}` : ''}`}
             className={`over-station ${n <= 6 ? 'powerplay' : n <= 16 ? 'middle' : 'death'} ${wickets.has(n) ? 'has-wicket' : ''} ${n === selected ? 'selected' : ''}`}
             onClick={() => setOver(n)}
             onKeyDown={(e) => {

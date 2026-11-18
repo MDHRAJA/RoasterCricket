@@ -72,8 +72,8 @@ describe('opening a recorded fixture', () => {
 
   it('Back to fixtures invokes navigation rather than only hiding the facts', async () => {
     await renderRecord();
-    const button = [...container.querySelectorAll<HTMLButtonElement>('dialog button')].find((node) =>
-      node.textContent?.includes('Back to fixtures'),
+    const button = [...container.querySelectorAll<HTMLButtonElement>('dialog button')].find(
+      (node) => node.textContent?.includes('Back to fixtures'),
     )!;
     await act(async () => button.click());
     expect(back).toHaveBeenCalledTimes(1);

@@ -37,11 +37,11 @@ Every displayed result stays paired with the exact request that generated it. Ed
 
 **Stop waiting** aborts the browser request and ignores late responses. It does not kill Python's computation. The backend may finish its existing job and return 429 to a second request meanwhile. Leaving the workspace also aborts the browser wait. The browser timeout is 45 seconds; the backend maintains its own computation budget.
 
-The seed repeated identical win estimates in the current local runtime during browser QA. Reproducibility also depends on the dataset, full request, code and numerical-library versions. Saved requests and full runs can be downloaded; the receipt retains returned dataset/model versions. Standalone imported requests and results reset when Match is left/reloaded. Lab scenarios retain drafts and completed runs across navigation within the page session, then reset on reload. **Edit team plans in Lab** explicitly transfers the current Match draft to a scenario slot.
+The seed repeated identical win estimates in the current local runtime during browser QA. Reproducibility also depends on the dataset, full request, code and numerical-library versions. **Save current request** exports the current draft, including edited trials, seed and availability. Invalid seeds disable that draft export. The receipt's **Save request** and **Save full run** retain the exact completed inputs and outputs even when the draft has changed. Standalone imported requests and results reset when Match is left/reloaded. Lab scenarios retain drafts and completed runs across navigation within the page session, then reset on reload. **Edit team plans in Lab** explicitly transfers the current Match draft to a scenario slot.
 
 ## Archive replay and request import
 
-Selecting an archived match opens its workspace. **View recorded result** opens the observed score/result dialog. No simulated forecast is automatically inferred from that result or from a broad participant pool.
+Selecting an archived match opens its observed score/result dialog immediately. Dismissing it reveals the replay workspace; **View recorded result** reopens the facts. **Back to fixtures** navigates to Fixtures. No simulated forecast is automatically inferred from that result or from a broad participant pool.
 
 To simulate an archive pairing, expand **Load an explicit scenario request**. Import a JSON file (up to 64 KB), or paste the request. It must include both starting XIs, batting orders, twenty bowling assignments, captains, venue, cutoff and batting-first team. Client checks validate structure; the backend remains authoritative for roster and rule constraints. For an archive replay, teams and venue must match the selected record, the cutoff must be on/before the match date, and the rule season must be 2026. Even then, the result is a hypothetical replay, not a recovered historical forecast or a verified historical lineup.
 
@@ -64,3 +64,17 @@ npm run format:check
 The Phase 2 checkpoint had 46 tests. Added coverage included bounded requests, seed zero, request/result correspondence, preserved tie mass, histogram reconciliation, invalid responses, backend errors, illegal deliveries, early sample endings and archive-context restrictions. Manual browser checks included live runs, repeatability, cancellation, request import, details, keyboard controls and mobile geometry. The downloaded saved-run export retained its 200-trial request, response, seed and saved source. A final check with the owned backend stopped showed a connection failure while retaining the prior saved result. Review images are under `docs/frontend-review/`; `phase2-match-light.jpg` and `phase2-match-dark.jpg` show a live 200-trial API result, while the mobile/overview images show the separately labelled saved example. The saved SQLite SHA-256 still matches the Phase 1 extract. See the phase plan for subsequent suite totals.
 
 The Match chunk is loaded only when opened, preserving the Fixtures entry path. Fonts are local and no new runtime library was added for this phase. The interface has reduced-motion styles, chart text alternatives, exact data tables, keyboard focus and native dialogs. Further cross-browser and assistive-technology review belongs to the final integration phase.
+
+## Repeatable live-service checks
+
+The normal suite mocks network boundaries. Four optional live checks send five sequential simulation requests: a repeated 50-trial seed-zero run, reversed batting order without a sample, the 200-trial example, and strict availability rejection. They validate real responses through the same frontend boundary as Match. Run from `frontend/` against the intended backend:
+
+```powershell
+$env:VITE_API_BASE_URL = 'https://roaster-cricket-api.vercel.app/api/v1'
+$env:VITE_LIVE_MATCH_QA = '1'
+npm test -- src/api/simulation.live.test.ts
+Remove-Item Env:VITE_LIVE_MATCH_QA
+Remove-Item Env:VITE_API_BASE_URL
+```
+
+These consume computation on the selected service and are skipped by default. They do not exercise browser layout or establish prediction accuracy. The current regression pass is recorded in [bug testing](bug-testing.md).

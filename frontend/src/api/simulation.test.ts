@@ -74,6 +74,32 @@ describe('completed run integrity', () => {
     r.data.sample_match!.innings[0].deliveries![0].score = -1;
     expect(() => validateSimulationResponse(r, exampleRequest)).toThrow();
   });
+  it.each([
+    'innings order',
+    'sample order',
+    'future evidence',
+    'reversed evidence',
+    'impossible wickets',
+    'impossible balls',
+    'misaligned bins',
+    'discontinuous trace',
+  ])('rejects %s rather than showing misleading charts or receipts', (caseName) => {
+    const r = copy(savedScenario.response);
+    if (caseName === 'innings order') r.data.innings.reverse();
+    if (caseName === 'sample order') r.data.sample_match!.innings.reverse();
+    if (caseName === 'future evidence') r.data.training.last_included_date = exampleRequest.as_of;
+    if (caseName === 'reversed evidence')
+      r.data.training.first_included_date = exampleRequest.as_of;
+    if (caseName === 'impossible wickets') r.data.innings[0].mean_wickets = 11;
+    if (caseName === 'impossible balls') r.data.innings[0].mean_legal_balls = 121;
+    if (caseName === 'misaligned bins') {
+      r.data.innings[0].score_histogram.at(-1)!.lower++;
+      r.data.innings[0].score_histogram.at(-1)!.upper_exclusive++;
+    }
+    if (caseName === 'discontinuous trace')
+      r.data.sample_match!.innings[0].deliveries![0].legal_balls_before = 1;
+    expect(() => validateSimulationResponse(r, exampleRequest)).toThrow();
+  });
 });
 describe('simulation HTTP boundary', () => {
   it('sends complete explicit inputs and passes through cancellation', async () => {
