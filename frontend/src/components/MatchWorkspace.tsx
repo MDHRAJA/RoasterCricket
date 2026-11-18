@@ -362,7 +362,7 @@ export default function MatchWorkspace({
     const keyboard = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement;
       if (
-        e.code === 'Space' &&
+        (e.code === 'Space' || e.key === ' ') &&
         !e.repeat &&
         !e.metaKey &&
         !e.ctrlKey &&

@@ -295,6 +295,18 @@ describe('Phase 2: Match simulation workflow', () => {
     expect(post).toHaveBeenCalledTimes(1);
   });
 
+  it('runs when Space is reported without a physical keyboard code', async () => {
+    await mount();
+    const event = new KeyboardEvent('keydown', {
+      key: ' ',
+      bubbles: true,
+      cancelable: true,
+    });
+    await act(async () => document.body.dispatchEvent(event));
+    expect(event.defaultPrevented).toBe(true);
+    expect(post).toHaveBeenCalledTimes(1);
+  });
+
   it('rejects malformed, oversized and mismatched imports without losing the displayed run', async () => {
     await mount();
     for (const [raw, error] of [
